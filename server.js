@@ -12,7 +12,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com", "https://www.clarity.ms", "https://cdnjs.cloudflare.com", "https://unpkg.com"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com", "https://www.clarity.ms", "https://cdnjs.cloudflare.com", "https://unpkg.com", "https://cdn.tailwindcss.com"],
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdnjs.cloudflare.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com"],
       imgSrc: ["'self'", "data:", "https:", "blob:"],
@@ -43,6 +43,11 @@ app.use(express.static(path.join(__dirname, 'public'), {
     }
   }
 }));
+
+app.get('/wedding', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache');
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.get('/sitemap.xml', (req, res) => {
   res.type('application/xml');
