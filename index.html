@@ -1,4 +1,1153 @@
-<!-- v3.0 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>The Perfect Look by Emily | Luxury Private Hair Studio | Odessa, Ontario</title>
+  <meta name="description" content="Luxury private hair studio in Odessa, Ontario. AI Hair Architect, AR Try-On, Pre-Arrival Vibe Setter, and world-class artistry by Emily."/>
+  <meta name="keywords" content="hair studio Odessa Ontario, balayage Kingston area, color correction, luxury hair, AI hair architect, Emily salon"/>
+  <meta property="og:title" content="The Perfect Look by Emily — Luxury Private Hair Studio"/>
+  <meta property="og:description" content="Where artistry meets innovation. AI Hair Architect, AR Try-On, and world-class hair artistry in Odessa, Ontario."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://theperfectlookbyemily.ca"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="https://theperfectlookbyemily.ca"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JK4GGND4SW"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JK4GGND4SW');</script>
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/vlwbv73d2h";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vlwbv73d2h");</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--amethyst:#8A2BE2;--teal:#00D4FF;--charcoal:#100F14;--gold:#D4AF37;--orchid:#B388FF;--mint:#64FFDA;--rose:#FF6B9D;--deep:#000D12;--glass:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.08);--glass-hover:rgba(255,255,255,0.08);--cinzel:'Cinzel','Playfair Display',serif;--cormorant:'Cormorant Garamond','Playfair Display',serif;--dm-sans:'DM Sans','Montserrat',sans-serif;}
+    *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+    body{background:var(--deep);font-family:var(--body);color:var(--text);overflow-x:hidden;}
+    ::selection{background:var(--amethyst);color:#fff;}
+    ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:rgba(138,43,226,0.3);border-radius:3px;}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}.reveal.visible{opacity:1;transform:none;}
+    .pl-section{padding:100px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+    .pl-label{font-family:var(--dm-sans);font-size:11px;letter-spacing:3em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;}
+    .pl-h2{font-family:var(--cinzel);font-size:clamp(2.2rem,5vw,4rem);font-weight:600;text-align:center;margin-bottom:16px;background:linear-gradient(135deg,#fff 30%,rgba(255,255,255,.6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .pl-sub{font-family:var(--cormorant);font-size:1.2rem;color:rgba(255,255,255,.55);text-align:center;margin-bottom:60px;font-style:italic;}
+    .pl-glass{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;backdrop-filter:blur(16px);}
+    .pl-cta{display:inline-block;padding:16px 48px;border:none;border-radius:999px;background:linear-gradient(135deg,var(--amethyst),var(--teal));color:#fff;font-family:var(--dm-sans);font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:opacity .2s,transform .2s;}
+    .pl-cta:hover{opacity:.85;transform:translateY(-2px);box-shadow:0 8px 30px rgba(138,43,226,.4);}
+    /* Logo Identity */
+    .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;max-width:1200px;width:100%;}
+    .logo-card{padding:28px 20px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);text-align:center;transition:all .3s;cursor:pointer;}
+    .logo-card:hover,.logo-card.active{border-color:var(--amethyst);box-shadow:0 0 40px rgba(138,43,226,.4);transform:translateY(-6px);}
+    /* Wizard */
+    .wiz-opt{background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.25);border-radius:14px;padding:18px 24px;color:#fff;font-family:var(--dm-sans);font-size:1rem;cursor:pointer;text-align:left;transition:all .2s;}
+    .wiz-opt:hover{background:rgba(138,43,226,.25);border-color:var(--amethyst);}
+    /* Vibe */
+    .vibe-card{border-radius:16px;padding:28px 20px;cursor:pointer;text-align:center;transition:all .3s;border:2px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);}
+    .vibe-card.active{border-color:var(--amethyst);background:rgba(138,43,226,.15);transform:translateY(-4px);}
+    /* Dashboard tabs */
+    .tab-btn{padding:12px 28px;border-radius:50px;border:none;cursor:pointer;font-family:var(--cinzel);font-size:11px;letter-spacing:2px;transition:all .3s;text-transform:uppercase;}
+    .tab-btn.active{background:linear-gradient(135deg,var(--amethyst),var(--teal));color:#fff;}
+    .tab-btn:not(.active){background:transparent;color:rgba(255,255,255,.5);}
+    /* Brand guide */
+    .brand-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+    .brand-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:40px;}
+    @keyframes float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-18px) scale(1.03);}}
+    @keyframes aurora{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1);}50%{opacity:.4;transform:translate(-50%,-50%) scale(1.2);}}
+    @media(max-width:768px){.brand-grid{grid-template-columns:1fr;}.logo-grid{grid-template-columns:repeat(2,1fr);}
+      .vibe-grid{grid-template-columns:repeat(2,1fr);}}
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<div id="main-content"></div>
+<script>
+const C = {amethyst:'#8A2BE2',teal:'#00D4FF',charcoal:'#100F14',gold:'#D4AF37',orchid:'#B388FF',mint:'#64FFDA',rose:'#FF6B9D',deep:'#000D12',text:'#F0EDE8',body:'Montserrat,sans-serif'};
+function useReveal(){React.useEffect(()=>{const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));return()=>obs.disconnect();},[]);}
+
+// ======== AuroraOrb ========
+function AuroraOrb({color,size,top,left,delay}){
+  return React.createElement('div',{style:{position:'absolute',top,left,width:size,height:size,borderRadius:'50%',background:color,filter:'blur(80px)',opacity:.35,animation:'aurora 8s ease-in-out infinite',animationDelay:delay||'0s',pointerEvents:'none',zIndex:0}});
+}
+
+// ======== SectionLabel ========
+function SectionLabel({text,color}){
+  return React.createElement('p',{className:'pl-label',style:{color:color||C.teal}},text);
+}
+
+// ======== StarRow ========
+function StarRow({n}){
+  return React.createElement('div',{style:{display:'flex',gap:'2px',margin:'8px 0'}},
+    Array.from({length:n||5},(_,i)=>React.createElement('span',{key:i,style:{color:C.gold,fontSize:'14px'}},'★'))
+  );
+}
+
+// ======== Nav ========
+const Nav = () => {
+  const [scrolled,setScrolled] = React.useState(false);
+  const [mOpen,setMOpen] = React.useState(false);
+  React.useEffect(()=>{
+    const fn=()=>setScrolled(window.scrollY>50);
+    window.addEventListener('scroll',fn);
+    return()=>window.removeEventListener('scroll',fn);
+  },[]);
+  const links = [
+    {label:'About',href:'#about'},{label:'Services',href:'#services'},{label:'Technology',href:'#technology'},
+    {label:'Identity',href:'#logo-identity'},{label:'Vibe',href:'#vibe-setter'},{label:'Membership',href:'#membership'},
+    {label:'Reviews',href:'#reviews'},{label:'Book',href:'#book'}
+  ];
+  return React.createElement('nav',{style:{position:'fixed',top:0,left:0,right:0,zIndex:1000,transition:'all .3s',background: scrolled ? 'rgba(0,13,18,.95)' : 'transparent',backdropFilter: scrolled ? 'blur(20px)' : 'none',borderBottom: scrolled ? '1px solid rgba(255,255,255,.06)' : 'none',padding:'16px 32px',display:'flex',alignItems:'center',justifyContent:'space-between'}},
+    React.createElement('a',{href:'#',style:{textDecoration:'none'}},
+      React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'clamp(.9rem,2vw,1.1rem)',letterSpacing:'3px',color:'#fff',textTransform:'uppercase'}},
+        'The Perfect Look ',React.createElement('span',{style:{color:C.teal}},'by Emily')
+      )
+    ),
+    React.createElement('div',{style:{display:'flex',gap:'28px',alignItems:'center'}},
+      links.map(l=>React.createElement('a',{key:l.label,href:l.href,style:{color:'rgba(255,255,255,.75)',textDecoration:'none',fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'2px',textTransform:'uppercase',transition:'color .2s'},
+        onMouseEnter:e=>e.target.style.color=C.amethyst,onMouseLeave:e=>e.target.style.color='rgba(255,255,255,.75)'
+      },l.label)),
+      React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{padding:'10px 24px',fontSize:'10px',textDecoration:'none'}}, 'Reserve Now')
+    )
+  );
+};
+
+// ======== Hero ========
+const Hero = () => {
+  return React.createElement('section',{id:'home',style:{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden',background:'radial-gradient(ellipse at 50% 100%,rgba(138,43,226,.18) 0%,transparent 60%)'}},
+    React.createElement(AuroraOrb,{color:C.amethyst,size:'600px',top:'10%',left:'10%',delay:'0s'}),
+    React.createElement(AuroraOrb,{color:C.teal,size:'500px',top:'30%',left:'65%',delay:'3s'}),
+    React.createElement(AuroraOrb,{color:C.orchid,size:'400px',top:'60%',left:'30%',delay:'6s'}),
+    React.createElement('div',{style:{textAlign:'center',zIndex:1,padding:'0 24px',maxWidth:'900px'}},
+      React.createElement('div',{style:{display:'inline-block',background:'rgba(138,43,226,.15)',border:'1px solid rgba(138,43,226,.4)',borderRadius:'50px',padding:'8px 24px',marginBottom:'32px'}},
+        React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'4px',color:C.amethyst,textTransform:'uppercase'}}, 'Luxury Private Hair Studio · Odessa, Ontario')
+      ),
+      React.createElement('h1',{style:{fontFamily:'Cinzel,serif',fontSize:'clamp(3rem,8vw,7rem)',fontWeight:700,color:'#fff',lineHeight:1.1,marginBottom:'28px',textShadow:'0 0 60px rgba(138,43,226,.4)'}},
+        'The Perfect', React.createElement('br'), React.createElement('span',{style:{background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}},'Look')
+      ),
+      React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'clamp(1.1rem,2.5vw,1.5rem)',color:'rgba(255,255,255,.7)',marginBottom:'48px',fontStyle:'italic',lineHeight:1.6}},
+        'Where artistry meets innovation. World-class hair by Emily.'
+      ),
+      React.createElement('div',{style:{display:'flex',gap:'16px',justifyContent:'center',flexWrap:'wrap'}},
+        React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none'}},'Book Your Experience'),
+        React.createElement('a',{href:'#about',style:{display:'inline-block',padding:'16px 48px',border:'1px solid rgba(255,255,255,.25)',borderRadius:'999px',color:'rgba(255,255,255,.8)',fontFamily:'DM Sans,sans-serif',fontSize:'.9rem',letterSpacing:'.2em',textTransform:'uppercase',textDecoration:'none',transition:'all .2s'},
+          onMouseEnter:e=>{e.currentTarget.style.borderColor=C.amethyst;e.currentTarget.style.color=C.amethyst;},
+          onMouseLeave:e=>{e.currentTarget.style.borderColor='rgba(255,255,255,.25)';e.currentTarget.style.color='rgba(255,255,255,.8)';}
+        },'Explore the Brand')
+      )
+    )
+  );
+};
+
+// ======== StatsTicker ========
+function StatsTicker(){
+  const stats=[{n:'500+',l:'Happy Clients'},{n:'10+',l:'Years Experience'},{n:'98%',l:'5-Star Reviews'},{n:'100%',l:'Passion Driven'}];
+  return React.createElement('div',{style:{background:'rgba(138,43,226,.08)',borderTop:'1px solid rgba(138,43,226,.2)',borderBottom:'1px solid rgba(138,43,226,.2)',padding:'32px 0',overflow:'hidden'}},
+    React.createElement('div',{style:{display:'flex',justifyContent:'center',gap:'clamp(40px,8vw,120px)',flexWrap:'wrap',padding:'0 40px'}},
+      stats.map(s=>React.createElement('div',{key:s.n,style:{textAlign:'center'}},
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'clamp(2rem,4vw,3rem)',fontWeight:700,background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}},s.n),
+        React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'12px',letterSpacing:'2px',color:'rgba(255,255,255,.5)',textTransform:'uppercase',marginTop:'4px'}},s.l)
+      ))
+    )
+  );
+}
+
+// ======== Marquee ========
+function Marquee(){
+  const items=['Balayage · ','Colour Correction · ','Signature Cut · ','Head Spa · ','AR Try-On · ','Luxury Tinting · ','Scalp Health · '];
+  const repeated=[...items,...items,...items];
+  return React.createElement('div',{style:{overflow:'hidden',padding:'20px 0',background:'transparent',borderBottom:'1px solid rgba(255,255,255,.04)'}},
+    React.createElement('div',{style:{display:'flex',gap:'0',animation:'none',whiteSpace:'nowrap'}},
+      React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'13px',letterSpacing:'3px',color:'rgba(255,255,255,.2)',textTransform:'uppercase'}},
+        repeated.join('')
+      )
+    )
+  );
+}
+
+// ======== AboutEmily ========
+function AboutEmily(){
+  return React.createElement('section',{id:'about',className:'pl-section reveal',style:{background:'linear-gradient(180deg,#000D12 0%,#0D0D12 100%)',padding:'120px 20px'}},
+    React.createElement('div',{style:{maxWidth:'1100px',width:'100%',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'80px',alignItems:'center'}},
+      React.createElement('div',null,
+        React.createElement(SectionLabel,{text:'About Emily',color:C.amethyst}),
+        React.createElement('h2',{className:'pl-h2',style:{textAlign:'left',marginBottom:'24px'}},'Where Artistry Meets Innovation'),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.2rem',color:'rgba(255,255,255,.7)',lineHeight:1.8,marginBottom:'24px',fontStyle:'italic'}},
+          'With over a decade of luxury styling experience, Emily transforms hair into living art. Every appointment is a private, bespoke experience tailored entirely to you.'
+        ),
+        React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'1rem',color:'rgba(255,255,255,.55)',lineHeight:1.8,marginBottom:'40px'}},
+          'Based in Odessa, Ontario — Emily's private studio blends cutting-edge technology with timeless technique. From advanced balayage to the restorative Head Spa, every service is a sensory journey designed around your hair goals.'
+        ),
+        React.createElement('div',{style:{display:'flex',gap:'40px'}},
+          [{n:'10+',l:'Years'},{n:'500+',l:'Clients'},{n:'100%',l:'Bespoke'}].map(s=>
+            React.createElement('div',{key:s.n},
+              React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'2rem',fontWeight:700,color:C.amethyst}},s.n),
+              React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'12px',letterSpacing:'2px',color:'rgba(255,255,255,.4)',textTransform:'uppercase'}},s.l)
+            )
+          )
+        )
+      ),
+      React.createElement('div',{style:{position:'relative'}},
+        React.createElement('div',{style:{width:'100%',aspectRatio:'3/4',borderRadius:'24px',background:'linear-gradient(135deg,rgba(138,43,226,.3) 0%,rgba(0,212,255,.2) 100%)',border:'1px solid rgba(138,43,226,.3)',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden'}},
+          React.createElement('div',{style:{textAlign:'center',padding:'40px'}},
+            React.createElement('div',{style:{width:'120px',height:'120px',borderRadius:'50%',background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',margin:'0 auto 24px',display:'flex',alignItems:'center',justifyContent:'center'}},
+              React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'3rem',color:'#fff',fontWeight:700}},'E')
+            ),
+            React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.4rem',color:'#fff',letterSpacing:'3px'}},'EMILY'),
+            React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.5)',marginTop:'8px',fontStyle:'italic'}},'Master Stylist · Odessa, ON'),
+            React.createElement(StarRow,{n:5})
+          )
+        )
+      )
+    )
+  );
+}
+
+// ======== ClientJourney ========
+function ClientJourney(){
+  const steps=[
+    {n:'01',title:'Discovery Consultation',desc:'We begin with a deep-dive into your hair history, lifestyle, and vision.'},
+    {n:'02',title:'Custom Planning',desc:'Emily crafts a personalised colour and care roadmap exclusively for you.'},
+    {n:'03',title:'Studio Experience',desc:'Arrive to your curated playlist, lighting and atmosphere — your vibe, your way.'},
+    {n:'04',title:'Transformation',desc:'World-class artistry meets innovation. Every detail, perfected.'},
+    {n:'05',title:'Aftercare Program',desc:'Personalised product guidance and maintenance plan to protect your investment.'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#0D0D12',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'The Journey'}),
+    React.createElement('h2',{className:'pl-h2'},'Your Client Experience'),
+    React.createElement('p',{className:'pl-sub'},'Every step is designed around you.'),
+    React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'0',maxWidth:'800px',width:'100%'}},
+      steps.map((s,i)=>React.createElement('div',{key:s.n,style:{display:'flex',gap:'32px',alignItems:'flex-start',padding:'32px 0',borderBottom: i<steps.length-1 ? '1px solid rgba(255,255,255,.06)' : 'none'}},
+        React.createElement('div',{style:{flexShrink:0,width:'60px',height:'60px',borderRadius:'50%',background:'linear-gradient(135deg,'+C.amethyst+'22,'+C.teal+'22)',border:'1px solid '+C.amethyst+'44',display:'flex',alignItems:'center',justifyContent:'center'}},
+          React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'14px',color:C.amethyst,fontWeight:700}},s.n)
+        ),
+        React.createElement('div',null,
+          React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.1rem',color:'#fff',marginBottom:'8px',letterSpacing:'1px'}},s.title),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.05rem',color:'rgba(255,255,255,.55)',lineHeight:1.7,fontStyle:'italic'}},s.desc)
+        )
+      ))
+    )
+  );
+}
+
+// ======== ServicesSection ========
+function ServicesSection(){
+  const services=[
+    {emoji:'✂️',title:'Signature Cut',price:'$60–$80',desc:'Precision cut tailored to your face shape and lifestyle.',tags:['Cut','Style','Consultation']},
+    {emoji:'💈',title:'Classic Barber',price:'$35–$45',desc:'Clean fades, tapers, and classic cuts with modern precision.',tags:['Barber','Fade','Taper']},
+    {emoji:'🎨',title:'Advanced Balayage',price:'From $120',desc:'Hand-painted colour for sun-kissed, dimensional results.',tags:['Colour','Balayage','Highlight']},
+    {emoji:'🖌️',title:'Color Correction',price:'$80–$100/hr',desc:'Complex correction for previously processed or damaged hair.',tags:['Correction','Colour','Olaplex']},
+    {emoji:'✨',title:'Texture & Smooth',price:'Custom Quote',desc:'Keratin, Brazilian blowout, or texture enhancement services.',tags:['Keratin','Smooth','Texture']},
+    {emoji:'🧖',title:'Scalp Health Spa',price:'Custom Quote',desc:'Rejuvenating scalp treatments for optimal hair health.',tags:['Scalp','Treatment','Wellness']}
+  ];
+  return React.createElement('section',{id:'services',className:'pl-section reveal',style:{background:'#100F14',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'The Studio Menu'}),
+    React.createElement('h2',{className:'pl-h2'},'Services & Pricing'),
+    React.createElement('p',{className:'pl-sub'},'Every service is a bespoke experience'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:'24px',maxWidth:'1100px',width:'100%'}},
+      services.map(s=>React.createElement('div',{key:s.title,className:'pl-glass reveal',style:{padding:'36px',borderRadius:'20px',transition:'transform .3s,box-shadow .3s'},
+        onMouseEnter:e=>{e.currentTarget.style.transform='translateY(-4px)';e.currentTarget.style.boxShadow='0 20px 50px rgba(138,43,226,.25)';},
+        onMouseLeave:e=>{e.currentTarget.style.transform='none';e.currentTarget.style.boxShadow='none';}
+      },
+        React.createElement('div',{style:{fontSize:'2.5rem',marginBottom:'16px'}},s.emoji),
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.1rem',color:'#fff',marginBottom:'8px',letterSpacing:'1px'}},s.title),
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.3rem',background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',marginBottom:'16px',fontWeight:700}},s.price),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.05rem',color:'rgba(255,255,255,.6)',lineHeight:1.7,marginBottom:'20px',fontStyle:'italic'}},s.desc),
+        React.createElement('div',{style:{display:'flex',gap:'8px',flexWrap:'wrap'}},
+          s.tags.map(t=>React.createElement('span',{key:t,style:{background:'rgba(138,43,226,.12)',border:'1px solid rgba(138,43,226,.25)',borderRadius:'20px',padding:'4px 12px',fontFamily:'DM Sans,sans-serif',fontSize:'11px',color:C.orchid,letterSpacing:'1px'}},t))
+        )
+      ))
+    ),
+    React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'12px',color:'rgba(255,255,255,.3)',marginTop:'40px',letterSpacing:'2px',textAlign:'center',textTransform:'uppercase'}},
+      'Product Partners: Olaplex · K18 · Kérastase · Moroccanoil · Redken · Schwarzkopf'
+    )
+  );
+}
+
+// ======== HeadSpaSection ========
+function HeadSpaSection(){
+  const steps=[
+    {icon:'🌿',title:'Scalp Analysis',desc:'Advanced assessment of scalp health, density, and condition.'},
+    {icon:'💧',title:'Deep Cleanse',desc:'Therapeutic shampoo ritual with botanical actives.'},
+    {icon:'🎵',title:'Massage Ritual',desc:'Tension-releasing scalp massage for circulation and relaxation.'},
+    {icon:'✨',title:'Treatment Infusion',desc:'Customised serums and masks for your specific scalp needs.'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'linear-gradient(180deg,#100F14 0%,#0D0D12 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'The Head Spa',color:C.mint}),
+    React.createElement('h2',{className:'pl-h2'},'Scalp Restoration'),
+    React.createElement('p',{className:'pl-sub'},'A complete sensory journey for your scalp and mind.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:'20px',maxWidth:'1000px',width:'100%'}},
+      steps.map(s=>React.createElement('div',{key:s.title,className:'pl-glass reveal',style:{padding:'32px 24px',textAlign:'center',borderRadius:'20px'}},
+        React.createElement('div',{style:{fontSize:'2.5rem',marginBottom:'16px'}},s.icon),
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'#fff',marginBottom:'12px',letterSpacing:'1px'}},s.title),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.55)',lineHeight:1.7,fontStyle:'italic'}},s.desc)
+      ))
+    )
+  );
+}
+
+// ======== DynamicPricing ========
+function DynamicPricing(){
+  const [sel,setSel] = React.useState(null);
+  const tiers=[
+    {id:'essential',name:'Essential',price:'$60–$120',color:C.teal,services:['Signature Cut','Classic Barber','Blowout & Style']},
+    {id:'signature',name:'Signature',price:'$120–$200',color:C.amethyst,services:['Advanced Balayage','Highlights','Root Touch-Up']},
+    {id:'luxury',name:'Luxury',price:'$200–$400+',color:C.gold,services:['Full Colour Transformation','Color Correction','Toning & Gloss']}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#0D0D12',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Investment'}),
+    React.createElement('h2',{className:'pl-h2'},'Transparent Pricing'),
+    React.createElement('p',{className:'pl-sub'},'Select your service tier to explore options.'),
+    React.createElement('div',{style:{display:'flex',gap:'20px',flexWrap:'wrap',justifyContent:'center',maxWidth:'900px',width:'100%'}},
+      tiers.map(t=>React.createElement('div',{key:t.id,
+        className:'pl-glass',
+        style:{padding:'36px 28px',borderRadius:'20px',cursor:'pointer',textAlign:'center',flex:'1',minWidth:'240px',transition:'all .3s',border: sel===t.id ? '1px solid '+t.color : '1px solid rgba(255,255,255,.08)',background: sel===t.id ? t.color+'18' : undefined},
+        onClick:()=>setSel(sel===t.id?null:t.id)
+      },
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.1rem',color:'#fff',marginBottom:'8px',letterSpacing:'2px'}},t.name),
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.8rem',color:t.color,fontWeight:700,marginBottom:'20px'}},t.price),
+        React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'10px'}},
+          t.services.map(s=>React.createElement('p',{key:s,style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.6)',fontStyle:'italic'}},s))
+        ),
+        sel===t.id && React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{display:'inline-block',marginTop:'24px',textDecoration:'none',fontSize:'11px',padding:'12px 28px'}},'Book Now')
+      ))
+    )
+  );
+}
+
+// ======== LogoIdentitySection ========
+function LogoIdentitySection(){
+  const logos=[
+    {id:1,name:'Amethyst Crown',tagline:'Luxury Redefined',primary:'#8A2BE2',secondary:'#00D4FF',svgPath:'<circle cx="50" cy="35" r="18" fill="none" stroke="#8A2BE2" stroke-width="2.5"/><path d="M35 35 Q50 20 65 35" fill="none" stroke="#00D4FF" stroke-width="2"/><path d="M42 42 L50 55 L58 42" fill="#8A2BE2" opacity="0.7"/><text x="50" y="72" text-anchor="middle" font-family="Cinzel,serif" font-size="7" fill="#E8D5FF" letter-spacing="2">THE PERFECT LOOK</text>'},
+    {id:2,name:'Teal Elegance',tagline:'Modern Sophistication',primary:'#00D4FF',secondary:'#8A2BE2',svgPath:'<ellipse cx="50" cy="38" rx="20" ry="22" fill="none" stroke="#00D4FF" stroke-width="2"/><circle cx="50" cy="30" r="8" fill="#00D4FF" opacity="0.3"/><path d="M30 50 Q50 58 70 50" fill="none" stroke="#8A2BE2" stroke-width="1.5"/><text x="50" y="72" text-anchor="middle" font-family="Cinzel,serif" font-size="7" fill="#B3F0FF" letter-spacing="2">BY EMILY</text>'},
+    {id:3,name:'Golden Ratio',tagline:'Artistry In Balance',primary:'#D4AF37',secondary:'#8A2BE2',svgPath:'<path d="M50 15 L62 38 L88 42 L69 60 L74 86 L50 74 L26 86 L31 60 L12 42 L38 38 Z" fill="none" stroke="#D4AF37" stroke-width="2"/><circle cx="50" cy="50" r="12" fill="#D4AF37" opacity="0.25"/><text x="50" y="95" text-anchor="middle" font-family="Cinzel,serif" font-size="6.5" fill="#F5E6A3" letter-spacing="1.5">EMILY</text>'},
+    {id:4,name:'Obsidian Luxe',tagline:'Dark Glamour',primary:'#E8D5FF',secondary:'#8A2BE2',svgPath:'<rect x="28" y="20" width="44" height="55" rx="4" fill="none" stroke="#E8D5FF" stroke-width="1.5"/><path d="M38 38 Q50 28 62 38 Q62 52 50 58 Q38 52 38 38Z" fill="#8A2BE2" opacity="0.5"/><text x="50" y="85" text-anchor="middle" font-family="Cinzel,serif" font-size="7" fill="#E8D5FF" letter-spacing="2">PERFECT</text>'},
+    {id:5,name:'Aurora Bloom',tagline:'Radiant Transformation',primary:'#FF6B9D',secondary:'#00D4FF',svgPath:'<circle cx="50" cy="42" r="25" fill="none" stroke="#FF6B9D" stroke-width="1.5" stroke-dasharray="4,3"/><circle cx="50" cy="42" r="16" fill="none" stroke="#00D4FF" stroke-width="1.5"/><circle cx="50" cy="42" r="7" fill="#FF6B9D" opacity="0.6"/><text x="50" y="78" text-anchor="middle" font-family="Cinzel,serif" font-size="7" fill="#FFD6EA" letter-spacing="2">EMILY</text>'}
+  ];
+  const [active,setActive]=React.useState(0);
+  const logo=logos[active];
+  return React.createElement('section',{id:'logo-identity',className:'reveal',style:{padding:'100px 0',background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',position:'relative',overflow:'hidden'}},
+    React.createElement('div',{style:{position:'absolute',inset:0,background:'radial-gradient(ellipse at 30% 50%,rgba(138,43,226,0.08) 0%,transparent 60%)',pointerEvents:'none'}}),
+    React.createElement('div',{className:'pl-section',style:{maxWidth:'1200px',margin:'0 auto',padding:'0 40px',alignItems:'stretch'}},
+      React.createElement('div',{style:{textAlign:'center',marginBottom:'70px',alignSelf:'center'}},
+        React.createElement(SectionLabel,{text:'Brand Identity',color:C.amethyst}),
+        React.createElement('h2',{className:'pl-h2'},'Logo Identity Suite'),
+        React.createElement('p',{className:'pl-sub',style:{marginBottom:0}},'Five distinct expressions of luxury — each crafted to communicate the artistry and elegance of The Perfect Look.')
+      ),
+      React.createElement('div',{className:'logo-grid',style:{gridTemplateColumns:'repeat(5,1fr)',marginBottom:'50px'}},
+        logos.map((l,i)=>React.createElement('div',{key:l.id,onClick:()=>setActive(i),
+          className:'logo-card'+(i===active?' active':''),
+          style:{borderColor:i===active?l.primary:undefined,background:i===active?'rgba(138,43,226,0.18)':undefined}
+        },
+          React.createElement('svg',{viewBox:'0 0 100 100',style:{width:'80px',height:'80px',margin:'0 auto 16px'},dangerouslySetInnerHTML:{__html:l.svgPath}}),
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'2px',color:'rgba(255,255,255,0.55)',textTransform:'uppercase'}},l.name)
+        ))
+      ),
+      React.createElement('div',{className:'pl-glass',style:{textAlign:'center',padding:'40px',width:'100%'}},
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.8rem',color:'#fff',marginBottom:'8px'}},logo.name),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,0.45)',marginBottom:'28px',letterSpacing:'3px',textTransform:'uppercase'}},logo.tagline),
+        React.createElement('div',{style:{display:'flex',justifyContent:'center',gap:'12px'}},
+          [logo.primary,logo.secondary,'#E8D5FF','#100f14'].map(clr=>React.createElement('div',{key:clr,style:{width:'40px',height:'40px',borderRadius:'50%',background:clr,border:'2px solid rgba(255,255,255,0.2)'}}))
+        )
+      )
+    )
+  );
+}
+
+// ======== AIWizardSection ========
+function AIWizardSection(){
+  const [step,setStep]=React.useState(0);
+  const [answers,setAnswers]=React.useState({});
+  const [result,setResult]=React.useState(null);
+  const questions=[
+    {key:'colorHistory',label:'Color History',question:'Do you have box dye or previous color treatments?',options:['Yes — box dye','Yes — professional only','No — virgin hair']},
+    {key:'hairLength',label:'Hair Length',question:'What is your current hair length?',options:['Short (above chin)','Medium (chin to shoulder)','Long (below shoulder)']},
+    {key:'goalService',label:'Goal Service',question:'What transformation are you dreaming of?',options:['Balayage / Highlights','Full Color Change','Cut & Style Only']}
+  ];
+  function calcResult(a){
+    if(a.colorHistory==='Yes — box dye')return{price:'From $300',time:'~4.5 hrs',type:'Color Correction Required',color:'#FF6B6B'};
+    if(a.hairLength==='Long (below shoulder)'&&a.colorHistory==='Yes — professional only')return{price:'From $150',time:'~3 hrs',type:'Extended Session Booked',color:C.teal};
+    return{price:'From $120',time:'~2 hrs',type:'Standard Appointment',color:C.amethyst};
+  }
+  function handleAnswer(val){const q=questions[step];const na={...answers,[q.key]:val};setAnswers(na);if(step<questions.length-1)setStep(step+1);else setResult(calcResult(na));}
+  function reset(){setStep(0);setAnswers({});setResult(null);}
+  const q=questions[step];
+  return React.createElement('section',{id:'ai-wizard',className:'reveal',style:{padding:'100px 0',background:'#0D0D12',position:'relative'}},
+    React.createElement('div',{style:{position:'absolute',inset:0,background:'radial-gradient(ellipse at 70% 50%,rgba(0,212,255,0.06) 0%,transparent 60%)',pointerEvents:'none'}}),
+    React.createElement('div',{className:'pl-section',style:{maxWidth:'800px',margin:'0 auto',padding:'0 40px'}},
+      React.createElement('div',{style:{textAlign:'center',marginBottom:'60px'}},
+        React.createElement(SectionLabel,{text:'Smart Pricing',color:C.teal}),
+        React.createElement('h2',{className:'pl-h2'},'AI Hair Architect'),
+        React.createElement('p',{className:'pl-sub',style:{marginBottom:0}},'Answer three questions. Receive your personalised pricing and time estimate instantly.')
+      ),
+      !result?React.createElement('div',{style:{width:'100%'}},
+        React.createElement('div',{style:{display:'flex',justifyContent:'center',gap:'8px',marginBottom:'50px'}},
+          questions.map((_,i)=>React.createElement('div',{key:i,style:{width:'80px',height:'4px',borderRadius:'2px',background:i<=step?C.amethyst:'rgba(255,255,255,0.15)',transition:'background 0.3s'}}))
+        ),
+        React.createElement('div',{className:'pl-glass',style:{padding:'50px 40px',textAlign:'center'}},
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'4px',color:C.amethyst,textTransform:'uppercase',marginBottom:'16px'}},q.label),
+          React.createElement('h3',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.8rem',color:'#fff',marginBottom:'40px'}},q.question),
+          React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'12px'}},
+            q.options.map(opt=>React.createElement('button',{key:opt,onClick:()=>handleAnswer(opt),className:'wiz-opt'},opt))
+          )
+        )
+      ):React.createElement('div',{className:'pl-glass',style:{padding:'60px 40px',textAlign:'center',borderColor:result.color+'40',width:'100%'}},
+        React.createElement('div',{style:{display:'inline-block',background:result.color+'20',border:'1px solid '+result.color+'60',borderRadius:'30px',padding:'8px 24px',marginBottom:'30px'}},
+          React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'3px',color:result.color}},result.type)
+        ),
+        React.createElement('div',{style:{display:'flex',justifyContent:'center',gap:'60px',marginBottom:'40px'}},
+          [['price','Estimated Investment'],['time','Session Duration']].map(([k,lbl])=>
+            React.createElement('div',{key:k},
+              React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'3rem',color:result.color,fontWeight:700}},result[k]),
+              React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'0.85rem',color:'rgba(255,255,255,0.4)',letterSpacing:'2px',textTransform:'uppercase'}},lbl)
+            )
+          )
+        ),
+        React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{display:'inline-block',textDecoration:'none',marginBottom:'24px'}},'Book This Session'),
+        React.createElement('br'),
+        React.createElement('button',{onClick:reset,style:{background:'none',border:'none',color:'rgba(255,255,255,0.4)',fontFamily:'DM Sans,sans-serif',fontSize:'0.9rem',cursor:'pointer',textDecoration:'underline'}},'Start Over')
+      )
+    )
+  );
+}
+
+// ======== VibeSetterSection ========
+function VibeSetterSection(){
+  const [av,setAV]=React.useState(0);
+  const vibes=[
+    {name:'Aurora Luxe',emoji:'✨',desc:'Luminous, ethereal, and softly radiant. Perfect for colour transformations.',gradient:'linear-gradient(135deg,#8A2BE2 0%,#00D4FF 100%)',playlist:'Ambient / Lo-fi',lighting:'Soft violet + teal wash'},
+    {name:'Noir Ritual',emoji:'🖤',desc:'Deep, mysterious, and powerfully bold. Ideal for dramatic cuts or colour.',gradient:'linear-gradient(135deg,#1a1a2e 0%,#8A2BE2 100%)',playlist:'Dark Electronic',lighting:'Deep indigo spotlight'},
+    {name:'Rose Reverie',emoji:'🌸',desc:'Warm, romantic, and delicately feminine. Flawless for bridal or event styling.',gradient:'linear-gradient(135deg,#FF6B9D 0%,#D4AF37 100%)',playlist:'Soft Pop / Indie',lighting:'Warm rose gold glow'},
+    {name:'Zen Garden',emoji:'🍃',desc:'Clean, fresh, and mindfully calm. Best for scalp treatments or head spa.',gradient:'linear-gradient(135deg,#00B894 0%,#00D4FF 100%)',playlist:'Nature Sounds',lighting:'Cool daylight spectrum'}
+  ];
+  const v=vibes[av];
+  return React.createElement('section',{id:'vibe-setter',className:'reveal',style:{padding:'100px 0',background:'linear-gradient(180deg,#100F14 0%,#0D0D12 100%)',position:'relative',overflow:'hidden'}},
+    React.createElement('div',{style:{position:'absolute',inset:0,background:'radial-gradient(ellipse at 50% 50%,rgba(138,43,226,0.06) 0%,transparent 70%)',pointerEvents:'none'}}),
+    React.createElement('div',{className:'pl-section',style:{maxWidth:'1200px',margin:'0 auto',padding:'0 40px',alignItems:'stretch'}},
+      React.createElement('div',{style:{textAlign:'center',marginBottom:'70px',alignSelf:'center'}},
+        React.createElement(SectionLabel,{text:'Pre-Arrival Experience',color:C.amethyst}),
+        React.createElement('h2',{className:'pl-h2'},'Set Your Vibe'),
+        React.createElement('p',{className:'pl-sub',style:{marginBottom:0}},'Choose your atmosphere before you arrive. Emily curates your music, lighting, and studio energy to match your vision.')
+      ),
+      React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'16px',marginBottom:'50px',width:'100%'}},
+        vibes.map((vibe,i)=>React.createElement('div',{key:vibe.name,onClick:()=>setAV(i),
+          className:'vibe-card'+(i===av?' active':'')
+        },
+          React.createElement('div',{style:{fontSize:'2.5rem',marginBottom:'12px'}},vibe.emoji),
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'2px',color:i===av?'#fff':'rgba(255,255,255,0.5)',textTransform:'uppercase'}},vibe.name)
+        ))
+      ),
+      React.createElement('div',{className:'pl-glass',style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'40px',alignItems:'center',padding:'50px',width:'100%'}},
+        React.createElement('div',null,
+          React.createElement('div',{style:{width:'100%',height:'200px',borderRadius:'16px',background:v.gradient,marginBottom:'24px',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'4rem'}}),
+          React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.6rem',color:'#fff',marginBottom:'10px'}},v.name),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.1rem',color:'rgba(255,255,255,0.6)'}},v.desc)
+        ),
+        React.createElement('div',null,
+          React.createElement('div',{style:{marginBottom:'28px'}},
+            React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'3px',color:C.amethyst,textTransform:'uppercase',marginBottom:'8px'}},'Curated Playlist'),
+            React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.3rem',color:'#fff'}},v.playlist)
+          ),
+          React.createElement('div',{style:{marginBottom:'40px'}},
+            React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'3px',color:C.teal,textTransform:'uppercase',marginBottom:'8px'}},'Studio Lighting'),
+            React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.3rem',color:'#fff'}},v.lighting)
+          ),
+          React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none',display:'inline-block'}},'Book '+v.name+' Session')
+        )
+      )
+    )
+  );
+}
+
+// ======== StudioDashboardSection ========
+function StudioDashboardSection(){
+  const [tab,setTab]=React.useState('checkout');
+  const [email,setEmail]=React.useState('');
+  const [waitDone,setWaitDone]=React.useState(false);
+  const [arStyle,setARStyle]=React.useState(0);
+  const arStyles=[
+    {name:'Platinum Balayage',color:'#E8D5B0',desc:'Sun-kissed platinum tones through the lengths'},
+    {name:'Rich Brunette',color:'#3D2010',desc:'Deep, lustrous brown with warm undertones'},
+    {name:'Amethyst Tint',color:'#6B4E8A',desc:'Subtle violet tones for statement brunettes'},
+    {name:'Natural Teal',color:'#0D7377',desc:'Vivid teal for the bold and beautiful'}
+  ];
+  const tabs=[{id:'checkout',label:'Frictionless Checkout'},{id:'waitlist',label:'Waitlist'},{id:'ar',label:'AR Try-On'}];
+  return React.createElement('section',{id:'studio-dashboard',className:'reveal',style:{padding:'100px 0',background:'#100F14',position:'relative',overflow:'hidden'}},
+    React.createElement('div',{style:{position:'absolute',inset:0,background:'radial-gradient(ellipse at 20% 80%,rgba(0,212,255,0.05) 0%,transparent 50%)',pointerEvents:'none'}}),
+    React.createElement('div',{className:'pl-section',style:{maxWidth:'1000px',margin:'0 auto',padding:'0 40px',alignItems:'center'}},
+      React.createElement('div',{style:{textAlign:'center',marginBottom:'60px'}},
+        React.createElement(SectionLabel,{text:'Studio Technology',color:C.teal}),
+        React.createElement('h2',{className:'pl-h2'},'Studio Dashboard'),
+        React.createElement('p',{className:'pl-sub',style:{marginBottom:0}},'The full luxury experience — seamless checkout, instant waitlist, and virtual try-on all in one place.')
+      ),
+      React.createElement('div',{style:{display:'flex',gap:'4px',background:'rgba(255,255,255,.05)',borderRadius:'50px',padding:'6px',marginBottom:'40px'}},
+        tabs.map(t=>React.createElement('button',{key:t.id,onClick:()=>setTab(t.id),className:'tab-btn'+(tab===t.id?' active':'')},t.label))
+      ),
+      tab==='checkout'&&React.createElement('div',{className:'pl-glass',style:{padding:'50px',textAlign:'center',width:'100%'}},
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.4rem',color:'rgba(255,255,255,.7)',marginBottom:'30px'}},'Your transformation awaits'),
+        React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none',display:'inline-block'}},'Book Your Session')
+      ),
+      tab==='waitlist'&&React.createElement('div',{className:'pl-glass',style:{padding:'60px',textAlign:'center',width:'100%'}},
+        !waitDone?React.createElement('div',null,
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',letterSpacing:'3px',color:C.amethyst,textTransform:'uppercase',marginBottom:'16px'}},'Join The Waitlist'),
+          React.createElement('h3',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'2rem',color:'#fff',marginBottom:'16px'}},"Can't Find Your Date?"),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.1rem',color:'rgba(255,255,255,.6)',marginBottom:'40px'}},"Join the priority waitlist and we'll notify you the moment a spot opens."),
+          React.createElement('div',{style:{display:'flex',gap:'12px',maxWidth:'500px',margin:'0 auto'}},
+            React.createElement('input',{type:'email',placeholder:'your@email.com',value:email,onChange:e=>setEmail(e.target.value),style:{flex:1,background:'rgba(255,255,255,.06)',border:'1px solid rgba(255,255,255,.15)',borderRadius:'12px',padding:'16px 20px',color:'#fff',fontFamily:'DM Sans,sans-serif',fontSize:'1rem',outline:'none'}}),
+            React.createElement('button',{onClick:()=>{if(email.includes('@'))setWaitDone(true);},style:{background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',border:'none',borderRadius:'12px',padding:'16px 28px',color:'#fff',fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'2px',cursor:'pointer',whiteSpace:'nowrap'}},'Join Now')
+          )
+        ):React.createElement('div',null,
+          React.createElement('p',{style:{fontSize:'4rem',marginBottom:'20px'}},'✨'),
+          React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.8rem',color:'#fff',marginBottom:'12px'}},"You're on the list!"),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.2rem',color:'rgba(255,255,255,.6)'}},"We'll reach out the moment your perfect slot opens up.")
+        )
+      ),
+      tab==='ar'&&React.createElement('div',{className:'pl-glass',style:{padding:'50px',width:'100%'}},
+        React.createElement('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'40px',alignItems:'center'}},
+          React.createElement('div',null,
+            React.createElement('div',{style:{width:'100%',height:'300px',borderRadius:'20px',background:'linear-gradient(135deg,#100f14,#1a1a2e)',border:'1px solid rgba(255,255,255,.08)',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}},
+              React.createElement('div',{style:{width:'140px',height:'200px',borderRadius:'50% 50% 45% 45% / 60% 60% 40% 40%',background:arStyles[arStyle].color,opacity:0.85,boxShadow:'0 0 40px '+arStyles[arStyle].color+'80',transition:'all 0.5s ease'}}),
+              React.createElement('div',{style:{position:'absolute',bottom:'16px',left:'50%',transform:'translateX(-50%)',background:'rgba(0,0,0,0.7)',borderRadius:'20px',padding:'6px 16px',backdropFilter:'blur(10px)'}},
+                React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',color:'#fff',letterSpacing:'2px'}},arStyles[arStyle].name)
+              )
+            )
+          ),
+          React.createElement('div',null,
+            React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'3px',color:C.teal,textTransform:'uppercase',marginBottom:'16px'}},'Virtual Try-On'),
+            React.createElement('h3',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.6rem',color:'#fff',marginBottom:'12px'}},arStyles[arStyle].name),
+            React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.6)',marginBottom:'30px'}},arStyles[arStyle].desc),
+            React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'10px'}},
+              arStyles.map((s,i)=>React.createElement('button',{key:i,onClick:()=>setARStyle(i),style:{display:'flex',alignItems:'center',gap:'12px',background:i===arStyle?'rgba(138,43,226,.15)':'transparent',border:'1px solid '+(i===arStyle?C.amethyst:'rgba(255,255,255,.08)'),borderRadius:'10px',padding:'12px 16px',cursor:'pointer',transition:'all .2s'}},
+                React.createElement('div',{style:{width:'24px',height:'24px',borderRadius:'50%',background:s.color,flexShrink:0}}),
+                React.createElement('span',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'.9rem',color:i===arStyle?'#fff':'rgba(255,255,255,.5)'}},s.name)
+              ))
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+// ======== BrandGuideSection ========
+function BrandGuideSection(){
+  const cards=[
+    {title:'Colour Palette',icon:'🎨',items:[{swatch:'#8A2BE2',name:'Royal Amethyst',desc:'Primary brand colour — luxury & creativity'},{swatch:'#00D4FF',name:'Luminous Teal',desc:'Accent — technology & freshness'},{swatch:'#100f14',name:'Charcoal Noir',desc:'Background — depth & sophistication'},{swatch:'#F0EDE8',name:'Ivory Light',desc:'Text — warmth & legibility'}]},
+    {title:'Typography',icon:'✍️',items:[{name:'Cinzel',desc:'Fenway Park inspired — luxury serif for headlines'},{name:'Cormorant Garamond',desc:'Editorial — elegance & refinement'},{name:'DM Sans',desc:'Modern — clarity & precision for UI'},{name:'Playfair Display',desc:'Legacy serif — warmth & elegance'}]},
+    {title:'Usage Rules',icon:'📐',items:[{name:'Spacing',desc:'Generous white space — never crowd the logo'},{name:'Dark Backgrounds',desc:'Primary brand expressions on dark only'},{name:'No Gradients on Logo',desc:'Logo stays in solid or knockout form'},{name:'Minimum Size',desc:'Logo never smaller than 120px wide'}]},
+    {title:'Digital Specs',icon:'💻',items:[{name:'Primary Format',desc:'SVG for web / PNG (2x) for social'},{name:'Social Profile',desc:'400×400px — centred emblem mark'},{name:'Open Graph',desc:'1200×630px — horizontal lockup'},{name:'Favicon',desc:'64×64px — emblem only, amethyst bg'}]}
+  ];
+  return React.createElement('section',{id:'brand-guide',className:'reveal',style:{padding:'100px 0',background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',position:'relative',overflow:'hidden'}},
+    React.createElement('div',{style:{position:'absolute',inset:0,background:'radial-gradient(ellipse at 80% 20%,rgba(138,43,226,0.08) 0%,transparent 50%)',pointerEvents:'none'}}),
+    React.createElement('div',{className:'pl-section',style:{maxWidth:'1200px',margin:'0 auto',padding:'0 40px',alignItems:'stretch'}},
+      React.createElement('div',{style:{textAlign:'center',marginBottom:'70px',alignSelf:'center'}},
+        React.createElement(SectionLabel,{text:'Identity System',color:C.amethyst}),
+        React.createElement('h2',{className:'pl-h2'},'Master Brand Guide'),
+        React.createElement('p',{className:'pl-sub',style:{marginBottom:0}},'The visual DNA of The Perfect Look by Emily — every detail, codified.')
+      ),
+      React.createElement('div',{className:'brand-grid',style:{width:'100%'}},
+        cards.map(card=>React.createElement('div',{key:card.title,className:'brand-card'},
+          React.createElement('div',{style:{display:'flex',alignItems:'center',gap:'12px',marginBottom:'28px'}},
+            React.createElement('span',{style:{fontSize:'1.8rem'}},card.icon),
+            React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.1rem',color:'#fff',letterSpacing:'2px'}},card.title)
+          ),
+          React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'16px'}},
+            card.items.map((item,i)=>React.createElement('div',{key:i,style:{display:'flex',alignItems:'flex-start',gap:'14px',paddingBottom:'14px',borderBottom:i<card.items.length-1?'1px solid rgba(255,255,255,.05)':'none'}},
+              item.swatch?React.createElement('div',{style:{width:'28px',height:'28px',borderRadius:'6px',background:item.swatch,flexShrink:0,marginTop:'2px',border:'1px solid rgba(255,255,255,.15)'}}):React.createElement('div',{style:{width:'28px',height:'28px',borderRadius:'6px',background:'rgba(138,43,226,.3)',flexShrink:0,marginTop:'2px'}}),
+              React.createElement('div',null,
+                React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',color:'#fff',letterSpacing:'1px',marginBottom:'4px'}},item.name),
+                React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'.83rem',color:'rgba(255,255,255,.4)',lineHeight:1.5}},item.desc)
+              )
+            ))
+          )
+        ))
+      )
+    )
+  );
+}
+
+// ======== LookbookSection ========
+function LookbookSection(){
+  const looks=[
+    {title:'Platinum Goddess',desc:'Full bleach & tone with glossy pearl finish.',tag:'Colour'},
+    {title:'Dimensional Brunette',desc:'Rich balayage with copper and caramel tones.',tag:'Balayage'},
+    {title:'The Executive Cut',desc:'Precision men's cut with fade detail.',tag:'Cut'},
+    {title:'Bridal Waves',desc:'Soft, romantic waves for the big day.',tag:'Style'},
+    {title:'Vivid Fantasy',desc:'Bold fashion colour from root to tip.',tag:'Vivid'},
+    {title:'The Bob',desc:'Classic blunt bob with modern edge.',tag:'Cut'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'The Lookbook'}),
+    React.createElement('h2',{className:'pl-h2'},'Signature Transformations'),
+    React.createElement('p',{className:'pl-sub'},'A curated selection of Emily's finest work.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:'20px',maxWidth:'1100px',width:'100%'}},
+      looks.map((look,i)=>React.createElement('div',{key:look.title,className:'pl-glass reveal',style:{borderRadius:'20px',overflow:'hidden',transition:'transform .3s'},
+        onMouseEnter:e=>e.currentTarget.style.transform='translateY(-4px)',
+        onMouseLeave:e=>e.currentTarget.style.transform='none'
+      },
+        React.createElement('div',{style:{height:'200px',background:'linear-gradient(135deg,rgba(138,43,226,.'+((i%3)+2)+') 0%,rgba(0,212,255,.'+((i%2)+1)+') 100%)',display:'flex',alignItems:'center',justifyContent:'center'}},
+          React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'3px',color:'rgba(255,255,255,.6)',textTransform:'uppercase',background:'rgba(0,0,0,.4)',padding:'6px 16px',borderRadius:'20px'}},look.tag)
+        ),
+        React.createElement('div',{style:{padding:'24px'}},
+          React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'#fff',marginBottom:'8px',letterSpacing:'1px'}},look.title),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.55)',fontStyle:'italic'}},look.desc)
+        )
+      ))
+    )
+  );
+}
+
+// ======== BeforeAfter ========
+function BeforeAfter(){
+  const [pos,setPos]=React.useState(50);
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#0D0D12',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Transformation'}),
+    React.createElement('h2',{className:'pl-h2'},'See The Difference'),
+    React.createElement('p',{className:'pl-sub'},'Drag to reveal the transformation.'),
+    React.createElement('div',{style:{position:'relative',maxWidth:'700px',width:'100%',height:'400px',borderRadius:'20px',overflow:'hidden',cursor:'col-resize',userSelect:'none'},
+      onMouseMove:e=>{const r=e.currentTarget.getBoundingClientRect();setPos(Math.min(100,Math.max(0,((e.clientX-r.left)/r.width)*100)));},
+      onTouchMove:e=>{const r=e.currentTarget.getBoundingClientRect();const t=e.touches[0];setPos(Math.min(100,Math.max(0,((t.clientX-r.left)/r.width)*100)));}
+    },
+      React.createElement('div',{style:{position:'absolute',inset:0,background:'linear-gradient(135deg,#2C1654,#4a1942)',display:'flex',alignItems:'center',justifyContent:'center'}},
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'rgba(255,255,255,.4)',letterSpacing:'4px',textTransform:'uppercase'}})
+      ),
+      React.createElement('div',{style:{position:'absolute',top:0,left:0,width:pos+'%',height:'100%',overflow:'hidden',background:'linear-gradient(135deg,rgba(138,43,226,.3),rgba(0,212,255,.3))',borderRight:'2px solid #fff',display:'flex',alignItems:'center',justifyContent:'center'}},
+        React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'13px',color:'rgba(255,255,255,.7)',letterSpacing:'3px',textTransform:'uppercase',position:'absolute',left:'16px',top:'16px',background:'rgba(0,0,0,.5)',padding:'4px 12px',borderRadius:'20px',whiteSpace:'nowrap'}})
+      ),
+      React.createElement('div',{style:{position:'absolute',top:'50%',left:pos+'%',transform:'translate(-50%,-50%)',width:'40px',height:'40px',borderRadius:'50%',background:'#fff',display:'flex',alignItems:'center',justifyContent:'center',boxShadow:'0 0 20px rgba(0,0,0,.4)',zIndex:2}},
+        React.createElement('span',{style:{fontSize:'16px'}})
+      ),
+      React.createElement('p',{style:{position:'absolute',bottom:'16px',left:'50%',transform:'translateX(-50%)',fontFamily:'DM Sans,sans-serif',fontSize:'11px',letterSpacing:'2px',color:'rgba(255,255,255,.5)',textTransform:'uppercase'}})
+    )
+  );
+}
+
+// ======== ExperienceSection ========
+function ExperienceSection(){
+  const features=[
+    {icon:'🎵',title:'Curated Atmosphere',desc:'Your choice of playlist, lighting temperature, and studio scent — set before you arrive.'},
+    {icon:'🌿',title:'Premium Products Only',desc:'Olaplex, K18, Kérastase, Moroccanoil and Schwarzkopf — nothing less.'},
+    {icon:'📱',title:'Digital Aftercare',desc:'Personalised product recommendations and styling guides sent directly to you.'},
+    {icon:'✨',title:'Private & Exclusive',desc:'One client at a time. No waiting, no noise — just pure focus on you.'}
+  ];
+  return React.createElement('section',{id:'technology',className:'pl-section reveal',style:{background:'linear-gradient(180deg,#100F14 0%,#0D0D12 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'The Experience',color:C.orchid}),
+    React.createElement('h2',{className:'pl-h2'},'What Sets Us Apart'),
+    React.createElement('p',{className:'pl-sub'},'Luxury isn't just a price point — it's a feeling.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'24px',maxWidth:'1000px',width:'100%'}},
+      features.map(f=>React.createElement('div',{key:f.title,className:'pl-glass reveal',style:{padding:'36px 28px',borderRadius:'20px',transition:'transform .3s'},
+        onMouseEnter:e=>e.currentTarget.style.transform='translateY(-4px)',
+        onMouseLeave:e=>e.currentTarget.style.transform='none'
+      },
+        React.createElement('div',{style:{fontSize:'2.5rem',marginBottom:'20px'}},f.icon),
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'#fff',marginBottom:'12px',letterSpacing:'1px'}},f.title),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.05rem',color:'rgba(255,255,255,.55)',lineHeight:1.7,fontStyle:'italic'}},f.desc)
+      ))
+    )
+  );
+}
+
+// ======== ARMirrorPreview ========
+function ARMirrorPreview(){
+  const [style,setStyle]=React.useState(0);
+  const styles=[
+    {name:'Platinum Balayage',color:'#E8D5B0',shadow:'rgba(232,213,176,.5)'},
+    {name:'Rich Brunette',color:'#3D2010',shadow:'rgba(61,32,16,.6)'},
+    {name:'Vivid Teal',color:'#0D7377',shadow:'rgba(13,115,119,.5)'},
+    {name:'Amethyst Fantasy',color:'#8A2BE2',shadow:'rgba(138,43,226,.5)'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#0D0D12',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'AR Technology',color:C.teal}),
+    React.createElement('h2',{className:'pl-h2'},'Virtual Try-On Mirror'),
+    React.createElement('p',{className:'pl-sub'},'See your transformation before we begin.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'60px',maxWidth:'900px',width:'100%',alignItems:'center'}},
+      React.createElement('div',{style:{position:'relative',aspectRatio:'3/4',borderRadius:'20px',overflow:'hidden',background:'linear-gradient(180deg,#1a1a2e,#100F14)',border:'1px solid rgba(138,43,226,.2)'}},
+        React.createElement('div',{style:{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:'120px',height:'170px',borderRadius:'50% 50% 45% 45% / 60% 60% 40% 40%',background:styles[style].color,opacity:.9,boxShadow:'0 0 50px '+styles[style].shadow,transition:'all .6s ease'}}),
+        React.createElement('div',{style:{position:'absolute',bottom:'20px',left:'50%',transform:'translateX(-50%)',background:'rgba(0,0,0,.7)',borderRadius:'20px',padding:'8px 20px',backdropFilter:'blur(10px)'}},
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',color:'#fff',letterSpacing:'2px',whiteSpace:'nowrap'}},styles[style].name)
+        )
+      ),
+      React.createElement('div',null,
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'3px',color:C.teal,textTransform:'uppercase',marginBottom:'20px'}},'Choose Your Look'),
+        React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'12px',marginBottom:'40px'}},
+          styles.map((s,i)=>React.createElement('button',{key:i,onClick:()=>setStyle(i),
+            style:{display:'flex',alignItems:'center',gap:'16px',padding:'14px 20px',borderRadius:'12px',border:'1px solid '+(i===style?'rgba(138,43,226,.6)':'rgba(255,255,255,.08)'),background:i===style?'rgba(138,43,226,.12)':'transparent',cursor:'pointer',transition:'all .2s'}
+          },
+            React.createElement('div',{style:{width:'28px',height:'28px',borderRadius:'50%',background:s.color,flexShrink:0,border:'2px solid rgba(255,255,255,.2)'}}),
+            React.createElement('span',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'.95rem',color:i===style?'#fff':'rgba(255,255,255,.5)'}},s.name)
+          ))
+        ),
+        React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none',display:'inline-block'}},'Book This Look')
+      )
+    )
+  );
+}
+
+// ======== SmartSalonTech ========
+function SmartSalonTech(){
+  const tech=[
+    {icon:'🤖',title:'AI Hair Analysis',desc:'Advanced algorithm analyses your hair type, texture, and condition for precision recommendations.'},
+    {icon:'📊',title:'Colour Formula Tracking',desc:'Digital record of every colour formula — perfect results, every single visit.'},
+    {icon:'🔬',title:'K18 Biomimetic Science',desc:'Molecular repair technology that rebuilds hair structure from within.'},
+    {icon:'💎',title:'Olaplex Bond Building',desc:'The science of stronger, healthier hair — woven into every colour service.'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'Smart Technology',color:C.mint}),
+    React.createElement('h2',{className:'pl-h2'},'Innovation Meets Artistry'),
+    React.createElement('p',{className:'pl-sub'},'Cutting-edge technology at the service of your hair.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:'24px',maxWidth:'1000px',width:'100%'}},
+      tech.map(t=>React.createElement('div',{key:t.title,className:'pl-glass reveal',style:{padding:'32px 24px',borderRadius:'20px',transition:'transform .3s'},
+        onMouseEnter:e=>e.currentTarget.style.transform='translateY(-4px)',
+        onMouseLeave:e=>e.currentTarget.style.transform='none'
+      },
+        React.createElement('div',{style:{fontSize:'2.5rem',marginBottom:'16px'}},t.icon),
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'#fff',marginBottom:'10px',letterSpacing:'1px'}},t.title),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.55)',lineHeight:1.7,fontStyle:'italic'}},t.desc)
+      ))
+    )
+  );
+}
+
+// ======== StudioSection ========
+function StudioSection(){
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#100F14',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'The Space'}),
+    React.createElement('h2',{className:'pl-h2'},'Emily's Private Studio'),
+    React.createElement('p',{className:'pl-sub'},'An intimate sanctuary designed for your transformation.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'60px',maxWidth:'1000px',width:'100%',alignItems:'center'}},
+      React.createElement('div',{style:{aspectRatio:'4/3',borderRadius:'24px',background:'linear-gradient(135deg,rgba(138,43,226,.2),rgba(0,212,255,.15))',border:'1px solid rgba(138,43,226,.2)',display:'flex',alignItems:'center',justifyContent:'center'}},
+        React.createElement('div',{style:{textAlign:'center',padding:'40px'}},
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.2rem',color:'rgba(255,255,255,.4)',letterSpacing:'4px',textTransform:'uppercase'}})
+        )
+      ),
+      React.createElement('div',null,
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1.4rem',color:'#fff',marginBottom:'20px',letterSpacing:'2px'}}, 'Odessa, Ontario'),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.15rem',color:'rgba(255,255,255,.65)',lineHeight:1.8,marginBottom:'24px',fontStyle:'italic'}},
+          'Emily's private studio is a carefully curated space — one client at a time, every detail considered. Natural light, premium tools, and a calm atmosphere designed to make you feel at ease the moment you walk in.'
+        ),
+        React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'12px'}},
+          ['Private one-on-one appointments only','Fully equipped with premium styling stations','Custom lighting and sound system','Complimentary beverages & consultation'].map(item=>
+            React.createElement('div',{key:item,style:{display:'flex',alignItems:'center',gap:'12px'}},
+              React.createElement('span',{style:{color:C.teal,fontSize:'16px'}},'✓'),
+              React.createElement('span',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'.95rem',color:'rgba(255,255,255,.65)'}},item)
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+// ======== SustainabilitySection ========
+function SustainabilitySection(){
+  const pillars=[
+    {icon:'🌱',title:'Eco-Conscious Products',desc:'We source from brands committed to sustainable packaging and ingredient transparency.'},
+    {icon:'💧',title:'Water Efficiency',desc:'Low-flow fixtures and mindful water usage in every service.'},
+    {icon:'♻️',title:'Waste Reduction',desc:'Foil recycling, product minimisation, and thoughtful disposal practices.'},
+    {icon:'🌍',title:'Carbon Awareness',desc:'Local sourcing where possible and a conscious approach to our footprint.'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Sustainability',color:C.mint}),
+    React.createElement('h2',{className:'pl-h2'},'Beauty With Responsibility'),
+    React.createElement('p',{className:'pl-sub'},'Looking good should never cost the planet.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:'20px',maxWidth:'900px',width:'100%'}},
+      pillars.map(p=>React.createElement('div',{key:p.title,className:'pl-glass reveal',style:{padding:'28px 22px',borderRadius:'16px',textAlign:'center'}},
+        React.createElement('div',{style:{fontSize:'2rem',marginBottom:'12px'}},p.icon),
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'0.95rem',color:'#fff',marginBottom:'8px',letterSpacing:'1px'}},p.title),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'0.95rem',color:'rgba(255,255,255,.5)',lineHeight:1.6,fontStyle:'italic'}},p.desc)
+      ))
+    )
+  );
+}
+
+// ======== TrustBadges ========
+function TrustBadges(){
+  const badges=[
+    {icon:'🏆',label:'Top Rated Studio'},
+    {icon:'🔒',label:'Privacy Guaranteed'},
+    {icon:'💳',label:'Flexible Payment'},
+    {icon:'⭐',label:'5-Star Average'},
+    {icon:'🎓',label:'Certified Expert'},
+    {icon:'🌿',label:'Eco-Conscious'}
+  ];
+  return React.createElement('div',{style:{padding:'40px 20px',background:'rgba(138,43,226,.06)',borderTop:'1px solid rgba(255,255,255,.04)',borderBottom:'1px solid rgba(255,255,255,.04)'}},
+    React.createElement('div',{style:{display:'flex',justifyContent:'center',gap:'clamp(20px,4vw,60px)',flexWrap:'wrap',maxWidth:'1000px',margin:'0 auto'}},
+      badges.map(b=>React.createElement('div',{key:b.label,style:{display:'flex',flexDirection:'column',alignItems:'center',gap:'8px'}},
+        React.createElement('span',{style:{fontSize:'1.8rem'}},b.icon),
+        React.createElement('span',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'2px',color:'rgba(255,255,255,.45)',textTransform:'uppercase'}},b.label)
+      ))
+    )
+  );
+}
+
+// ======== ProductsSection ========
+function ProductsSection(){
+  const products=[
+    {name:'Olaplex',desc:'Bond building & repair'},
+    {name:'K18',desc:'Biomimetic peptide science'},
+    {name:'Kérastase',desc:'French luxury hair care'},
+    {name:'Moroccanoil',desc:'Argan oil treatments'},
+    {name:'Schwarzkopf',desc:'Professional colour'},
+    {name:'Redken',desc:'Science-backed haircare'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#100F14',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Our Products'}),
+    React.createElement('h2',{className:'pl-h2'},'Only The Best'),
+    React.createElement('p',{className:'pl-sub'},'We use and retail only professional-grade, science-backed brands.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'16px',maxWidth:'900px',width:'100%'}},
+      products.map(p=>React.createElement('div',{key:p.name,className:'pl-glass reveal',style:{padding:'24px 20px',borderRadius:'16px',textAlign:'center',transition:'transform .3s'},
+        onMouseEnter:e=>e.currentTarget.style.transform='translateY(-3px)',
+        onMouseLeave:e=>e.currentTarget.style.transform='none'
+      },
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'#fff',marginBottom:'6px',letterSpacing:'1px'}},p.name),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'0.9rem',color:'rgba(255,255,255,.45)',fontStyle:'italic'}},p.desc)
+      ))
+    )
+  );
+}
+
+// ======== MembershipSection ========
+function MembershipSection(){
+  const plans=[
+    {name:'Silver',color:C.teal,price:'$89/mo',perks:['1 cut per month','10% off all services','Priority booking','Digital style guide']},
+    {name:'Gold',color:C.gold,price:'$159/mo',perks:['2 services per month','15% off all add-ons','Dedicated time slot','Colour formula archive','Aftercare product discount']},
+    {name:'Diamond',color:C.amethyst,price:'$249/mo',perks:['Unlimited washes & styles','20% off all services','VIP booking priority','Quarterly deep treatment','Product gift bag annually']}
+  ];
+  return React.createElement('section',{id:'membership',className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'Membership',color:C.amethyst}),
+    React.createElement('h2',{className:'pl-h2'},'The Loyalty Program'),
+    React.createElement('p',{className:'pl-sub'},'Elevate your hair care with exclusive membership benefits.'),
+    React.createElement('div',{style:{display:'flex',gap:'24px',flexWrap:'wrap',justifyContent:'center',maxWidth:'1000px',width:'100%'}},
+      plans.map(plan=>React.createElement('div',{key:plan.name,
+        className:'pl-glass reveal',
+        style:{padding:'40px 32px',borderRadius:'24px',flex:'1',minWidth:'260px',border:'1px solid '+plan.color+'30',background:plan.color+'08',textAlign:'center',transition:'transform .3s'},
+        onMouseEnter:e=>e.currentTarget.style.transform='translateY(-4px)',
+        onMouseLeave:e=>e.currentTarget.style.transform='none'
+      },
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'4px',color:plan.color,textTransform:'uppercase',marginBottom:'12px'}},plan.name),
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'2.5rem',color:'#fff',fontWeight:700,marginBottom:'28px'}},plan.price),
+        React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'32px'}},
+          plan.perks.map(perk=>React.createElement('div',{key:perk,style:{display:'flex',alignItems:'center',gap:'10px',justifyContent:'center'}},
+            React.createElement('span',{style:{color:plan.color,fontSize:'14px'}},'✓'),
+            React.createElement('span',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.65)',fontStyle:'italic'}},perk)
+          ))
+        ),
+        React.createElement('a',{href:'mailto:emily@perfectlookbyemily.ca',className:'pl-cta',style:{display:'inline-block',background:'linear-gradient(135deg,'+plan.color+','+plan.color+'aa)',textDecoration:'none',fontSize:'11px',padding:'12px 28px'}},'Get Started')
+      ))
+    )
+  );
+}
+
+// ======== LoyaltySection ========
+function LoyaltySection(){
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#100F14',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Loyalty Points',color:C.gold}),
+    React.createElement('h2',{className:'pl-h2'},'Earn With Every Visit'),
+    React.createElement('p',{className:'pl-sub'},'Points that convert to real savings on future services.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'24px',maxWidth:'800px',width:'100%'}},
+      [{pts:'100',for:'Every $10 spent'},{pts:'500',for:'Referral bonus'},{pts:'1000',for:'Birthday reward'}].map(item=>
+        React.createElement('div',{key:item.pts,className:'pl-glass reveal',style:{padding:'32px',textAlign:'center',borderRadius:'20px',border:'1px solid '+C.gold+'20'}},
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'2.5rem',color:C.gold,fontWeight:700,marginBottom:'8px'}},item.pts),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.5)',fontStyle:'italic'}},item.for)
+        )
+      )
+    )
+  );
+}
+
+// ======== GiftCards ========
+function GiftCards(){
+  const amounts=['$50','$100','$150','$250','Custom'];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Gift Cards',color:C.rose}),
+    React.createElement('h2',{className:'pl-h2'},'The Perfect Gift'),
+    React.createElement('p',{className:'pl-sub'},'Give the gift of luxury — for any occasion.'),
+    React.createElement('div',{style:{display:'flex',gap:'16px',flexWrap:'wrap',justifyContent:'center',maxWidth:'700px',width:'100%'}},
+      amounts.map(amt=>React.createElement('div',{key:amt,className:'pl-glass reveal',
+        style:{padding:'28px 32px',borderRadius:'16px',textAlign:'center',border:'1px solid '+C.rose+'25',minWidth:'120px',cursor:'pointer',transition:'all .2s'},
+        onMouseEnter:e=>{e.currentTarget.style.borderColor=C.rose;e.currentTarget.style.background='rgba(255,107,157,.08)';},
+        onMouseLeave:e=>{e.currentTarget.style.borderColor=C.rose+'25';e.currentTarget.style.background='';}
+      },
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.8rem',color:'#fff',fontWeight:700,marginBottom:'4px'}},amt),
+        React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'11px',color:'rgba(255,255,255,.4)',letterSpacing:'1px',textTransform:'uppercase'}},amt==='Custom'?'Any Amount':'Gift Card')
+      ))
+    ),
+    React.createElement('a',{href:'mailto:emily@perfectlookbyemily.ca?subject=Gift Card',className:'pl-cta',style:{display:'inline-block',marginTop:'32px',background:'linear-gradient(135deg,'+C.rose+',#D4AF37)',textDecoration:'none'}},'Purchase Gift Card')
+  );
+}
+
+// ======== ReviewsSection ========
+function ReviewsSection(){
+  const reviews=[
+    {name:'Sarah M.',text:'Emily is an absolute artist. My balayage turned out better than I could have imagined — and the studio atmosphere is unlike anything in the area.',stars:5},
+    {name:'Jess T.',text:'I've been to many salons, but The Perfect Look is genuinely something different. Private, luxurious, and Emily's technique is world-class.',stars:5},
+    {name:'Mike R.',text:'First time at a private studio and I'll never go back to a regular salon. The attention to detail is incredible — my fade was perfection.',stars:5},
+    {name:'Amanda K.',text:'Color correction can be terrifying, but Emily made the whole experience feel safe and exciting. The results were stunning.',stars:5},
+    {name:'Lauren B.',text:'The AI hair analysis alone was worth it. Emily knew exactly what my hair needed before we even started.',stars:5},
+    {name:'Chris H.',text:'Booked the Head Spa experience and left feeling completely transformed. Best $150 I've ever spent on myself.',stars:5}
+  ];
+  return React.createElement('section',{id:'reviews',className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'Reviews',color:C.gold}),
+    React.createElement('h2',{className:'pl-h2'},'What Clients Say'),
+    React.createElement('p',{className:'pl-sub'},'Real words from real clients.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:'20px',maxWidth:'1100px',width:'100%'}},
+      reviews.map(r=>React.createElement('div',{key:r.name,className:'pl-glass reveal',style:{padding:'32px',borderRadius:'20px',transition:'transform .3s'},
+        onMouseEnter:e=>e.currentTarget.style.transform='translateY(-3px)',
+        onMouseLeave:e=>e.currentTarget.style.transform='none'
+      },
+        React.createElement(StarRow,{n:r.stars}),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.05rem',color:'rgba(255,255,255,.7)',lineHeight:1.7,fontStyle:'italic',margin:'16px 0',borderLeft:'2px solid '+C.amethyst,paddingLeft:'16px'}},'"'+r.text+'"'),
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'2px',color:C.amethyst}},r.name)
+      ))
+    )
+  );
+}
+
+// ======== VirtualConsultSection ========
+function VirtualConsultSection(){
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#100F14',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Virtual Consult',color:C.teal}),
+    React.createElement('h2',{className:'pl-h2'},'Start With a Conversation'),
+    React.createElement('p',{className:'pl-sub'},'Not sure where to begin? Book a complimentary 15-minute virtual consultation.'),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'24px',maxWidth:'800px',width:'100%',marginBottom:'40px'}},
+      ['Tell Emily Your Goals','Share Inspiration Photos','Get a Custom Plan'].map((step,i)=>
+        React.createElement('div',{key:step,className:'pl-glass reveal',style:{padding:'28px 20px',textAlign:'center',borderRadius:'16px'}},
+          React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.5rem',color:C.teal,fontWeight:700,marginBottom:'8px'}},i+1),
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.65)',fontStyle:'italic'}},step)
+        )
+      )
+    ),
+    React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none'}},'Book Free Consultation')
+  );
+}
+
+// ======== ConsultationCTA ========
+function ConsultationCTA(){
+  return React.createElement('div',{style:{padding:'60px 20px',background:'linear-gradient(135deg,rgba(138,43,226,.12),rgba(0,212,255,.08))',borderTop:'1px solid rgba(138,43,226,.2)',borderBottom:'1px solid rgba(0,212,255,.1)',textAlign:'center'}},
+    React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'4px',color:C.teal,textTransform:'uppercase',marginBottom:'16px'}},'Free Consultation'),
+    React.createElement('h2',{style:{fontFamily:'Cinzel,serif',fontSize:'clamp(1.8rem,4vw,3rem)',color:'#fff',fontWeight:700,marginBottom:'16px'}},'Ready for Your Transformation?'),
+    React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.2rem',color:'rgba(255,255,255,.6)',marginBottom:'32px',fontStyle:'italic'}},'Book your complimentary consultation and let's create something extraordinary together.'),
+    React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none'}},'Begin Your Journey')
+  );
+}
+
+// ======== BookingSection ========
+function BookingSection(){
+  return React.createElement('section',{id:'book',className:'pl-section reveal',style:{background:'linear-gradient(180deg,#100F14 0%,#000D12 100%)',padding:'100px 20px'}},
+    React.createElement(SectionLabel,{text:'Booking',color:C.amethyst}),
+    React.createElement('h2',{className:'pl-h2'},'Reserve Your Appointment'),
+    React.createElement('p',{className:'pl-sub'},'Real-time availability. Instant confirmation.'),
+    React.createElement('div',{style:{display:'flex',gap:'20px',flexWrap:'wrap',justifyContent:'center',marginBottom:'40px'}},
+      React.createElement('a',{href:'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services',target:'_blank',className:'pl-cta',style:{textDecoration:'none'}},'Book Now'),
+      React.createElement('a',{href:'tel:+16135551234',style:{display:'inline-block',padding:'16px 48px',border:'1px solid rgba(255,255,255,.2)',borderRadius:'999px',color:'rgba(255,255,255,.75)',fontFamily:'DM Sans,sans-serif',fontSize:'.9rem',letterSpacing:'.2em',textTransform:'uppercase',textDecoration:'none',transition:'border-color .2s'},
+        onMouseEnter:e=>e.currentTarget.style.borderColor=C.amethyst,
+        onMouseLeave:e=>e.currentTarget.style.borderColor='rgba(255,255,255,.2)'
+      },'Call to Book')
+    ),
+    React.createElement('div',{style:{display:'flex',gap:'40px',flexWrap:'wrap',justifyContent:'center'}},
+      ['Tue–Fri: 10am–7pm','Saturday: 9am–5pm','Sunday–Monday: Closed'].map(h=>
+        React.createElement('p',{key:h,style:{fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'2px',color:'rgba(255,255,255,.35)',textTransform:'uppercase'}},h)
+      )
+    )
+  );
+}
+
+// ======== ComingSoonRoadmap ========
+function ComingSoonRoadmap(){
+  const items=[
+    {icon:'💇',title:'Online Style Library',eta:'Q2 2025',desc:'Browse and save looks from Emily's portfolio.'},
+    {icon:'🤖',title:'AI Style Matching',eta:'Q3 2025',desc:'Get AI-powered style recommendations based on your features.'},
+    {icon:'📦',title:'Product Shop',eta:'Q4 2025',desc:'Shop Emily's favourite professional products online.'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#0D0D12',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'Coming Soon',color:C.orchid}),
+    React.createElement('h2',{className:'pl-h2'},'What's Next'),
+    React.createElement('p',{className:'pl-sub'},'Exciting things are on the horizon.'),
+    React.createElement('div',{style:{display:'flex',gap:'24px',flexWrap:'wrap',justifyContent:'center',maxWidth:'900px',width:'100%'}},
+      items.map(item=>React.createElement('div',{key:item.title,className:'pl-glass reveal',style:{padding:'32px',borderRadius:'20px',flex:'1',minWidth:'240px',border:'1px solid '+C.orchid+'20'}},
+        React.createElement('div',{style:{fontSize:'2rem',marginBottom:'12px'}},item.icon),
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'10px',letterSpacing:'3px',color:C.orchid,marginBottom:'8px'}},item.eta),
+        React.createElement('h3',{style:{fontFamily:'Cinzel,serif',fontSize:'1rem',color:'#fff',marginBottom:'8px',letterSpacing:'1px'}},item.title),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'0.95rem',color:'rgba(255,255,255,.5)',fontStyle:'italic'}},item.desc)
+      ))
+    )
+  );
+}
+
+// ======== FAQSection ========
+function FAQSection(){
+  const [open,setOpen]=React.useState(null);
+  const faqs=[
+    {q:'How do I book an appointment?',a:'You can book online 24/7 through the Book Now button, which connects directly to Emily's Square Appointments calendar.'},
+    {q:'What should I expect at my first visit?',a:'A thorough consultation to understand your hair history, goals, and lifestyle. Emily will create a custom plan before any services begin.'},
+    {q:'How long do appointments take?',a:'It depends on the service. A cut typically takes 60–90 minutes, while colour services can range from 2–5 hours.'},
+    {q:'Do you offer colour correction?',a:'Yes. Emily specialises in colour correction. These services are priced at $80–$100/hr and require a consultation first.'},
+    {q:'What is your cancellation policy?',a:'Please give 24 hours notice for cancellations. Late cancellations may be subject to a fee.'},
+    {q:'Do you take walk-ins?',a:'Emily's studio is by appointment only to ensure every client receives the full luxury experience without any waiting.'}
+  ];
+  return React.createElement('section',{className:'pl-section reveal',style:{background:'#100F14',padding:'80px 20px'}},
+    React.createElement(SectionLabel,{text:'FAQ'}),
+    React.createElement('h2',{className:'pl-h2'},'Common Questions'),
+    React.createElement('p',{className:'pl-sub'},'Everything you need to know before you visit.'),
+    React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:'0',maxWidth:'800px',width:'100%'}},
+      faqs.map((faq,i)=>React.createElement('div',{key:faq.q,style:{borderBottom:'1px solid rgba(255,255,255,.06)'}},
+        React.createElement('button',{onClick:()=>setOpen(open===i?null:i),
+          style:{width:'100%',padding:'24px 0',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',color:'#fff',fontFamily:'Cinzel,serif',fontSize:'1rem',letterSpacing:'1px',textAlign:'left'}
+        },
+          React.createElement('span',null,faq.q),
+          React.createElement('span',{style:{color:C.amethyst,fontSize:'1.5rem',transition:'transform .3s',transform:open===i?'rotate(45deg)':'none'}},'+')
+        ),
+        open===i && React.createElement('div',{style:{paddingBottom:'24px'}},
+          React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1.05rem',color:'rgba(255,255,255,.6)',lineHeight:1.7,fontStyle:'italic'}},faq.a)
+        )
+      ))
+    )
+  );
+}
+
+// ======== InstagramCTA ========
+function InstagramCTA(){
+  return React.createElement('section',{id:'instagram',className:'pl-section reveal',style:{background:'linear-gradient(180deg,#0D0D12 0%,#100F14 100%)',padding:'80px 20px',textAlign:'center'}},
+    React.createElement(SectionLabel,{text:'Instagram',color:C.rose}),
+    React.createElement('h2',{className:'pl-h2'},'Follow the Journey'),
+    React.createElement('p',{className:'pl-sub'},'Behind-the-scenes, transformations, and studio life.'),
+    React.createElement('a',{href:'https://instagram.com/theperfectlookbyemily',target:'_blank',className:'pl-cta',style:{display:'inline-block',background:'linear-gradient(135deg,#E1306C,#833AB4,#405DE6)',textDecoration:'none'}},'@theperfectlookbyemily')
+  );
+}
+
+// ======== AIConcierge ========
+function AIConcierge(){
+  const [open,setOpen]=React.useState(false);
+  const [msgs,setMsgs]=React.useState([{role:'ai',text:'Hi! I'm Emily's AI concierge. Ask me anything about services, pricing, or booking!'}]);
+  const [input,setInput]=React.useState('');
+  function handleSend(){
+    if(!input.trim())return;
+    const q=input.trim();
+    setInput('');
+    setMsgs(m=>[...m,{role:'user',text:q}]);
+    setTimeout(()=>{
+      let resp='I'd love to help! For bookings and detailed questions, please reach out to Emily directly or use the Book Now button.';
+      if(/price|cost|how much/i.test(q))resp='Services start from $35 for a classic cut up to $300+ for full colour corrections. Emily's balayage starts at $120.';
+      if(/book|appoint/i.test(q))resp='You can book online 24/7 at the Book Now button above, or I can share the direct link: squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services';
+      if(/hour|long|time/i.test(q))resp='Service times vary — cuts take 60–90 min, balayage 2–3 hrs, and colour corrections can be 4+ hrs. Emily will confirm at your consultation.';
+      setMsgs(m=>[...m,{role:'ai',text:resp}]);
+    },800);
+  }
+  if(!open) return React.createElement('button',{onClick:()=>setOpen(true),
+    style:{position:'fixed',bottom:'24px',right:'24px',width:'60px',height:'60px',borderRadius:'50%',background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',border:'none',cursor:'pointer',boxShadow:'0 8px 30px rgba(138,43,226,.5)',zIndex:1000,fontSize:'1.5rem',transition:'transform .2s'},
+    onMouseEnter:e=>e.target.style.transform='scale(1.1)',
+    onMouseLeave:e=>e.target.style.transform='scale(1)'
+  },'💬');
+  return React.createElement('div',{style:{position:'fixed',bottom:'24px',right:'24px',width:'340px',background:'#0D0D12',border:'1px solid rgba(138,43,226,.3)',borderRadius:'20px',boxShadow:'0 20px 60px rgba(0,0,0,.8)',zIndex:1000,overflow:'hidden'}},
+    React.createElement('div',{style:{padding:'16px 20px',background:'linear-gradient(135deg,'+C.amethyst+'22,'+C.teal+'11)',borderBottom:'1px solid rgba(255,255,255,.06)',display:'flex',justifyContent:'space-between',alignItems:'center'}},
+      React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'12px',color:'#fff',letterSpacing:'1px'}},'Emily's AI Concierge'),
+      React.createElement('button',{onClick:()=>setOpen(false),style:{background:'none',border:'none',color:'rgba(255,255,255,.5)',cursor:'pointer',fontSize:'1.2rem'}},'×')
+    ),
+    React.createElement('div',{style:{height:'240px',overflowY:'auto',padding:'16px',display:'flex',flexDirection:'column',gap:'12px'}},
+      msgs.map((m,i)=>React.createElement('div',{key:i,style:{display:'flex',justifyContent:m.role==='user'?'flex-end':'flex-start'}},
+        React.createElement('div',{style:{maxWidth:'80%',padding:'10px 14px',borderRadius:'12px',background:m.role==='user'?'linear-gradient(135deg,'+C.amethyst+','+C.teal+')':'rgba(255,255,255,.06)',fontFamily:'DM Sans,sans-serif',fontSize:'0.85rem',color:'#fff',lineHeight:1.5}},m.text)
+      ))
+    ),
+    React.createElement('div',{style:{padding:'12px',borderTop:'1px solid rgba(255,255,255,.06)',display:'flex',gap:'8px'}},
+      React.createElement('input',{value:input,onChange:e=>setInput(e.target.value),onKeyDown:e=>e.key==='Enter'&&handleSend(),
+        placeholder:'Ask me anything...',
+        style:{flex:1,background:'rgba(255,255,255,.06)',border:'1px solid rgba(255,255,255,.1)',borderRadius:'8px',padding:'10px 14px',color:'#fff',fontFamily:'DM Sans,sans-serif',fontSize:'0.85rem',outline:'none'}
+      }),
+      React.createElement('button',{onClick:handleSend,style:{background:'linear-gradient(135deg,'+C.amethyst+','+C.teal+')',border:'none',borderRadius:'8px',padding:'10px 16px',color:'#fff',cursor:'pointer',fontFamily:'Cinzel,serif',fontSize:'11px'}},'Send')
+    )
+  );
+}
+
+// ======== BackToTop ========
+function BackToTop(){
+  const [vis,setVis]=React.useState(false);
+  React.useEffect(()=>{
+    const fn=()=>setVis(window.scrollY>400);
+    window.addEventListener('scroll',fn);
+    return()=>window.removeEventListener('scroll',fn);
+  },[]);
+  if(!vis)return null;
+  return React.createElement('button',{
+    onClick:()=>window.scrollTo({top:0,behavior:'smooth'}),
+    style:{position:'fixed',bottom:'96px',right:'24px',width:'48px',height:'48px',borderRadius:'50%',background:'rgba(138,43,226,.3)',border:'1px solid rgba(138,43,226,.5)',cursor:'pointer',color:'#fff',fontSize:'1.2rem',zIndex:999,backdropFilter:'blur(10px)',transition:'all .2s'},
+    onMouseEnter:e=>{e.target.style.background='rgba(138,43,226,.5)';},
+    onMouseLeave:e=>{e.target.style.background='rgba(138,43,226,.3)';}
+  },'↑');
+}
+
+// ======== Footer ========
+function Footer(){
+  return React.createElement('footer',{style:{background:'#080808',borderTop:'1px solid rgba(255,255,255,.05)',padding:'60px 40px 40px',textAlign:'center'}},
+    React.createElement('div',{style:{maxWidth:'1100px',margin:'0 auto'}},
+      React.createElement('div',{style:{marginBottom:'40px'}},
+        React.createElement('p',{style:{fontFamily:'Cinzel,serif',fontSize:'1.4rem',color:'#fff',letterSpacing:'3px',marginBottom:'8px'}},'THE PERFECT LOOK'),
+        React.createElement('p',{style:{fontFamily:'Cormorant Garamond,serif',fontSize:'1rem',color:'rgba(255,255,255,.35)',letterSpacing:'2px',fontStyle:'italic'}},'BY EMILY — ODESSA, ONTARIO')
+      ),
+      React.createElement('div',{style:{display:'flex',justifyContent:'center',gap:'40px',marginBottom:'40px',flexWrap:'wrap'}},
+        ['Services','About','Book Now','Reviews','Contact'].map(link=>
+          React.createElement('a',{key:link,
+            href:link==='Book Now'?'https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services':'#'+link.toLowerCase().replace(' ','-'),
+            style:{color:'rgba(255,255,255,.4)',fontFamily:'Cinzel,serif',fontSize:'11px',letterSpacing:'2px',textDecoration:'none',textTransform:'uppercase',transition:'color .2s'},
+            onMouseEnter:e=>e.target.style.color=C.amethyst,
+            onMouseLeave:e=>e.target.style.color='rgba(255,255,255,.4)'
+          },link)
+        )
+      ),
+      React.createElement('div',{style:{width:'60px',height:'1px',background:'linear-gradient(90deg,transparent,'+C.amethyst+',transparent)',margin:'0 auto 28px'}}),
+      React.createElement('p',{style:{fontFamily:'DM Sans,sans-serif',fontSize:'0.8rem',color:'rgba(255,255,255,.2)',letterSpacing:'1px'}},
+        '© 2025 The Perfect Look by Emily. All rights reserved. | perfectlookbyemily.ca'
+      )
+    )
+  );
+}
+
+// ======== App ========
+function App(){
+  useReveal();
+  return React.createElement('div',{style:{background:C.deep,minHeight:'100vh'}},
+    React.createElement(Nav,null),
+    React.createElement(Hero,null),
+    React.createElement(StatsTicker,null),
+    React.createElement(Marquee,null),
+    React.createElement(AboutEmily,null),
+    React.createElement(ClientJourney,null),
+    React.createElement(ServicesSection,null),
+    React.createElement(HeadSpaSection,null),
+    React.createElement(DynamicPricing,null),
+    React.createElement(LogoIdentitySection,null),
+    React.createElement(AIWizardSection,null),
+    React.createElement(VibeSetterSection,null),
+    React.createElement(StudioDashboardSection,null),
+    React.createElement(BrandGuideSection,null),
+    React.createElement(LookbookSection,null),
+    React.createElement(BeforeAfter,null),
+    React.createElement(ExperienceSection,null),
+    React.createElement(ARMirrorPreview,null),
+    React.createElement(SmartSalonTech,null),
+    React.createElement(StudioSection,null),
+    React.createElement(SustainabilitySection,null),
+    React.createElement(TrustBadges,null),
+    React.createElement(ProductsSection,null),
+    React.createElement(MembershipSection,null),
+    React.createElement(LoyaltySection,null),
+    React.createElement(GiftCards,null),
+    React.createElement(ReviewsSection,null),
+    React.createElement(VirtualConsultSection,null),
+    React.createElement(ConsultationCTA,null),
+    React.createElement(BookingSection,null),
+    React.createElement(ComingSoonRoadmap,null),
+    React.createElement(FAQSection,null),
+    React.createElement(InstagramCTA,null),
+    React.createElement(Footer,null),
+    React.createElement(AIConcierge,null),
+    React.createElement(BackToTop,null)
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(App));
+  </script>
+</body>
+</html><!-- v3.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
