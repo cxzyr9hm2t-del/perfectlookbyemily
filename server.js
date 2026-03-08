@@ -1,18 +1,16 @@
 'use strict';
-
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js  GOLD MASTER
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER
 // ================================================================
 // ENVIRONMENT VARIABLES REQUIRED (set in Render dashboard):
-//   SQUARE_ACCESS_TOKEN   — your Live (or Sandbox) Access Token
-//   SQUARE_LOCATION_ID    — your Live (or Sandbox) Location ID
-//   SQUARE_ENV            — 'sandbox' | 'production'
-//   FORMSPREE_ENDPOINT    — xzdjpakd
-//   MAILCHIMP_API_KEY     — your Mailchimp API key
-//   MAILCHIMP_LIST_ID     — your Mailchimp audience list ID
-//   MAILCHIMP_SERVER      — your Mailchimp server prefix (e.g. us14)
+//   SQUARE_ACCESS_TOKEN — your Live (or Sandbox) Access Token
+//   SQUARE_LOCATION_ID  — your Live (or Sandbox) Location ID
+//   SQUARE_ENV          — 'sandbox' | 'production'
+//   FORMSPREE_ENDPOINT  — xzdjpakd
+//   MAILCHIMP_API_KEY   — your Mailchimp API key
+//   MAILCHIMP_LIST_ID   — your Mailchimp audience list ID
+//   MAILCHIMP_SERVER    — your Mailchimp server prefix (e.g. us14)
 // ================================================================
-
 const express    = require('express');
 const compression = require('compression');
 const helmet     = require('helmet');
@@ -23,7 +21,7 @@ const https      = require('https');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
-// ── SQUARE (lazy-require to prevent cold-start crash) ────────────
+// ── SQUARE (lazy-require to prevent cold-start crash) ──────────────
 const SQUARE_ENV = (process.env.SQUARE_ENV || 'sandbox').toLowerCase();
 let squareClient = null;
 function getSquareClient() {
@@ -33,9 +31,7 @@ function getSquareClient() {
     squareClient = new Client({
       accessToken: process.env.SQUARE_ACCESS_TOKEN || 'REPLACE_WITH_ACCESS_TOKEN',
       environment:
-        SQUARE_ENV === 'production'
-          ? Environment.Production
-          : Environment.Sandbox,
+        SQUARE_ENV === 'production' ? Environment.Production : Environment.Sandbox,
     });
   } catch (e) {
     console.error('Square client init error:', e.message);
@@ -43,46 +39,69 @@ function getSquareClient() {
   return squareClient;
 }
 
-// ── MIDDLEWARE ───────────────────────────────────────────────────
+// ── CORS ────────────────────────────────────────────────────────────
+const ALLOWED_ORIGINS = [
+  'https://theperfectlookbyemily.ca',
+  'https://the-perfect-look-by-emily.web.app',
+  'https://the-perfect-look-by-emily.firebaseapp.com',
+];
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+  res.setHeader('Access-Control-Max-Age', '86400');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+  next();
+});
+
+// ── MIDDLEWARE ──────────────────────────────────────────────────────
 app.use(compression());
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: false }));
-
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc:  ["'self'"],
-      scriptSrc:   [
-        "'self'", "'unsafe-inline'",
-        "https://cdn.tailwindcss.com",
-        "https://www.googletagmanager.com",
-        "https://www.google-analytics.com",
-        "https://sandbox.web.squarecdn.com",
-        "https://web.squarecdn.com",
-        "https://www.gstatic.com",
-        "https://fonts.googleapis.com",
-      ],
-      styleSrc:    ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-      fontSrc:     ["'self'", "https://fonts.gstatic.com"],
-      imgSrc:      ["'self'", "data:", "https:", "blob:"],
-      connectSrc:  [
-        "'self'",
-        "https://www.google-analytics.com",
-        "https://formspree.io",
-        "https://connect.squareupsandbox.com",
-        "https://connect.squareup.com",
-        "https://firestore.googleapis.com",
-        "https://identitytoolkit.googleapis.com",
-        "https://securetoken.googleapis.com",
-      ],
-      frameSrc:    ["'self'", "https://www.google.com"],
-      workerSrc:   ["'self'", "blob:"],
-      mediaSrc:    ["'self'"],
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc:  ["'self'"],
+        scriptSrc:   [
+          "'self'", "'unsafe-inline'",
+          'https://cdn.tailwindcss.com',
+          'https://www.googletagmanager.com',
+          'https://www.google-analytics.com',
+          'https://sandbox.web.squarecdn.com',
+          'https://web.squarecdn.com',
+          'https://www.gstatic.com',
+          'https://fonts.googleapis.com',
+        ],
+        styleSrc:    ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        fontSrc:     ["'self'", 'https://fonts.gstatic.com'],
+        imgSrc:      ["'self'", 'data:', 'https:', 'blob:'],
+        connectSrc:  [
+          "'self'",
+          'https://www.google-analytics.com',
+          'https://formspree.io',
+          'https://connect.squareupsandbox.com',
+          'https://connect.squareup.com',
+          'https://firestore.googleapis.com',
+          'https://identitytoolkit.googleapis.com',
+          'https://securetoken.googleapis.com',
+        ],
+        frameSrc:    ["'self'", 'https://www.google.com'],
+        workerSrc:   ["'self'", 'blob:'],
+        mediaSrc:    ["'self'"],
+      },
     },
-  },
-  crossOriginEmbedderPolicy: false,
-  crossOriginResourcePolicy: { policy: 'cross-origin' },
-}));
+    crossOriginEmbedderPolicy:    false,
+    crossOriginResourcePolicy:    { policy: 'cross-origin' },
+  })
+);
 
 app.use((req, res, next) => {
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
@@ -93,31 +112,32 @@ app.use((req, res, next) => {
   next();
 });
 
-// ── STATIC FILES ─────────────────────────────────────────────────
-app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: '1y',
-  etag: true,
-  index: false,
-  fallthrough: true,
-  setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.html')) {
-      res.setHeader('Cache-Control', 'no-cache');
-    }
-  },
-}));
+// ── STATIC FILES ────────────────────────────────────────────────────
+app.use(
+  express.static(path.join(__dirname, 'public'), {
+    maxAge:     '1y',
+    etag:       true,
+    index:      false,
+    fallthrough: true,
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith('.html')) {
+        res.setHeader('Cache-Control', 'no-cache');
+      }
+    },
+  })
+);
 
-// ── ROOT ROUTE ───────────────────────────────────────────────────
+// ── ROOT ROUTE ──────────────────────────────────────────────────────
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // ================================================================
-// API: POST /api/payment  — Square createPayment ($25 CAD deposit)
+// API: POST /api/payment — Square createPayment ($25 CAD deposit)
 // ================================================================
 app.post('/api/payment', async (req, res) => {
   try {
     const { sourceId, verificationToken, amount, currency, note } = req.body;
-
     if (!sourceId) {
       return res.status(400).json({ success: false, error: 'Missing sourceId.' });
     }
@@ -127,20 +147,20 @@ app.post('/api/payment', async (req, res) => {
       return res.status(503).json({ success: false, error: 'Payment service unavailable.' });
     }
 
-    const chargeAmount = amount || 2500; // 2500 cents = $25.00 CAD
+    const chargeAmount  = amount   || 2500;   // 2500 cents = $25.00 CAD
     const chargeCurrency = currency || 'CAD';
     const idempotencyKey = crypto.randomUUID();
-    const locationId = process.env.SQUARE_LOCATION_ID || 'REPLACE_WITH_LOCATION_ID';
+    const locationId    = process.env.SQUARE_LOCATION_ID || 'REPLACE_WITH_LOCATION_ID';
 
     const paymentBody = {
       sourceId,
       idempotencyKey,
       amountMoney: {
-        amount: BigInt(chargeAmount),
+        amount:   BigInt(chargeAmount),
         currency: chargeCurrency,
       },
       locationId,
-      note: note || 'Appointment Deposit — The Perfect Look By Emily',
+      note:         note || 'Appointment Deposit — The Perfect Look By Emily',
       autocomplete: true,
     };
 
@@ -149,17 +169,16 @@ app.post('/api/payment', async (req, res) => {
     }
 
     const { result } = await client.paymentsApi.createPayment(paymentBody);
-
     const payment = result.payment;
     console.log('[Square] Payment created:', payment.id, payment.status);
 
-    // ── Post-payment: fire Formspree notification ──────────────
+    // ── Post-payment: fire Formspree notification ─────────────────
     const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT || 'xzdjpakd';
     try {
       await postFormspree(formspreeEndpoint, {
-        name:    'Deposit Notification',
-        email:   'deposit@theperfectlookbyemily.ca',
-        message: `New $25 deposit received. Payment ID: ${payment.id}. Status: ${payment.status}. Amount: ${chargeCurrency} ${(chargeAmount / 100).toFixed(2)}.`,
+        name:     'Deposit Notification',
+        email:    'deposit@theperfectlookbyemily.ca',
+        message:  `New $25 deposit received. Payment ID: ${payment.id}. Status: ${payment.status}. Amount: ${chargeCurrency} ${(chargeAmount / 100).toFixed(2)}.`,
         _subject: 'New Deposit — The Perfect Look By Emily',
       });
     } catch (fErr) {
@@ -167,24 +186,20 @@ app.post('/api/payment', async (req, res) => {
     }
 
     return res.status(200).json({
-      success: true,
+      success:   true,
       paymentId: payment.id,
       status:    payment.status,
       message:   'Deposit confirmed. Emily will be in touch shortly.',
     });
-
   } catch (err) {
     console.error('[Square] createPayment error:', err);
-    const msg =
-      err.result?.errors?.[0]?.detail ||
-      err.message ||
-      'Payment processing failed.';
+    const msg = err.result?.errors?.[0]?.detail || err.message || 'Payment processing failed.';
     return res.status(500).json({ success: false, error: msg });
   }
 });
 
 // ================================================================
-// API: POST /api/contact  — Formspree proxy
+// API: POST /api/contact — Formspree proxy
 // ================================================================
 app.post('/api/contact', async (req, res) => {
   try {
@@ -209,12 +224,11 @@ app.post('/api/subscribe', async (req, res) => {
     const { email } = req.body;
     if (!email) return res.status(400).json({ success: false, error: 'Email required.' });
 
-    const apiKey  = process.env.MAILCHIMP_API_KEY  || '';
-    const listId  = process.env.MAILCHIMP_LIST_ID  || '';
-    const server  = process.env.MAILCHIMP_SERVER   || 'us1';
+    const apiKey = process.env.MAILCHIMP_API_KEY || '';
+    const listId = process.env.MAILCHIMP_LIST_ID || '';
+    const server = process.env.MAILCHIMP_SERVER  || 'us1';
 
     if (!apiKey || !listId) {
-      // Graceful degradation — Mailchimp not configured yet
       console.warn('[Mailchimp] Not configured. Skipping subscribe.');
       return res.status(200).json({ success: true, note: 'Mailchimp not configured.' });
     }
@@ -232,7 +246,6 @@ app.post('/api/subscribe', async (req, res) => {
 
     const result = await mcRequest(server, apiKey, listId, subscriberHash, mcData);
     return res.status(200).json({ success: true, ...result });
-
   } catch (err) {
     console.error('[Mailchimp] error:', err.message);
     return res.status(500).json({ success: false, error: err.message });
@@ -322,7 +335,7 @@ app.get('/robots.txt', (req, res) => {
   res.send('User-agent: *\nAllow: /\nSitemap: https://theperfectlookbyemily.ca/sitemap.xml');
 });
 
-// ── PRIVACY & TERMS ──────────────────────────────────────────────
+// ── PRIVACY & TERMS ─────────────────────────────────────────────────
 app.get('/privacy', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'privacy.html'));
 });
@@ -330,12 +343,12 @@ app.get('/terms', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'terms.html'));
 });
 
-// ── SPA CATCH-ALL ────────────────────────────────────────────────
+// ── SPA CATCH-ALL ───────────────────────────────────────────────────
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// ── START ────────────────────────────────────────────────────────
+// ── START ───────────────────────────────────────────────────────────
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`The Perfect Look By Emily — running on port ${PORT} [${SQUARE_ENV.toUpperCase()}]`);
 });
