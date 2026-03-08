@@ -1,6 +1,6 @@
 // ================================================================
-// THE PERFECT LOOK BY EMILY — Service Worker (sw.js)
-// v2 — service account CI/CD v3 — raw JSON secret fix
+// THE PERFECT LOOK BY EMILY â Service Worker (sw.js)
+// v4 — CORS fix + sitemap + robots deploy
 // Handles Firebase Cloud Messaging push notifications
 // ================================================================
 'use strict';
