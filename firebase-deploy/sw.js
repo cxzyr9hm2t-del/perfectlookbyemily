@@ -1,5 +1,6 @@
 // ================================================================
 // THE PERFECT LOOK BY EMILY — Service Worker (sw.js)
+// v2 — service account CI/CD deploy
 // Handles Firebase Cloud Messaging push notifications
 // ================================================================
 'use strict';
