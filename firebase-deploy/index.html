@@ -103,7 +103,7 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       <div class="absolute top-0 right-0 w-64 h-64 bg-orchid/8 rounded-full blur-3xl pointer-events-none"></div>
       <p class="brand-signature text-orchid text-2xl mb-3">The Artist Behind the Chair</p>
       <h2 class="font-display text-4xl text-white font-bold mb-6">About Emily</h2>
-      <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-10">With over 25 years of experience, Emily has perfected the art of making clients feel extraordinary. Based in Amherstview, she brings the full luxury salon experience to your neighbourhood with personalized service, premium products, and a genuine love for her craft — all within her <span class="text-lavender font-semibold">Bespoke Home Suite</span>.</p>
+      <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-10">With over 25 years of experience, Emily has perfected the art of making clients feel extraordinary. Based in Amherstview, she brings the full luxury salon experience to your neighbourhood with personalized service, premium products, and a genuine love for her craft â all within her <span class="text-lavender font-semibold">Bespoke Home Suite</span>.</p>
       <div class="grid grid-cols-3 gap-6 max-w-md mx-auto">
         <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">25+</p><p class="text-gray-400 text-xs mt-1">Years Experience</p></div>
         <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">500+</p><p class="text-gray-400 text-xs mt-1">Happy Clients</p></div>
@@ -150,14 +150,14 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       <div class="glass-teal rounded-2xl p-6">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-9 h-9 rounded-full bg-teal/20 flex items-center justify-center text-teal font-bold text-lg">$</div>
-          <div><p class="text-white font-semibold">Secure Your Appointment</p><p class="text-gray-400 text-xs">$25 deposit — applied to your service balance</p></div>
+          <div><p class="text-white font-semibold">Secure Your Appointment</p><p class="text-gray-400 text-xs">$25 deposit â applied to your service balance</p></div>
         </div>
         <div id="square-card-container" class="mb-4"></div>
         <p id="square-status-msg" class="text-red-400 text-sm mb-3 min-h-5"></p>
         <button id="square-pay-btn" type="button" onclick="handleSquarePayment()" class="gradient-btn w-full py-3 rounded-xl text-white font-semibold shadow-lg">Pay $25 Deposit &amp; Request Appointment</button>
         <div id="sandbox-helper" class="mt-4 rounded-xl p-3 border border-yellow-500/30 bg-yellow-500/5">
-          <p class="text-yellow-400 text-xs font-semibold mb-1">&#129514; Sandbox Mode — Test Cards Only</p>
-          <p class="text-gray-400 text-xs">Visa: <code class="text-teal">4111 1111 1111 1111</code> &nbsp;·&nbsp; Exp: any future &nbsp;·&nbsp; CVV: any 3 digits &nbsp;·&nbsp; ZIP: 12345</p>
+          <p class="text-yellow-400 text-xs font-semibold mb-1">&#129514; Sandbox Mode â Test Cards Only</p>
+          <p class="text-gray-400 text-xs">Visa: <code class="text-teal">4111 1111 1111 1111</code> &nbsp;Â·&nbsp; Exp: any future &nbsp;Â·&nbsp; CVV: any 3 digits &nbsp;Â·&nbsp; ZIP: 12345</p>
         </div>
       </div>
       <div id="square-success-panel" class="hidden glass-teal rounded-2xl p-8 text-center">
@@ -214,9 +214,9 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       </div>
       <div class="flex flex-wrap items-center gap-4 justify-center">
         <a href="/privacy" class="hover:text-orchid transition-colors">Privacy Policy</a>
-        <span class="text-gray-700">·</span>
+        <span class="text-gray-700">Â·</span>
         <a href="/terms" class="hover:text-orchid transition-colors">Terms of Service</a>
-        <span class="text-gray-700">·</span>
+        <span class="text-gray-700">Â·</span>
         <a href="tel:+16139298711" class="hover:text-teal transition-colors">(613) 929-8711</a>
       </div>
       <div class="text-center md:text-right">
@@ -259,8 +259,8 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
 // CONFIG
 // ============================================================
 const ADMIN_UID = 'REPLACE_WITH_EMILY_FIREBASE_UID';
-const SQUARE_APP_ID = 'REPLACE_WITH_SANDBOX_APP_ID';
-const SQUARE_LOCATION_ID = 'REPLACE_WITH_SANDBOX_LOCATION_ID';
+const SQUARE_APP_ID      = 'sq0idp-M_oCFikySOk7i5WSDPArqw';
+const SQUARE_LOCATION_ID = 'L3KS31DS36YTN';
 const ENV = 'sandbox';
 
 // ============================================================
@@ -383,7 +383,7 @@ async function initSquare() {
 async function handleSquarePayment() {
   const statusEl = document.getElementById('square-status-msg');
   const payBtn = document.getElementById('square-pay-btn');
-  if (!squareCard) { statusEl.textContent = 'Payment system initialising — please wait.'; return; }
+  if (!squareCard) { statusEl.textContent = 'Payment system initialising â please wait.'; return; }
   if (!currentUser) { statusEl.textContent = 'Please sign in first.'; return; }
   statusEl.textContent = '';
   payBtn.disabled = true;
@@ -402,7 +402,7 @@ async function handleSquarePayment() {
       countryCode: 'CA',
       billingContact: { givenName: currentUser.displayName || 'Client', email: currentUser.email }
     });
-    const response = await fetch('/api/payment', {
+    const response = await fetch('https://perfectlookbyemily.onrender.com/api/payment', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -447,7 +447,7 @@ async function submitContact(event) {
   btn.disabled = true;
   try {
     const data = new FormData(form);
-    const response = await fetch('/api/contact', {
+    const response = await fetch('https://perfectlookbyemily.onrender.com/api/contact', {
       method: 'POST',
       headers: {'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(Object.fromEntries(data))
@@ -476,7 +476,7 @@ async function submitMailchimp(event) {
   statusEl.textContent = 'Joining...';
   btn.disabled = true;
   try {
-    const response = await fetch('/api/subscribe', {
+    const response = await fetch('https://perfectlookbyemily.onrender.com/api/subscribe', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({email})
