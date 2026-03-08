@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | The Perfect Look By Emily</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theperfectlookbyemily.ca/privacy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --midnight: #0f0a1a;
+      --orchid: #8b5cf6;
+      --teal: #2dd4bf;
+      --lavender: #c4b5fd;
+      --blush: #f5d0fe;
+      --glass-bg: rgba(139,92,246,0.08);
+      --glass-border: rgba(139,92,246,0.2);
+    }
+    body {
+      background-color: var(--midnight);
+      color: #e2d9f3;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    /* Background gradient orbs */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -20%;
+      right: -20%;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,10,26,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--lavender);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .back-link {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .back-link:hover { color: var(--orchid); }
+    .back-link::before { content: '\2190'; }
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+    .page-hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      background: linear-gradient(135deg, var(--orchid), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .page-hero .updated {
+      color: rgba(196,181,253,0.6);
+      font-size: 0.875rem;
+      font-style: italic;
+    }
+    .card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: border-color 0.3s;
+    }
+    .card:hover { border-color: rgba(139,92,246,0.35); }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--lavender);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    h3 {
+      font-size: 1rem;
+      color: var(--teal);
+      font-weight: 500;
+      margin: 1.25rem 0 0.5rem;
+    }
+    p { margin-bottom: 0.75rem; color: rgba(226,217,243,0.85); }
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: rgba(226,217,243,0.85);
+    }
+    li { margin-bottom: 0.35rem; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { color: var(--orchid); text-decoration: underline; }
+    .contact-highlight {
+      background: rgba(45,212,191,0.08);
+      border: 1px solid rgba(45,212,191,0.2);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .contact-highlight strong { color: var(--teal); }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: rgba(196,181,253,0.4);
+      font-size: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 600px) {
+      .card { padding: 1.5rem; }
+      header { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="brand">The Perfect Look By Emily</a>
+  <a href="/" class="back-link">Back to Home</a>
+</header>
+
+<main>
+  <div class="page-hero">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last Updated: March 2026</p>
+  </div>
+
+  <div class="card">
+    <h2>1. Introduction</h2>
+    <p>The Perfect Look By Emily ("we," "our," or "us") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website at <strong>theperfectlookbyemily.ca</strong> or contact us to book an appointment.</p>
+    <p>This policy complies with the <em>Personal Information Protection and Electronic Documents Act (PIPEDA)</em> and applicable provincial privacy legislation in Ontario, Canada.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Information We Collect</h2>
+    <h3>Information You Provide Directly</h3>
+    <ul>
+      <li><strong>Contact form submissions:</strong> name, email address, phone number, and any message you include when reaching out about appointments</li>
+      <li><strong>Booking deposit payments:</strong> when you submit a $25 CAD consultation deposit via our secure Square payment form, Square collects your card information directly; we do not store raw card data</li>
+      <li><strong>Email subscription:</strong> if you join our Inner Circle newsletter via Mailchimp, we collect your email address and first name</li>
+    </ul>
+    <h3>Information Collected Automatically</h3>
+    <ul>
+      <li><strong>Usage data:</strong> pages visited, time on site, referring URLs, and device/browser type via Firebase Analytics and Google Analytics (GA4)</li>
+      <li><strong>Cookies and local storage:</strong> small data files stored on your device to remember your preferences and enable analytics; see Section 6 for details</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul>
+      <li>To respond to your appointment inquiries and booking requests</li>
+      <li>To process your $25 CAD booking deposit via Square's secure payment infrastructure</li>
+      <li>To send our Inner Circle email newsletter (only if you subscribed)</li>
+      <li>To send appointment-related confirmations and reminders via email</li>
+      <li>To improve our website content and user experience through analytics</li>
+      <li>To comply with our legal obligations</li>
+    </ul>
+    <p>We do not use your personal information for automated decision-making or profiling.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Third-Party Service Providers</h2>
+    <p>We rely on the following trusted third-party services to operate our website. Each has its own privacy policy governing your data:</p>
+    <h3>Square (Payment Processing)</h3>
+    <p>Your booking deposit payment is processed securely by <strong>Square Inc.</strong> Square is PCI-DSS compliant and handles all card data. We receive only a tokenized reference to your payment. <a href="https://squareup.com/ca/en/legal/general/privacy" target="_blank" rel="noopener">Square Privacy Policy ↗</a></p>
+    <h3>Mailchimp (Email Marketing)</h3>
+    <p>If you subscribe to our Inner Circle newsletter, your email address and first name are stored by <strong>Intuit Mailchimp</strong>. You may unsubscribe at any time via the link in any email. <a href="https://mailchimp.com/legal/privacy/" target="_blank" rel="noopener">Mailchimp Privacy Policy ↗</a></p>
+    <h3>Formspree (Contact Form)</h3>
+    <p>Contact form submissions are routed through <strong>Formspree</strong>, a secure form backend service. <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree Privacy Policy ↗</a></p>
+    <h3>Firebase / Google Analytics</h3>
+    <p>We use <strong>Firebase Analytics (GA4)</strong> provided by Google to understand how visitors use our site. Analytics data is anonymized and aggregated. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy ↗</a></p>
+  </div>
+
+  <div class="card">
+    <h2>5. Data Retention</h2>
+    <p>We retain your personal information only as long as necessary for the purposes outlined in this policy:</p>
+    <ul>
+      <li><strong>Contact form messages:</strong> retained for up to 2 years for appointment management purposes</li>
+      <li><strong>Payment records:</strong> retained by Square per their legal and financial obligations</li>
+      <li><strong>Newsletter subscribers:</strong> retained until you unsubscribe</li>
+      <li><strong>Analytics data:</strong> retained for 14 months per Google Analytics default settings</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>6. Cookies</h2>
+    <p>Our website uses the following types of cookies:</p>
+    <ul>
+      <li><strong>Essential cookies:</strong> necessary for the website to function (e.g., session management)</li>
+      <li><strong>Analytics cookies:</strong> set by Firebase/Google Analytics to measure website traffic and usage patterns</li>
+      <li><strong>Third-party cookies:</strong> may be set by Square or Google when you interact with embedded payment or analytics components</li>
+    </ul>
+    <p>Most browsers allow you to control cookies through their settings. Disabling analytics cookies will not affect your ability to use our website.</p>
+  </div>
+
+  <div class="card">
+    <h2>7. Your Rights Under PIPEDA</h2>
+    <p>As a Canadian resident, you have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Right of access:</strong> you may request a copy of the personal information we hold about you</li>
+      <li><strong>Right to correction:</strong> you may request that inaccurate information be corrected</li>
+      <li><strong>Right to withdraw consent:</strong> you may withdraw consent for non-essential data processing at any time</li>
+      <li><strong>Right to complain:</strong> you have the right to file a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener">priv.gc.ca ↗</a></li>
+    </ul>
+    <p>To exercise any of these rights, please contact us directly.</p>
+  </div>
+
+  <div class="card">
+    <h2>8. Data Security</h2>
+    <p>We take reasonable technical and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction. Our website is served over HTTPS and payment processing is handled entirely by Square's PCI-DSS-compliant infrastructure — we never transmit or store raw payment card data on our servers.</p>
+  </div>
+
+  <div class="card">
+    <h2>9. Children's Privacy</h2>
+    <p>Our services are intended for adults. We do not knowingly collect personal information from individuals under the age of 18. If you believe a minor has submitted personal information through our website, please contact us and we will promptly delete it.</p>
+  </div>
+
+  <div class="card">
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. Continued use of our website after changes are posted constitutes acceptance of the revised policy.</p>
+  </div>
+
+  <div class="card">
+    <h2>11. Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us:</p>
+    <div class="contact-highlight">
+      <p><strong>The Perfect Look By Emily</strong></p>
+      <p>By appointment &mdash; Amherstview, Ontario, Canada</p>
+      <p>Phone: <a href="tel:+16139298711"><strong>(613) 929-8711</strong></a></p>
+      <p><a href="/">Visit our website &rarr;</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 The Perfect Look By Emily &bull; Amherstview, Ontario &bull; <a href="/privacy.html">Privacy Policy</a> &bull; <a href="/terms.html">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
