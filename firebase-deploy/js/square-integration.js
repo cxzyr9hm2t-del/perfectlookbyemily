@@ -1,22 +1,22 @@
 // ================================================================
-// THE PERFECT LOOK BY EMILY — square-integration.js  GOLD MASTER
+// THE PERFECT LOOK BY EMILY â square-integration.js  GOLD MASTER
 // ================================================================
-// SANDBOX → PRODUCTION SWITCH:
+// SANDBOX â PRODUCTION SWITCH:
 //   In firebase-deploy/index.html, change these two consts:
-//     const SQUARE_APP_ID      = 'sandbox-sq0idb-...'  → 'sq0idp-...'
-//     const SQUARE_LOCATION_ID = 'L...'                → your live ID
+//     const SQUARE_APP_ID      = 'sandbox-sq0idb-...'  â 'sq0idp-...'
+//     const SQUARE_LOCATION_ID = 'L...'                â your live ID
 //   AND change the SDK script src:
-//     sandbox.web.squarecdn.com/v1/square.js → web.squarecdn.com/v1/square.js
+//     sandbox.web.squarecdn.com/v1/square.js â web.squarecdn.com/v1/square.js
 // ================================================================
 
 'use strict';
 
-// ── State ────────────────────────────────────────────────────────
+// ââ State ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let _squarePayments = null;
 let _squareCard     = null;
 let _sqInitialized  = false;
 
-// ── Glassmorphic card-field style config ─────────────────────────
+// ââ Glassmorphic card-field style config âââââââââââââââââââââââââ
 const SQ_STYLE = {
   '.input-container': {
     borderColor:  '#8b5cf6',
@@ -42,14 +42,14 @@ const SQ_STYLE = {
 };
 
 // ================================================================
-// initSquare() — called on DOMContentLoaded
+// initSquare() â called on DOMContentLoaded
 // ================================================================
 async function initSquare() {
   const container = document.getElementById('square-card-container');
   if (!container) return;
 
   if (!window.Square) {
-    console.warn('[Square] SDK not loaded — check script src.');
+    console.warn('[Square] SDK not loaded â check script src.');
     _setSquareStatus('Payment system unavailable. Please call (613) 929-8711.', 'error');
     return;
   }
@@ -59,7 +59,7 @@ async function initSquare() {
   const locationId = (typeof SQUARE_LOCATION_ID !== 'undefined') ? SQUARE_LOCATION_ID : '';
 
   if (!appId || appId.includes('REPLACE')) {
-    console.log('[Square] Credentials not set — deposit panel disabled.');
+    console.log('[Square] Credentials not set â deposit panel disabled.');
     _sandboxHelperVisible(true);
     return;
   }
@@ -84,11 +84,11 @@ async function initSquare() {
 }
 
 // ================================================================
-// handleSquarePayment() — called by Pay button onclick
+// handleSquarePayment() â called by Pay button onclick
 // ================================================================
 async function handleSquarePayment() {
   if (!_sqInitialized || !_squareCard) {
-    _setSquareStatus('Payment system is initialising — please wait a moment.', 'error');
+    _setSquareStatus('Payment system is initialising â please wait a moment.', 'error');
     return;
   }
 
@@ -103,18 +103,18 @@ async function handleSquarePayment() {
   _btnLoading(payBtn, true);
 
   try {
-    // Step 1 — Tokenize card
+    // Step 1 â Tokenize card
     const tokenResult = await _squareCard.tokenize();
     if (tokenResult.status !== 'OK') {
       const msg = tokenResult.errors
         ? tokenResult.errors.map(e => e.message).join(' ')
-        : 'Card error — please check your details.';
+        : 'Card error â please check your details.';
       _setSquareStatus(msg, 'error');
       _btnLoading(payBtn, false);
       return;
     }
 
-    // Step 2 — verifyBuyer (SCA — required for Canada)
+    // Step 2 â verifyBuyer (SCA â required for Canada)
     let verificationToken = null;
     try {
       const verifyResult = await _squarePayments.verifyBuyer(
@@ -136,11 +136,11 @@ async function handleSquarePayment() {
       console.warn('[Square] SCA skipped (acceptable in sandbox):', sca.message);
     }
 
-    // Step 3 — POST to backend /api/payment
-    _setSquareStatus('Processing payment…', 'info');
+    // Step 3 â POST to backend /api/payment
+    _setSquareStatus('Processing paymentâ¦', 'info');
 
     const service = document.getElementById('bkService')?.value || 'Appointment';
-    const response = await fetch('/api/payment', {
+    const response = await fetch('https://perfectlookbyemily.onrender.com/api/payment', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -148,7 +148,7 @@ async function handleSquarePayment() {
         verificationToken: verificationToken,
         amount:            2500,
         currency:          'CAD',
-        note:              'Deposit — ' + service,
+        note:              'Deposit â ' + service,
       }),
     });
 
@@ -157,7 +157,7 @@ async function handleSquarePayment() {
     if (data.success) {
       _onPaymentSuccess(service, currentUser);
     } else {
-      _setSquareStatus(data.error || 'Payment failed — please try again.', 'error');
+      _setSquareStatus(data.error || 'Payment failed â please try again.', 'error');
       _btnLoading(payBtn, false);
     }
 
@@ -169,7 +169,7 @@ async function handleSquarePayment() {
 }
 
 // ================================================================
-// _onPaymentSuccess() — show success state + submit booking
+// _onPaymentSuccess() â show success state + submit booking
 // ================================================================
 function _onPaymentSuccess(service, user) {
   // Hide payment UI
