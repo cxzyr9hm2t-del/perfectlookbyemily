@@ -1,558 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Perfect Look By Emily | Luxury Hair Salon | Amherstview, Ontario</title>
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#8b5cf6">
-  <meta name="description" content="Emily Caird luxury hair salon in Amherstview Kingston area. Cuts colour highlights mobile concierge personalized recommendations.">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
-  <link rel="shortcut icon" href="/icons/icon-192.png">
-  <link rel="apple-touch-icon" href="/icons/icon-192.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-messaging-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-check-compat.js"></script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGWTM46YWT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RGWTM46YWT');
-  </script>
-
-  <script>
-    // Firebase Init
-    const firebaseConfig = {
-      apiKey: "AIzaSyCvWfCBZ0ZiRhH4OvSs4B3DbLQAmw8b0gQ",
-      authDomain: "the-perfect-look-by-emily.firebaseapp.com",
-      projectId: "the-perfect-look-by-emily",
-      storageBucket: "the-perfect-look-by-emily.firebasestorage.app",
-      messagingSenderId: "666646387432",
-      appId: "1:666646387432:web:55291b4ef09d4fdf09075d",
-      measurementId: "G-RGWTM46YWT"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-    const analytics = firebase.analytics();
-  </script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="robots" content="index,follow"/>
+<title>The Perfect Look By Emily | Luxury Hair Salon Amherstview, Ontario</title>
+<meta name="description" content="Luxury mobile hair salon serving Amherstview and Kingston. Precision cuts, colour, and treatments in a Private Luxury Studio. Book your appointment today."/>
+<link rel="canonical" href="https://theperfectlookbyemily.ca/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://theperfectlookbyemily.ca/"/>
+<meta property="og:title" content="The Perfect Look By Emily | Luxury Hair Salon"/>
+<meta property="og:description" content="Studio-quality results in your neighbourhood. 25+ years of luxury expertise."/>
+<meta property="og:locale" content="en_CA"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGWTM46YWT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RGWTM46YWT');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{midnight:'#0f0a1a',orchid:'#8b5cf6',teal:'#2dd4bf',gold:'#e5b869',lavender:'#c4b5fd',blush:'#f5d0fe'},fontFamily:{display:['Playfair Display','Georgia','serif'],script:['"Mrs Saint Delafield"','cursive'],sans:['Inter','system-ui','sans-serif']}}}};
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-serif}
+@font-face{font-family:'FenwayPark';src:url('/fonts/FenwayPark.woff2') format('woff2'),url('/fonts/FenwayPark.woff') format('woff');font-weight:normal;font-style:normal;font-display:swap}
+.brand-signature{font-family:'FenwayPark','Mrs Saint Delafield','Playfair Display',Georgia,serif}
+.glass{background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.glass-teal{background:rgba(45,212,191,0.06);border:1px solid rgba(45,212,191,0.2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.glass-dark{background:rgba(15,10,26,0.88);border:1px solid rgba(139,92,246,0.15);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.gradient-text{background:linear-gradient(135deg,#8b5cf6 0%,#2dd4bf 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-btn{background:linear-gradient(135deg,#8b5cf6 0%,#2dd4bf 100%);transition:opacity 0.2s,transform 0.2s}
+.gradient-btn:hover{opacity:0.88;transform:translateY(-1px)}
+.hero-bg{background:radial-gradient(ellipse at 20% 50%,rgba(139,92,246,0.18) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(45,212,191,0.12) 0%,transparent 50%),#0f0a1a}
+.service-card{transition:transform 0.25s,box-shadow 0.25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(139,92,246,0.25)}
+.form-input{background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.3);border-radius:0.75rem;color:#e2e8f0;padding:0.75rem 1rem;width:100%;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.form-input:focus{border-color:#2dd4bf;box-shadow:0 0 0 2px rgba(45,212,191,0.2)}
+.form-input option{background:#0f0a1a}
+.sq-card-wrapper{border:1px solid #8b5cf6!important;border-radius:0.75rem!important;background:rgba(139,92,246,0.06)!important;padding:14px!important;transition:border-color 0.2s!important}
+.sq-card-wrapper:focus-within{border-color:#2dd4bf!important;box-shadow:0 0 0 2px rgba(45,212,191,0.25)!important}
+#toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:9999;padding:0.875rem 2rem;border-radius:2rem;background:linear-gradient(135deg,rgba(139,92,246,0.9),rgba(45,212,191,0.85));color:#fff;font-size:0.95rem;font-weight:500;pointer-events:none;opacity:0;transition:opacity 0.3s;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);white-space:nowrap;max-width:90vw;text-align:center}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0f0a1a}::-webkit-scrollbar-thumb{background:rgba(139,92,246,0.5);border-radius:3px}
+</style>
 </head>
-  <style id="glassmorph-v5">
-    :root{--orchid:#a855f7;--teal-c:#2dd4bf;--midnight:#0a0a14;--glass-border:rgba(168,85,247,.25);--orchid-glow:rgba(168,85,247,.4)}
-    body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);opacity:.2}
-    body::before{width:600px;height:600px;background:radial-gradient(circle,#a855f7,transparent 70%);top:-200px;left:-200px;animation:floatOrbA 18s ease-in-out infinite alternate}
-    body::after{width:500px;height:500px;background:radial-gradient(circle,#2dd4bf,transparent 70%);bottom:-150px;right:-150px;animation:floatOrbA 22s ease-in-out infinite alternate-reverse}
-    @keyframes floatOrbA{0%{transform:translate(0,0)}50%{transform:translate(40px,-30px) scale(1.1)}100%{transform:translate(-20px,50px) scale(.95)}}
-    .section-pill{display:inline-block;padding:.3rem 1rem;border:1px solid rgba(168,85,247,.4);border-radius:50px;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#a855f7;background:rgba(168,85,247,.08);margin-bottom:1rem}
-    .premium-day-notice{background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(45,212,191,.12));border:1px solid rgba(168,85,247,.4);border-radius:12px;padding:1rem 1.5rem;color:#e0d4ff;font-size:.9rem;margin-top:1rem;display:none;animation:fadeInD .3s ease}
-    @keyframes fadeInD{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-    .mobile-concierge-section{padding:6rem 1.5rem;position:relative;z-index:1}
-    .concierge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:3rem auto 0}
-    .concierge-card{background:rgba(15,10,26,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(168,85,247,.22);border-radius:20px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
-    .concierge-card:hover{border-color:#a855f7;transform:translateY(-6px);box-shadow:0 20px 60px rgba(168,85,247,.2)}
-    .concierge-card .card-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
-    .concierge-card h3{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.75rem}
-    .concierge-card p{color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.6}
-    .concierge-card .tag{display:inline-block;margin-top:1rem;margin-right:.5rem;padding:.25rem .75rem;background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.3);border-radius:50px;font-size:.75rem;color:#2dd4bf}
-    .concierge-card.featured{border-color:rgba(168,85,247,.5)}
-    .featured-badge{position:absolute;top:1rem;right:1rem;background:linear-gradient(135deg,#a855f7,#2dd4bf);color:#fff;font-size:.65rem;letter-spacing:.1em;padding:.3rem .8rem;border-radius:50px;text-transform:uppercase}
-    .trending-section{padding:6rem 1.5rem;position:relative;z-index:1;background:radial-gradient(ellipse at center,rgba(168,85,247,.06) 0%,transparent 70%)}
-    .trending-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:3rem auto 0}
-    .trend-card{background:rgba(15,10,26,.65);border:1px solid rgba(168,85,247,.18);border-radius:16px;padding:1.5rem;transition:all .3s}
-    .trend-card:hover{border-color:#2dd4bf;box-shadow:0 10px 40px rgba(45,212,191,.12);transform:translateY(-3px)}
-    .trend-card .trend-icon{font-size:2rem;margin-bottom:.75rem}
-    .trend-card h4{color:#fff;font-weight:600;margin-bottom:.5rem}
-    .trend-card p{color:rgba(255,255,255,.55);font-size:.85rem;line-height:1.5}
-    .coming-soon-section{padding:6rem 1.5rem;position:relative;z-index:1}
-    .coming-soon-panel{max-width:900px;margin:0 auto;background:rgba(15,10,26,.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(168,85,247,.3);border-radius:28px;padding:4rem 3rem;text-align:center;position:relative;overflow:hidden}
-    .coming-soon-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,85,247,.06),rgba(45,212,191,.04));pointer-events:none}
-    .classified-badge{display:inline-block;margin-bottom:1.5rem;padding:.4rem 1.2rem;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.5);border-radius:50px;font-size:.65rem;letter-spacing:.2em;color:#a855f7;text-transform:uppercase;animation:pulseCS 2.5s ease-in-out infinite}
-    @keyframes pulseCS{0%,100%{opacity:1}50%{opacity:.6}}
-    .coming-soon-panel h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;background:linear-gradient(135deg,#fff 30%,#a855f7 60%,#2dd4bf 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem;line-height:1.15}
-    .coming-soon-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem}
-    .cs-feature{background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.18);border-radius:12px;padding:1rem;font-size:.85rem;color:rgba(255,255,255,.75)}
-    .cs-feature .cs-icon{font-size:1.5rem;display:block;margin-bottom:.4rem}
-    .waitlist-form{max-width:500px;margin:0 auto;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
-    .waitlist-form input{flex:1;min-width:220px;background:rgba(255,255,255,.07);border:1px solid rgba(168,85,247,.3);border-radius:50px;padding:.85rem 1.5rem;color:#fff;font-size:.95rem;outline:none;transition:border-color .3s}
-    .waitlist-form input:focus{border-color:#a855f7}
-    .waitlist-form input::placeholder{color:rgba(255,255,255,.35)}
-    .waitlist-form button{background:linear-gradient(135deg,#a855f7,#2dd4bf);color:#fff;font-weight:700;font-size:.9rem;padding:.85rem 2rem;border:none;border-radius:50px;cursor:pointer;transition:all .3s;white-space:nowrap}
-    .waitlist-form button:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(168,85,247,.4)}
-    .availability-badges{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
-    .avail-badge{display:flex;align-items:center;gap:.4rem;padding:.4rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:50px;font-size:.8rem;color:rgba(255,255,255,.7)}
-    .avail-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
-    .dot-green{background:#22c55e;box-shadow:0 0 6px #22c55e}
-    .dot-amber{background:#f59e0b;box-shadow:0 0 6px #f59e0b}
-    @media(max-width:768px){.trending-grid{grid-template-columns:1fr}.coming-soon-panel{padding:2.5rem 1.5rem}.waitlist-form{flex-direction:column}}
-  </style>
-<body class="min-h-screen">
-
-  <!-- NAVIGATION -->
-  <nav class="fixed top-0 w-full z-50 glass">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="font-display text-xl text-gold gold-glow">The Perfect Look By Emily</div>
-      <div class="hidden md:flex gap-6 text-sm">
-        <a href="#services" class="text-gray-300 hover:text-orchid transition-colors">Services</a>
-        <a href="#about" class="text-gray-300 hover:text-orchid transition-colors">About</a>
-        <a href="#coming-soon" class="text-gray-300 hover:text-orchid transition-colors">Coming Soon</a>
-        <a href="#book" class="text-gray-300 hover:text-orchid transition-colors">Book Now</a>
-        <a href="#contact" class="text-gray-300 hover:text-orchid transition-colors">Contact</a>
-      </div>
-      <div class="flex items-center gap-3">
-        <span id="userName" class="text-sm text-gray-400 hidden"></span>
-        <button id="loginBtn" onclick="signInWithGoogle()" class="btn-primary text-white text-sm font-semibold px-4 py-2 rounded-full">Sign In</button>
-        <button id="logoutBtn" onclick="signOut()" class="hidden text-sm text-gray-400 border border-gray-600 px-4 py-2 rounded-full hover:border-orchid transition-colors">Sign Out</button>
+<body class="bg-midnight min-h-screen">
+<nav class="glass-dark border-b border-orchid/10 py-4 px-6 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full gradient-btn flex items-center justify-center text-white font-bold text-lg shadow-lg">E</div>
+      <div><span class="brand-signature text-2xl text-white leading-none">The Perfect Look</span><p class="text-teal text-xs tracking-widest uppercase">By Emily</p></div>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <a href="#services" class="hover:text-orchid transition-colors">Services</a>
+      <a href="#about" class="hover:text-orchid transition-colors">About</a>
+      <a href="#book" class="hover:text-orchid transition-colors">Book Now</a>
+      <a href="#contact" class="hover:text-orchid transition-colors">Contact</a>
+      <a href="tel:+16139298711" class="text-teal hover:text-white font-semibold transition-colors">(613) 929-8711</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="userName" class="hidden text-sm text-lavender font-medium"></span>
+      <button id="loginBtn" onclick="signInWithGoogle()" class="gradient-btn px-4 py-2 rounded-full text-white text-sm font-semibold">Sign In</button>
+      <button id="logoutBtn" onclick="signOut()" class="hidden glass border border-orchid/30 px-4 py-2 rounded-full text-gray-300 text-sm hover:text-white transition-colors">Sign Out</button>
+    </div>
+  </div>
+</nav>
+<section class="hero-bg min-h-screen flex items-center justify-center px-4 py-24 text-center relative overflow-hidden">
+  <div class="absolute top-20 left-10 w-72 h-72 bg-orchid/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal/8 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <p class="brand-signature text-teal text-3xl mb-4">Amherstview / Kingston, Ontario</p>
+    <h1 class="font-display text-5xl md:text-7xl text-white font-bold leading-tight mb-6">Your Hair,<br/><span class="gradient-text">Perfected.</span></h1>
+    <p class="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">25+ years of luxury salon expertise, brought to your neighbourhood. Precision cuts, stunning colour, and a personalized experience in a <strong class="text-lavender">Private Luxury Studio</strong>.</p>
+    <p class="text-sm text-gray-500 mb-10 tracking-wide">Serving Amherstview, Kingston &amp; surrounding communities</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#book" class="gradient-btn px-8 py-4 rounded-full text-white font-semibold text-lg shadow-xl">Book Your Appointment</a>
+      <a href="#services" class="glass border border-orchid/30 px-8 py-4 rounded-full text-gray-200 font-semibold text-lg hover:border-teal/50 transition-colors">View Services</a>
+    </div>
+  </div>
+</section>
+<section id="services" class="py-24 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="brand-signature text-teal text-2xl mb-2">What We Offer</p>
+      <h2 class="font-display text-4xl md:text-5xl text-white font-bold mb-4">Services &amp; Pricing</h2>
+      <p class="text-gray-400 max-w-xl mx-auto">Studio-quality results in a private, relaxed setting.</p>
+    </div>
+    <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#9986;&#65039;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Women's Cut &amp; Style</h3><p class="text-gray-400 text-sm mb-4">Precision cut with blowout and style finish.</p><p class="text-teal font-bold text-lg">from $65</p></div>
+      <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#127912;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Colour &amp; Highlights</h3><p class="text-gray-400 text-sm mb-4">Full colour, balayage, highlights, and toning.</p><p class="text-teal font-bold text-lg">from $120</p></div>
+      <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#128134;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Treatment &amp; Gloss</h3><p class="text-gray-400 text-sm mb-4">Luxury deep conditioning and Olaplex treatments.</p><p class="text-teal font-bold text-lg">from $45</p></div>
+      <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#127775;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Children's Cut</h3><p class="text-gray-400 text-sm mb-4">Gentle, fun cuts for kids in a relaxed home setting.</p><p class="text-teal font-bold text-lg">from $30</p></div>
+      <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#128136;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Men's Cut</h3><p class="text-gray-400 text-sm mb-4">Clean, sharp cuts with attention to detail.</p><p class="text-teal font-bold text-lg">from $35</p></div>
+      <div class="service-card glass-teal rounded-2xl p-7 relative overflow-hidden"><div class="absolute top-3 right-3 px-3 py-1 bg-teal/20 border border-teal/40 rounded-full text-teal text-xs font-semibold">Coming Soon</div><div class="w-12 h-12 rounded-xl bg-teal/15 flex items-center justify-center mb-4 text-2xl">&#127756;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Aurora Studio</h3><p class="text-gray-400 text-sm mb-4">Emily's dedicated Private Luxury Studio space. An elevated bespoke experience.</p><p class="text-teal/60 font-semibold">Launching Soon</p></div>
+    </div>
+  </div>
+</section>
+<section id="about" class="py-24 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="glass rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-orchid/8 rounded-full blur-3xl pointer-events-none"></div>
+      <p class="brand-signature text-orchid text-2xl mb-3">The Artist Behind the Chair</p>
+      <h2 class="font-display text-4xl text-white font-bold mb-6">About Emily</h2>
+      <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-10">With over 25 years of experience, Emily has perfected the art of making clients feel extraordinary. Based in Amherstview, she brings the full luxury salon experience to your neighbourhood with personalized service, premium products, and a genuine love for her craft — all within her <span class="text-lavender font-semibold">Bespoke Home Suite</span>.</p>
+      <div class="grid grid-cols-3 gap-6 max-w-md mx-auto">
+        <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">25+</p><p class="text-gray-400 text-xs mt-1">Years Experience</p></div>
+        <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">500+</p><p class="text-gray-400 text-xs mt-1">Happy Clients</p></div>
+        <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">100%</p><p class="text-gray-400 text-xs mt-1">Satisfaction</p></div>
       </div>
     </div>
-  </nav>  <!-- HERO -->
-  <section class="hero-gradient min-h-screen flex items-center justify-center pt-16">
-    <div class="text-center px-4 max-w-3xl mx-auto">
-      <span class="section-pill">✦ Amherstview / Kingston, Ontario</span>
-      <h1 class="font-display text-5xl md:text-7xl text-white mb-6 leading-tight">
-        Your Hair, <span class="text-gold gold-glow">Perfected.</span>
-      </h1>
-      <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-xl mx-auto">
-        Emily Caird brings 25+ years of luxury salon expertise to your doorstep. Precision cuts, stunning colour, and a personalized experience.
-      </p>
-      <div class="flex gap-4 justify-center flex-wrap">
-        <a href="#book" class="btn-primary text-white font-semibold px-8 py-3 rounded-full">Book Your Session</a>
-        <a href="#services" class="text-white border border-purple-500/30 px-8 py-3 rounded-full hover:bg-purple-500/10 transition-colors">View Services</a>
-      </div>
-      <div class="availability-badges">
-        <span class="avail-badge"><span class="avail-dot dot-green"></span>Tue &ndash; Sat: Standard Rate</span>
-        <span class="avail-badge"><span class="avail-dot dot-amber"></span>Sun &ndash; Mon: Premium Rate</span>
-        <span class="avail-badge">🏠 Mobile Concierge Available</span>
-      </div>
+  </div>
+</section>
+<section id="book" class="py-24 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="brand-signature text-teal text-2xl mb-2">Reserve Your Session</p>
+      <h2 class="font-display text-4xl text-white font-bold mb-3">Book An Appointment</h2>
+      <p class="text-gray-400">Sign in with Google to request your session with Emily.</p>
     </div>
-  </section>
-
-
-  <!-- SERVICES -->
-  <section id="services" class="py-24 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="font-display text-4xl text-center text-white mb-4">Services &amp; Pricing</h2>
-      <p class="text-gray-400 text-center mb-16 max-w-xl mx-auto">Studio-quality results in a private, relaxed setting.</p>
-      <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Services loaded from Firestore -->
-        <div class="glass rounded-2xl p-6 service-card">
-          <div class="text-3xl mb-3"></div>
-          <h3 class="font-display text-xl text-white mb-2">Women's Cut &amp; Style</h3>
-          <p class="text-gray-400 text-sm mb-4">Precision cut tailored to your face shape and lifestyle. Includes consultation, shampoo, cut, and style.</p>
-          <p class="text-orchid font-semibold">From $65</p>
-          <span class="inline-block mt-3 text-xs text-teal border border-teal/30 px-3 py-1 rounded-full">Tue&ndash;Sat: Standard &bull; Sun&ndash;Mon: Premium</span>
-        </div>
-        <div class="glass rounded-2xl p-6 service-card">
-          <div class="text-3xl mb-3"></div>
-          <h3 class="font-display text-xl text-white mb-2">Colour &amp; Highlights</h3>
-          <p class="text-gray-400 text-sm mb-4">Full colour, balayage, and highlighting services with professional-grade products for stunning results.</p>
-          <p class="text-orchid font-semibold">From $120</p>
-          <span class="inline-block mt-3 text-xs text-teal border border-teal/30 px-3 py-1 rounded-full">Tue&ndash;Sat: Standard &bull; Sun&ndash;Mon: Premium</span>
-        </div>
-        <div class="glass rounded-2xl p-6 service-card">
-          <div class="text-3xl mb-3"></div>
-          <h3 class="font-display text-xl text-white mb-2">Personalized Trending Rec.</h3>
-          <p class="text-gray-400 text-sm mb-4">Curated hair recommendations based on your face shape, lifestyle, and current industry trends.</p>
-          <p class="text-orchid font-semibold">Consultation: $40</p>
-          <span class="inline-block mt-3 text-xs text-teal border border-teal/30 px-3 py-1 rounded-full">All days available</span>
-        </div>
-        <div class="glass rounded-2xl p-6 service-card">
-          <div class="text-3xl mb-3"></div>
-          <h3 class="font-display text-xl text-white mb-2">Men's Cut</h3>
-          <p class="text-gray-400 text-sm mb-4">Clean, styled cuts with a modern luxury approach in a private, relaxed environment.</p>
-          <p class="text-orchid font-semibold">From $40</p>
-          <span class="inline-block mt-3 text-xs text-teal border border-teal/30 px-3 py-1 rounded-full">Tue&ndash;Sat: Standard &bull; Sun&ndash;Mon: Premium</span>
-        </div>
-        <div class="glass rounded-2xl p-6 service-card">
-          <div class="text-3xl mb-3"></div>
-          <h3 class="font-display text-xl text-white mb-2">Treatments &amp; Glosses</h3>
-          <p class="text-gray-400 text-sm mb-4">Deep conditioning, keratin treatments, and glass hair gloss for extraordinary shine and health.</p>
-          <p class="text-orchid font-semibold">From $75</p>
-          <span class="inline-block mt-3 text-xs text-teal border border-teal/30 px-3 py-1 rounded-full">Tue&ndash;Sat: Standard &bull; Sun&ndash;Mon: Premium</span>
-        </div>
-        <div class="glass rounded-2xl p-6 service-card">
-          <div class="text-3xl mb-3"></div>
-          <h3 class="font-display text-xl text-white mb-2">Mobile Concierge Visit</h3>
-          <p class="text-gray-400 text-sm mb-4">Emily comes to you. In-home visits, retirement community care, and corporate event styling.</p>
-          <p class="text-orchid font-semibold">From $85 + travel</p>
-          <span class="inline-block mt-3 text-xs text-teal border border-teal/30 px-3 py-1 rounded-full">All days available</span>
-        </div>
+    <div id="bookingAuth" class="glass rounded-2xl p-8 text-center">
+      <p class="text-3xl mb-4">&#128274;</p>
+      <p class="text-gray-300 mb-6 text-lg">Please sign in to book your appointment.</p>
+      <button onclick="signInWithGoogle()" class="gradient-btn px-8 py-3 rounded-full text-white font-semibold">Sign in with Google</button>
+    </div>
+    <form id="bookingForm" class="hidden glass rounded-2xl p-8 space-y-5" onsubmit="submitBooking(event)">
+      <div><label class="block text-sm text-gray-400 mb-2">Your Name</label><input id="bkName" type="text" required placeholder="Full name" class="form-input"/></div>
+      <div><label class="block text-sm text-gray-400 mb-2">Service</label>
+        <select id="bkService" required class="form-input">
+          <option value="">Select a service...</option>
+          <option value="Women's Cut &amp; Style">Women's Cut &amp; Style</option>
+          <option value="Colour &amp; Highlights">Colour &amp; Highlights</option>
+          <option value="Treatment &amp; Gloss">Treatment &amp; Gloss</option>
+          <option value="Children's Cut">Children's Cut</option>
+          <option value="Men's Cut">Men's Cut</option>
+        </select>
       </div>
-    </div>
-  </section>
-  <!-- MOBILE CONCIERGE -->
-  <section class="mobile-concierge-section">
-    <div style="text-align:center;max-width:1100px;margin:0 auto">
-      <span class="section-pill">Mobile Concierge</span>
-      <h2 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:1rem">The Salon Comes <span style="background:linear-gradient(135deg,#a855f7,#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent">To You</span></h2>
-      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto;font-size:1.05rem">Luxury hair services delivered to your home, office, or care facility &mdash; with no compromise on quality or comfort.</p>
-    </div>
-    <div class="concierge-grid">
-      <div class="concierge-card">
-        <span class="card-icon">🏠</span>
-        <h3>In-Home Visits</h3>
-        <p>Full salon experience in the comfort of your own space. Cuts, colour, treatments &mdash; professionally executed at your home.</p>
-        <span class="tag">📅 Flexible scheduling</span><br>
-        <a href="#book" class="btn-primary" style="display:inline-block;margin-top:1.25rem;padding:.75rem 2rem;border-radius:50px;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem">Book a Home Visit</a>
-      </div>
-      <div class="concierge-card featured">
-        <span class="featured-badge">Specialized Care ✦</span>
-        <span class="card-icon">💝</span>
-        <h3>Retirement Community Visits</h3>
-        <p>Dedicated, caring mobile visits to retirement homes and care facilities across the Kingston area. Patient, gentle, and fully equipped.</p>
-        <span class="tag">💚 Serving Kingston-area communities</span>
-        <span class="tag">🤍 Gentle, specialized care</span><br>
-        <a href="#book" class="btn-primary" style="display:inline-block;margin-top:1.25rem;padding:.75rem 2rem;border-radius:50px;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem">Schedule a Visit</a>
-      </div>
-      <div class="concierge-card">
-        <span class="card-icon">🏢</span>
-        <h3>Corporate &amp; Events</h3>
-        <p>On-site styling for special events, corporate gatherings, bridal parties, and milestone celebrations. Elevate every occasion.</p>
-        <span class="tag">🎉 Events &amp; occasions</span><br>
-        <a href="#contact" style="display:inline-block;margin-top:1.25rem;padding:.75rem 2rem;border-radius:50px;color:#a855f7;text-decoration:none;font-weight:600;font-size:.9rem;border:1px solid #a855f7">Enquire Now</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ABOUT -->
-  <section id="about" class="py-24 px-4 hero-gradient">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-display text-4xl text-white mb-6">About Emily</h2>
-      <p class="text-gray-300 text-lg leading-relaxed mb-8">
-        With over 25 years of experience, Emily Caird has perfected the art of making clients feel extraordinary. Based in Amherstview, she brings the full luxury salon experience to your neighbourhood with personalized service, premium products, and a genuine love for her craft.
-      </p>
-      <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto">
-        <div class="text-center">
-          <p class="font-display text-4xl text-orchid mb-2">25+</p>
-          <p class="text-gray-400 text-sm">Years Experience</p>
-        </div>
-        <div class="text-center">
-          <p class="font-display text-4xl text-teal mb-2">500+</p>
-          <p class="text-gray-400 text-sm">Happy Clients</p>
-        </div>
-        <div class="text-center">
-          <p class="font-display text-4xl text-gold mb-2">5★</p>
-          <p class="text-gray-400 text-sm">Google Rating</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- TRENDING RECOMMENDATIONS -->
-  <section class="trending-section">
-    <div style="text-align:center;max-width:900px;margin:0 auto">
-      <span class="section-pill">Personalized Consulting</span>
-      <h2 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:1rem">Trending <span style="background:linear-gradient(135deg,#a855f7,#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Recommendations</span></h2>
-      <p style="color:rgba(255,255,255,.6);max-width:580px;margin:0 auto;font-size:1.05rem">Emily curates personalized hair recommendations based on your face shape, lifestyle, and the latest industry trends.</p>
-    </div>
-    <div class="trending-grid">
-      <div class="trend-card"><div class="trend-icon">🌿</div><h4>Lived-In Colour</h4><p>Seamless, natural-looking colour that grows out beautifully. Low-maintenance luxury for every lifestyle.</p></div>
-      <div class="trend-card"><div class="trend-icon">✨</div><h4>Glass Hair Gloss</h4><p>Ultra-shine treatments that transform dull hair into liquid-mirror brilliance. Trending across every runway.</p></div>
-      <div class="trend-card"><div class="trend-icon">🎨</div><h4>Face-Framing Highlights</h4><p>Strategically placed brightness to enhance your features and illuminate your complexion effortlessly.</p></div>
-      <div class="trend-card"><div class="trend-icon">🙆</div><h4>Scalp Wellness Rituals</h4><p>Foundation-first approach &mdash; healthy scalp, thriving hair. Personalized scalp analysis and treatment plans.</p></div>
-    </div>
-    <div style="text-align:center;margin-top:3rem">
-      <a href="#book" class="btn-primary" style="display:inline-block;padding:1rem 2.5rem;border-radius:50px;color:#fff;text-decoration:none;font-weight:700">Get Your Personalized Recommendation &rarr;</a>
-    </div>
-  </section>
-
-  <!-- AURORA STUDIO: COMING SOON -->
-  <section class="coming-soon-section" id="coming-soon">
-    <div class="coming-soon-panel">
-      <span class="classified-badge">🔒 Classified &mdash; VIP Access Only</span>
-      <h2>Something Extraordinary<br>Is Being Built</h2>
-      <p style="color:rgba(255,255,255,.6);font-size:1.1rem;max-width:600px;margin:0 auto 2.5rem">A full luxury home salon &mdash; custom built inside a double-car garage &mdash; is arriving in Amherstview. Think private studio lighting, salon-grade ventilation, and an experience unlike anything in the Kingston area.</p>
-      <div class="coming-soon-features">
-        <div class="cs-feature"><span class="cs-icon">🔆</span>Studio Lighting</div>
-        <div class="cs-feature"><span class="cs-icon">🌬️</span>Pro Ventilation</div>
-        <div class="cs-feature"><span class="cs-icon">🛋️</span>Private Luxury Setting</div>
-        <div class="cs-feature"><span class="cs-icon">🎵</span>Curated Ambiance</div>
-        <div class="cs-feature"><span class="cs-icon">📱</span>Smart Booking System</div>
-        <div class="cs-feature"><span class="cs-icon">🌺</span>Exclusive Clientele</div>
-      </div>
-      <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:1.5rem">Join the VIP waitlist to be the <strong style="color:#a855f7">first to book</strong> when Aurora Studio opens.</p>
-      <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleWaitlist(event)">
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <button type="submit">Join VIP Waitlist ✦</button>
-      </form>
-      <p id="waitlist-confirm" style="display:none;color:#2dd4bf;margin-top:1rem;font-weight:600">✓ You&apos;re on the list! We&apos;ll be in touch.</p>
-    </div>
-  </section>
-
-
-  <!-- BOOK -->
-  <section id="book" class="py-24 px-4">
-    <div class="max-w-xl mx-auto">
-      <h2 class="font-display text-4xl text-center text-white mb-4">Book An Appointment</h2>
-      <p class="text-gray-400 text-center mb-10">Sign in to book your appointment with Emily.</p>
-      <div id="bookingAuth" class="glass rounded-2xl p-8 text-center">
-        <p class="text-gray-300 mb-6">Please sign in to book your appointment.</p>
-        <button onclick="signInWithGoogle()" class="btn-primary text-white font-semibold px-8 py-3 rounded-full w-full">
-          Sign in with Google
-        </button>
-      </div>
-      <form id="bookingForm" class="glass rounded-2xl p-8 hidden" onsubmit="submitBooking(event)">
-        <div class="mb-6">
-          <label class="block text-gray-300 text-sm mb-2">Service</label>
-          <select id="service" required class="w-full bg-white/5 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orchid">
-            <option value="">Select a service...</option>
-            <option value="womens-cut">Women's Cut &amp; Style — From $65</option>
-            <option value="colour">Colour &amp; Highlights — From $120</option>
-            <option value="mens-cut">Men's Cut — From $40</option>
-            <option value="treatments">Treatments &amp; Glosses — From $75</option>
-            <option value="trending-rec">Personalized Trending Recommendation — $40</option>
-            <option value="mobile-concierge">Mobile Concierge Visit — From $85 + travel</option>
-          </select>
-        </div>
-        <div class="mb-6">
-          <label class="block text-gray-300 text-sm mb-2">Location</label>
-          <select id="location" required class="w-full bg-white/5 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orchid">
-            <option value="">Select location...</option>
-            <option value="amherstview-salon">Amherstview Salon Chair</option>
-            <option value="mobile-home">Mobile / In-Home Visit</option>
-            <option value="mobile-retirement">Mobile / Retirement Community</option>
-            <option value="mobile-event">Corporate / Event</option>
-          </select>
-        </div>
-        <div class="mb-6">
-          <label class="block text-gray-300 text-sm mb-2">Date</label>
-          <input type="date" id="date" required onchange="checkPremiumDay()" class="w-full bg-white/5 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orchid">
-          <div id="premium-day-notice" class="premium-day-notice"></div>
-        </div>
-        <div class="mb-6">
-          <label class="block text-gray-300 text-sm mb-2">Preferred Time</label>
-          <select id="time" required class="w-full bg-white/5 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orchid">
+      <div class="grid grid-cols-2 gap-4">
+        <div><label class="block text-sm text-gray-400 mb-2">Preferred Date</label><input id="bkDate" type="date" required class="form-input"/></div>
+        <div><label class="block text-sm text-gray-400 mb-2">Preferred Time</label>
+          <select id="bkTime" required class="form-input">
             <option value="">Select time...</option>
-            <option value="9:00 AM">9:00 AM</option>
-            <option value="10:00 AM">10:00 AM</option>
-            <option value="11:00 AM">11:00 AM</option>
-            <option value="12:00 PM">12:00 PM</option>
-            <option value="1:00 PM">1:00 PM</option>
-            <option value="2:00 PM">2:00 PM</option>
-            <option value="3:00 PM">3:00 PM</option>
-            <option value="4:00 PM">4:00 PM</option>
+            <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+            <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option>
           </select>
         </div>
-        <div class="mb-6">
-          <label class="block text-gray-300 text-sm mb-2">Notes (optional)</label>
-          <textarea id="notes" rows="3" placeholder="Any special requests or notes..." class="w-full bg-white/5 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orchid resize-none"></textarea>
+      </div>
+      <div><label class="block text-sm text-gray-400 mb-2">Notes (optional)</label><textarea id="bkNotes" rows="3" placeholder="Any special requests or notes for Emily..." class="form-input resize-none"></textarea></div>
+      <div class="glass-teal rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 rounded-full bg-teal/20 flex items-center justify-center text-teal font-bold text-lg">$</div>
+          <div><p class="text-white font-semibold">Secure Your Appointment</p><p class="text-gray-400 text-xs">$25 deposit — applied to your service balance</p></div>
         </div>
-        <button type="submit" class="btn-primary text-white font-semibold px-8 py-3 rounded-full w-full">
-          Request Appointment
-        </button>
-        <p class="text-gray-500 text-xs text-center mt-4">Emily will confirm your booking by email within 24 hours.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-24 px-4 hero-gradient">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-display text-4xl text-white mb-8">Get In Touch</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass rounded-2xl p-6">
-          <p class="text-3xl mb-3">📍</p>
-          <p class="text-gray-300">Amherstview / Kingston</p>
-          <p class="text-gray-400 text-sm">Ontario, Canada</p>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-3xl mb-3">📱</p>
-          <p class="text-gray-300">Instagram</p>
-          <a href="https://instagram.com/theperfectlookbyemily" class="text-orchid text-sm hover:text-teal transition-colors">@theperfectlookbyemily</a>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-3xl mb-3">🕐</p>
-          <p class="text-gray-300 text-sm">Tue&ndash;Sat: Standard Availability</p>
-          <p class="text-amber-400 text-sm mt-1">Sun&ndash;Mon: Premium Rate Applies</p>
+        <div id="square-card-container" class="mb-4"></div>
+        <p id="square-status-msg" class="text-red-400 text-sm mb-3 min-h-5"></p>
+        <button id="square-pay-btn" type="button" onclick="handleSquarePayment()" class="gradient-btn w-full py-3 rounded-xl text-white font-semibold shadow-lg">Pay $25 Deposit &amp; Request Appointment</button>
+        <div id="sandbox-helper" class="mt-4 rounded-xl p-3 border border-yellow-500/30 bg-yellow-500/5">
+          <p class="text-yellow-400 text-xs font-semibold mb-1">&#129514; Sandbox Mode — Test Cards Only</p>
+          <p class="text-gray-400 text-xs">Visa: <code class="text-teal">4111 1111 1111 1111</code> &nbsp;·&nbsp; Exp: any future &nbsp;·&nbsp; CVV: any 3 digits &nbsp;·&nbsp; ZIP: 12345</p>
         </div>
       </div>
-      <!-- DROP ZONE: Google Maps embed -->
-      <!-- <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL" width="100%" height="300" style="border:0;border-radius:16px;margin-top:2rem" allowfullscreen loading="lazy"></iframe> -->
+      <div id="square-success-panel" class="hidden glass-teal rounded-2xl p-8 text-center">
+        <p class="text-4xl mb-3">&#10024;</p>
+        <p class="text-white font-bold text-xl mb-2">Deposit Confirmed!</p>
+        <p class="text-gray-300 text-sm">Check your email for your Consultation Guide. Emily will confirm your appointment shortly.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<section id="contact" class="py-24 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="brand-signature text-orchid text-2xl mb-2">Reach Out</p>
+      <h2 class="font-display text-4xl text-white font-bold mb-3">Get In Touch</h2>
+      <p class="text-gray-400">We'd love to hear from you.</p>
     </div>
-  </section>
-
-  <!-- ADMIN PANEL -->
-  <section id="adminPanel" class="hidden py-16 px-4" style="background: rgba(15,10,26,0.95); border-top: 1px solid rgba(168,85,247,0.2);">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="font-display text-3xl text-white mb-8">&#9881; Booking Management <span class="text-sm text-gray-400">(Admin Only)</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="glass rounded-2xl p-6 text-center"><p class="text-3xl mb-3">&#128205;</p><p class="text-white font-semibold mb-1">Location</p><p class="text-gray-300 text-sm">Amherstview / Kingston</p><p class="text-gray-400 text-xs">Ontario, Canada</p></div>
+      <div class="glass rounded-2xl p-6 text-center"><p class="text-3xl mb-3">&#128222;</p><p class="text-white font-semibold mb-1">Phone</p><a href="tel:+16139298711" class="text-teal text-sm hover:text-white transition-colors">(613) 929-8711</a><p class="text-gray-400 text-xs mt-1">Call or text anytime</p></div>
+      <div class="glass rounded-2xl p-6 text-center"><p class="text-3xl mb-3">&#128172;</p><p class="text-white font-semibold mb-1">Social</p><p class="text-gray-300 text-sm">@theperfectlookbyemily</p><p class="text-gray-400 text-xs mt-1">Follow for updates</p></div>
+    </div>
+    <div class="max-w-xl mx-auto">
+      <form id="contact-form" class="glass rounded-2xl p-8 space-y-5" onsubmit="submitContact(event)">
+        <h3 class="font-display text-xl text-white font-semibold text-center">Send a Message</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label class="block text-sm text-gray-400 mb-2">Name</label><input name="name" type="text" required placeholder="Your name" class="form-input"/></div>
+          <div><label class="block text-sm text-gray-400 mb-2">Email</label><input name="email" type="email" required placeholder="your@email.com" class="form-input"/></div>
+        </div>
+        <div><label class="block text-sm text-gray-400 mb-2">Message</label><textarea name="message" rows="4" required placeholder="How can Emily help you?" class="form-input resize-none"></textarea></div>
+        <p id="cf-status" class="text-sm min-h-5 text-center"></p>
+        <button type="submit" class="gradient-btn w-full py-3 rounded-xl text-white font-semibold">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer class="border-t border-orchid/10 py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="glass rounded-3xl p-8 md:p-12 text-center mb-12">
+      <p class="brand-signature text-teal text-2xl mb-2">Stay Connected</p>
+      <h3 class="font-display text-2xl text-white font-bold mb-3">Join the Inner Circle</h3>
+      <p class="text-gray-400 text-sm mb-6 max-w-md mx-auto">Exclusive styling tips, seasonal promotions, and first access to new appointment slots.</p>
+      <form id="mc-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="submitMailchimp(event)">
+        <input id="mc-email" name="EMAIL" type="email" required placeholder="your@email.com" class="form-input flex-1" autocomplete="email"/>
+        <button id="mc-submit" type="submit" class="gradient-btn px-6 py-3 rounded-xl text-white font-semibold text-sm whitespace-nowrap">Join Now</button>
+      </form>
+      <p id="mc-status" class="text-sm mt-3 min-h-5 text-teal"></p>
+      <p class="text-gray-600 text-xs mt-3">By subscribing you agree to receive marketing emails. Unsubscribe anytime. CASL-compliant.</p>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full gradient-btn flex items-center justify-center text-white font-bold text-sm">E</div>
+        <div><p class="text-white font-semibold text-sm">The Perfect Look By Emily</p><p class="text-gray-600 text-xs">Amherstview &amp; Kingston, Ontario</p></div>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 justify-center">
+        <a href="/privacy" class="hover:text-orchid transition-colors">Privacy Policy</a>
+        <span class="text-gray-700">·</span>
+        <a href="/terms" class="hover:text-orchid transition-colors">Terms of Service</a>
+        <span class="text-gray-700">·</span>
+        <a href="tel:+16139298711" class="hover:text-teal transition-colors">(613) 929-8711</a>
+      </div>
+      <div class="text-center md:text-right">
+        <p>&copy; 2026 The Perfect Look By Emily. All rights reserved.</p>
+        <p class="text-gray-700 text-xs mt-1">Powered by Google Firebase &amp; Cloud Platform</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<section id="adminPanel" class="hidden py-16 px-4 border-t border-orchid/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="glass rounded-2xl p-8">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-orchid/20 flex items-center justify-center text-orchid text-xl">&#9881;</div>
+          <div><h2 class="font-display text-xl text-white font-bold">Booking Management</h2><p class="text-gray-500 text-xs">Admin Only</p></div>
+        </div>
+        <button onclick="loadAdminBookings()" class="glass border border-orchid/30 px-4 py-2 rounded-full text-gray-300 text-sm hover:text-white transition-colors">&#8635; Refresh</button>
+      </div>
       <div class="overflow-x-auto">
-        <table class="w-full">
-          <thead>
-            <tr class="border-b border-gray-700">
-              <th class="px-6 py-3 text-left text-xs text-gray-400 uppercase tracking-wider">Client</th>
-              <th class="px-6 py-3 text-left text-xs text-gray-400 uppercase tracking-wider">Service</th>
-              <th class="px-6 py-3 text-left text-xs text-gray-400 uppercase tracking-wider">Date</th>
-              <th class="px-6 py-3 text-left text-xs text-gray-400 uppercase tracking-wider">Time</th>
-              <th class="px-6 py-3 text-left text-xs text-gray-400 uppercase tracking-wider">Location</th>
-              <th class="px-6 py-3 text-left text-xs text-gray-400 uppercase tracking-wider">Status</th>
-            </tr>
-          </thead>
-          <tbody id="adminTableBody"></tbody>
+        <table class="w-full text-left">
+          <thead><tr class="text-gray-500 text-xs uppercase tracking-wider border-b border-gray-700">
+            <th class="px-6 py-3">Date &amp; Time</th><th class="px-6 py-3">Client</th><th class="px-6 py-3">Service</th><th class="px-6 py-3">Status</th><th class="px-6 py-3">Notes</th><th class="px-6 py-3">Actions</th>
+          </tr></thead>
+          <tbody id="adminTableBody"><tr><td colspan="6" class="px-6 py-8 text-center text-gray-500 text-sm">Loading bookings...</td></tr></tbody>
         </table>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-messaging-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-check-compat.js"></script>
+<script>
+// ============================================================
+// CONFIG
+// ============================================================
+const ADMIN_UID = 'REPLACE_WITH_EMILY_FIREBASE_UID';
+const SQUARE_APP_ID = 'REPLACE_WITH_SANDBOX_APP_ID';
+const SQUARE_LOCATION_ID = 'REPLACE_WITH_SANDBOX_LOCATION_ID';
+const ENV = 'sandbox';
 
-  <!-- FOOTER -->
-  <footer class="py-8 px-4 text-center border-t border-white/10">
-    <p class="text-gray-500 text-sm">&copy; 2026 The Perfect Look By Emily &mdash; Emily Caird, Amherstview, Ontario. All rights reserved.</p>
-    <p class="text-gray-600 text-xs mt-2">Powered by Google Firebase &amp; Cloud Platform</p>
-  </footer>
+// ============================================================
+// FIREBASE INIT
+// ============================================================
+const firebaseConfig = {
+  apiKey: "AIzaSyCvWfCBZ0ZiRhH4OvSs4B3DbLQAmw8b0gQ",
+  authDomain: "the-perfect-look-by-emily.firebaseapp.com",
+  projectId: "the-perfect-look-by-emily",
+  storageBucket: "the-perfect-look-by-emily.firebasestorage.app",
+  messagingSenderId: "666646387432",
+  appId: "1:666646387432:web:55291b4ef09d4fdf09075d",
+  measurementId: "G-RGWTM46YWT"
+};
+const app = firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
+const db = firebase.firestore();
+const auth = firebase.auth();
+const appCheck = firebase.appCheck();
+appCheck.activate('6LfIAIEsAAAANfNDP8aBUUtVmqXaM08Hd-8RVPf', true);
 
-  <!-- TOAST -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 glass text-white px-6 py-3 rounded-full opacity-0 pointer-events-none z-50"></div>
-  <script>
-    // Premium Day Detection
-    function checkPremiumDay() {
-      var di = document.getElementById('date');
-      var notice = document.getElementById('premium-day-notice');
-      if (!di || !notice) return;
-      var d = new Date(di.value + 'T12:00:00');
-      var day = d.getDay();
-      if (day === 0 || day === 1) {
-        notice.style.display = 'block';
-        notice.innerHTML = '★ <strong>Premium Availability:</strong> Sundays &amp; Mondays are available at a competitive premium rate.';
-      } else { notice.style.display = 'none'; }
+// ============================================================
+// AUTH
+// ============================================================
+let currentUser = null;
+auth.onAuthStateChanged((user) => {
+  currentUser = user;
+  const loginBtn = document.getElementById('loginBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const userNameEl = document.getElementById('userName');
+  const bookingAuth = document.getElementById('bookingAuth');
+  const bookingForm = document.getElementById('bookingForm');
+  const adminPanel = document.getElementById('adminPanel');
+  if (user) {
+    loginBtn.classList.add('hidden');
+    logoutBtn.classList.remove('hidden');
+    userNameEl.classList.remove('hidden');
+    userNameEl.textContent = (user.displayName || user.email || '').split(' ')[0];
+    bookingAuth.classList.add('hidden');
+    bookingForm.classList.remove('hidden');
+    document.getElementById('bkName').value = user.displayName || '';
+    if (adminPanel) {
+      if (user.uid === ADMIN_UID) { adminPanel.classList.remove('hidden'); loadAdminBookings(); }
+      else { adminPanel.classList.add('hidden'); }
     }
-    document.addEventListener('DOMContentLoaded', function() {
-      var di = document.getElementById('date');
-      if (di) di.addEventListener('change', checkPremiumDay);
-    });
-    // VIP Waitlist
-    function handleWaitlist(e) {
-      e.preventDefault();
-      var form = e.target;
-      var confirm = document.getElementById('waitlist-confirm');
-      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function(r) { if (r.ok) { form.style.display = 'none'; if (confirm) confirm.style.display = 'block'; } })
-        .catch(function() { if (confirm) confirm.style.display = 'block'; });
-    }
-  </script>
-  <script>
-    // ============================================================
-    // FIREBASE AUTH + FIRESTORE BOOKING SYSTEM
-    // ============================================================
-    const ADMIN_EMAIL = 'emilyplbe@gmail.com';
-    let currentUser = null;
+  } else {
+    loginBtn.classList.remove('hidden');
+    logoutBtn.classList.add('hidden');
+    userNameEl.classList.add('hidden');
+    bookingAuth.classList.remove('hidden');
+    bookingForm.classList.add('hidden');
+    if (adminPanel) adminPanel.classList.add('hidden');
+  }
+});
+function signInWithGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).catch((err) => showToast('Sign-in failed: ' + err.message));
+}
+function signOut() { auth.signOut(); }
+</script>
+<script>
+// ============================================================
+// BOOKING
+// ============================================================
+async function submitBooking(event) {
+  event.preventDefault();
+  if (!currentUser) { showToast('Please sign in first.'); return; }
+  const booking = {
+    userId: currentUser.uid,
+    userEmail: currentUser.email,
+    name: document.getElementById('bkName').value,
+    service: document.getElementById('bkService').value,
+    date: document.getElementById('bkDate').value,
+    time: document.getElementById('bkTime').value,
+    notes: document.getElementById('bkNotes').value,
+    status: 'pending',
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  };
+  try {
+    await db.collection('bookings').add(booking);
+    showToast('&#10024; Appointment requested! Emily will confirm shortly.');
+    event.target.reset();
+    document.getElementById('bkName').value = currentUser.displayName || '';
+    if (typeof gtag !== 'undefined') gtag('event','booking_request',{service: booking.service});
+  } catch(err) { showToast('Error: ' + err.message); }
+}
 
-    auth.onAuthStateChanged((user) => {
-      currentUser = user;
-      const loginBtn = document.getElementById('loginBtn');
-      const logoutBtn = document.getElementById('logoutBtn');
-      const userName = document.getElementById('userName');
-      const bookingAuth = document.getElementById('bookingAuth');
-      const bookingForm = document.getElementById('bookingForm');
+// ============================================================
+// SQUARE PAYMENT
+// ============================================================
+let squareCard = null;
+let squarePayments = null;
 
-      if (user) {
-        loginBtn.classList.add('hidden');
-        logoutBtn.classList.remove('hidden');
-        userName.classList.remove('hidden');
-        userName.textContent = user.displayName || user.email;
-        bookingAuth.classList.add('hidden');
-        bookingForm.classList.remove('hidden');
-        // Show admin panel if admin
-        if (user.email === ADMIN_EMAIL) {
-          document.getElementById('adminPanel').classList.remove('hidden');
-          loadAdminBookings();
-        }
-      } else {
-        loginBtn.classList.remove('hidden');
-        logoutBtn.classList.add('hidden');
-        userName.classList.add('hidden');
-        bookingAuth.classList.remove('hidden');
-        bookingForm.classList.add('hidden');
-        document.getElementById('adminPanel').classList.add('hidden');
+async function initSquare() {
+  if (!window.Square) { console.warn('Square SDK not loaded'); return; }
+  if (SQUARE_APP_ID.includes('REPLACE')) { console.log('Square: add your Sandbox credentials'); return; }
+  try {
+    squarePayments = window.Square.payments(SQUARE_APP_ID, SQUARE_LOCATION_ID);
+    squareCard = await squarePayments.card({
+      style: {
+        '.input-container': { borderColor: '#8b5cf6', borderRadius: '12px' },
+        '.input-container.is-focus': { borderColor: '#2dd4bf' },
+        '.input-container.is-error': { borderColor: '#ef4444' },
+        '.message-text': { color: '#9ca3af' },
+        '.message-icon': { color: '#9ca3af' },
+        input: { color: '#e2e8f0', fontFamily: 'Inter, sans-serif' },
+        'input::placeholder': { color: '#6b7280' }
       }
     });
-
-    function signInWithGoogle() {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider).catch(err => showToast('Sign in failed: ' + err.message));
+    await squareCard.attach('#square-card-container');
+    if (ENV === 'sandbox') {
+      document.getElementById('sandbox-helper').style.display = 'block';
+    } else {
+      const helper = document.getElementById('sandbox-helper');
+      if (helper) helper.remove();
     }
+  } catch(err) { console.error('Square init error:', err); }
+}
 
-    function signOut() {
-      auth.signOut();
+async function handleSquarePayment() {
+  const statusEl = document.getElementById('square-status-msg');
+  const payBtn = document.getElementById('square-pay-btn');
+  if (!squareCard) { statusEl.textContent = 'Payment system initialising — please wait.'; return; }
+  if (!currentUser) { statusEl.textContent = 'Please sign in first.'; return; }
+  statusEl.textContent = '';
+  payBtn.disabled = true;
+  payBtn.textContent = 'Processing...';
+  try {
+    const result = await squareCard.tokenize();
+    if (result.status !== 'OK') {
+      statusEl.textContent = result.errors ? result.errors.map(e => e.message).join(', ') : 'Card error.';
+      payBtn.disabled = false; payBtn.textContent = 'Pay $25 Deposit & Request Appointment';
+      return;
     }
-
-    async function submitBooking(e) {
-      e.preventDefault();
-      if (!currentUser) { showToast('Please sign in first.'); return; }
-      const service = document.getElementById('service').value;
-      const location = document.getElementById('location').value;
-      const date = document.getElementById('date').value;
-      const time = document.getElementById('time').value;
-      const notes = document.getElementById('notes').value;
-      try {
-        await db.collection('bookings').add({
-          uid: currentUser.uid,
-          name: currentUser.displayName || currentUser.email,
-          email: currentUser.email,
-          service, location, date, time, notes,
-          status: 'pending',
-          createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        showToast('Booking requested! Emily will confirm within 24 hours. ✨');
-        e.target.reset();
-        document.getElementById('premium-day-notice').style.display = 'none';
-      } catch(err) {
-        showToast('Error: ' + err.message);
-      }
+    const verifyResult = await squarePayments.verifyBuyer(result.token, {
+      intent: 'CHARGE',
+      amount: '25.00',
+      currencyCode: 'CAD',
+      countryCode: 'CA',
+      billingContact: { givenName: currentUser.displayName || 'Client', email: currentUser.email }
+    });
+    const response = await fetch('/api/payment', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        sourceId: result.token,
+        verificationToken: verifyResult ? verifyResult.token : null,
+        amount: 2500,
+        currency: 'CAD',
+        note: 'Deposit - ' + (document.getElementById('bkService').value || 'Appointment')
+      })
+    });
+    const data = await response.json();
+    if (data.success) {
+      document.querySelector('.glass-teal .flex').style.display='none';
+      document.getElementById('square-card-container').style.display='none';
+      document.getElementById('square-status-msg').style.display='none';
+      document.getElementById('square-pay-btn').style.display='none';
+      document.getElementById('sandbox-helper').style.display='none';
+      document.getElementById('square-success-panel').classList.remove('hidden');
+      showToast('&#10024; Deposit Confirmed! Check your email for your Consultation Guide.');
+      submitBooking({preventDefault:()=>{},target:{reset:()=>{}},__fromSquare:true});
+    } else {
+      statusEl.textContent = data.error || 'Payment failed. Please try again.';
+      payBtn.disabled = false; payBtn.textContent = 'Pay $25 Deposit & Request Appointment';
     }
-
-    // ============================================================
-    // ADMIN - BOOKING MANAGEMENT
-    // ============================================================
-    async function loadAdminBookings() {
-      const snap = await db.collection('bookings').orderBy('date', 'asc').get();
-      const tbody = document.getElementById('adminTableBody');
-      if (!tbody) return;
-      tbody.innerHTML = '';
-      if (snap.empty) {
-        tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-gray-400">No bookings yet.</td></tr>';
-        return;
-      }
-      snap.forEach(doc => {
-        const b = doc.data();
-        const statusColor = b.status === 'confirmed' ? 'text-green-400' : b.status === 'cancelled' ? 'text-red-400' : 'text-yellow-400';
-        const row = `<tr class="border-t border-gray-700 hover:bg-gray-700/30 transition-colors">
-          <td class="px-6 py-4 text-white text-sm">${b.name || b.email}</td>
-          <td class="px-6 py-4 text-gray-300 text-sm">${b.service}</td>
-          <td class="px-6 py-4 text-gray-300 text-sm">${b.date}</td>
-          <td class="px-6 py-4 text-gray-300 text-sm">${b.time}</td>
-          <td class="px-6 py-4 text-gray-300 text-sm">${b.location || 'N/A'}</td>
-          <td class="px-6 py-4 text-sm">
-            <select onchange="updateStatus('${doc.id}', this.value)" class="bg-transparent ${statusColor} text-sm border border-gray-600 rounded px-2 py-1">
-              <option value="pending" ${b.status==='pending'?'selected':''}>Pending</option>
-              <option value="confirmed" ${b.status==='confirmed'?'selected':''}>Confirmed</option>
-              <option value="cancelled" ${b.status==='cancelled'?'selected':''}>Cancelled</option>
-            </select>
-          </td>
-        </tr>`;
-        tbody.insertAdjacentHTML('beforeend', row);
-      });
+  } catch(err) {
+    statusEl.textContent = 'Payment error: ' + err.message;
+    payBtn.disabled = false; payBtn.textContent = 'Pay $25 Deposit & Request Appointment';
+  }
+}
+</script>
+<script>
+// ============================================================
+// CONTACT FORM (Formspree via /api/contact proxy)
+// ============================================================
+async function submitContact(event) {
+  event.preventDefault();
+  const form = event.target;
+  const statusEl = document.getElementById('cf-status');
+  const btn = form.querySelector('button[type="submit"]');
+  statusEl.textContent = 'Sending...';
+  statusEl.className = 'text-sm min-h-5 text-center text-gray-400';
+  btn.disabled = true;
+  try {
+    const data = new FormData(form);
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(Object.fromEntries(data))
+    });
+    if (response.ok) {
+      statusEl.textContent = '&#10024; Message sent! Emily will be in touch soon.';
+      statusEl.className = 'text-sm min-h-5 text-center text-teal';
+      form.reset();
+    } else {
+      throw new Error('Server error');
     }
+  } catch(err) {
+    statusEl.textContent = 'Something went wrong. Please call (613) 929-8711.';
+    statusEl.className = 'text-sm min-h-5 text-center text-red-400';
+  } finally { btn.disabled = false; }
+}
 
-    async function updateStatus(docId, status) {
-      await db.collection('bookings').doc(docId).update({ status });
-      showToast('Status updated to ' + status);
+// ============================================================
+// MAILCHIMP (Inner Circle)
+// ============================================================
+async function submitMailchimp(event) {
+  event.preventDefault();
+  const email = document.getElementById('mc-email').value;
+  const statusEl = document.getElementById('mc-status');
+  const btn = document.getElementById('mc-submit');
+  statusEl.textContent = 'Joining...';
+  btn.disabled = true;
+  try {
+    const response = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({email})
+    });
+    const data = await response.json();
+    if (response.ok || data.title === 'Member Exists') {
+      statusEl.textContent = '&#10024; Welcome to the Inner Circle!';
+      document.getElementById('mc-email').value = '';
+    } else {
+      statusEl.textContent = data.detail || 'Something went wrong. Try again.';
     }
+  } catch(err) {
+    statusEl.textContent = 'Error: ' + err.message;
+  } finally { btn.disabled = false; }
+}
 
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.style.opacity = '1';
-      toast.style.pointerEvents = 'auto';
-      setTimeout(() => { toast.style.opacity = '0'; toast.style.pointerEvents = 'none'; }, 4000);
-    }
-  </script>
+// ============================================================
+// ADMIN
+// ============================================================
+async function loadAdminBookings() {
+  try {
+    const snap = await db.collection('bookings').orderBy('date','asc').get();
+    const tbody = document.getElementById('adminTableBody');
+    if (!tbody) return;
+    tbody.innerHTML = '';
+    if (snap.empty) { tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-gray-400 text-sm">No bookings yet.</td></tr>'; return; }
+    snap.forEach(doc => {
+      const b = doc.data();
+      const sc = b.status==='confirmed'?'text-green-400':b.status==='cancelled'?'text-red-400':'text-yellow-400';
+      tbody.insertAdjacentHTML('beforeend',`<tr class="border-t border-gray-700 hover:bg-gray-700/30 transition-colors">
+        <td class="px-6 py-4 text-sm">${b.date||'-'} ${b.time||''}</td>
+        <td class="px-6 py-4 text-sm"><div>${b.name||'-'}</div><div class="text-gray-400 text-xs">${b.userEmail||''}</div></td>
+        <td class="px-6 py-4 text-sm">${b.service||'-'}</td>
+        <td class="px-6 py-4 text-sm font-semibold ${sc} capitalize">${b.status||'pending'}</td>
+        <td class="px-6 py-4 text-xs text-gray-400">${b.notes||''}</td>
+        <td class="px-6 py-4"><div class="flex gap-2">
+          <button onclick="updateBookingStatus('${doc.id}','confirmed')" class="px-3 py-1 bg-green-600 hover:bg-green-500 text-white text-xs rounded-full">Confirm</button>
+          <button onclick="updateBookingStatus('${doc.id}','cancelled')" class="px-3 py-1 bg-red-700 hover:bg-red-600 text-white text-xs rounded-full">Cancel</button>
+        </div></td>
+      </tr>`);
+    });
+  } catch(err) { showToast('Admin load error: ' + err.message); }
+}
+async function updateBookingStatus(docId, status) {
+  try { await db.collection('bookings').doc(docId).update({status}); showToast('Booking ' + status + '!'); loadAdminBookings(); }
+  catch(err) { showToast('Update error: ' + err.message); }
+}
 
+// ============================================================
+// TOAST
+// ============================================================
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = msg;
+  toast.style.opacity = '1';
+  toast.style.pointerEvents = 'auto';
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.pointerEvents = 'none'; }, 3500);
+}
+</script>
+<script>
+// ============================================================
+// SERVICE WORKER + FCM
+// ============================================================
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then((reg) => {
+    console.log('Service Worker registered:', reg.scope);
+    try {
+      const messaging = firebase.messaging();
+      messaging.getToken({
+        vapidKey: 'BEdR4H6VZ7nEYMoOZT2cNSTG5MNSFSZYl_tagyVxf4Qx8IjBWLYg6Ie8PQmoE9VyOOeyv3vvZR44Cv1Cl2IV-CU',
+        serviceWorkerRegistration: reg
+      }).then((token) => { if (token) console.log('FCM Token:', token); }).catch(() => {});
+    } catch(e) {}
+  }).catch((err) => console.warn('SW registration failed:', err));
+}
+
+// ============================================================
+// INIT ON LOAD
+// ============================================================
+window.addEventListener('DOMContentLoaded', () => {
+  initSquare();
+  const bkDate = document.getElementById('bkDate');
+  if (bkDate) { const today = new Date(); bkDate.min = today.toISOString().split('T')[0]; }
+});
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "The Perfect Look By Emily",
+  "description": "Luxury mobile hair salon serving Amherstview and Kingston, Ontario. Precision cuts, colour, and treatments in a Private Luxury Studio.",
+  "url": "https://theperfectlookbyemily.ca",
+  "telephone": "+16139298711",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Amherstview",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.234,
+    "longitude": -76.733
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}
+  ],
+  "priceRange": "$$",
+  "servesCuisine": "Hair Salon Services",
+  "sameAs": ["https://www.instagram.com/theperfectlookbyemily"]
+}
+</script>
 </body>
 </html>
