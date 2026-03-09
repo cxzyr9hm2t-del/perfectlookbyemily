@@ -42,6 +42,10 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
 .sq-card-wrapper{border:1px solid #8b5cf6!important;border-radius:0.75rem!important;background:rgba(139,92,246,0.06)!important;padding:14px!important;transition:border-color 0.2s!important}
 .sq-card-wrapper:focus-within{border-color:#2dd4bf!important;box-shadow:0 0 0 2px rgba(45,212,191,0.25)!important}
 #toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:9999;padding:0.875rem 2rem;border-radius:2rem;background:linear-gradient(135deg,rgba(139,92,246,0.9),rgba(45,212,191,0.85));color:#fff;font-size:0.95rem;font-weight:500;pointer-events:none;opacity:0;transition:opacity 0.3s;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);white-space:nowrap;max-width:90vw;text-align:center}
+
+.gradient-btn:active{opacity:0.75;transform:translateY(0)}
+.booking-cta-hover:hover{box-shadow:0 0 0 3px rgba(45,212,191,0.35),0 8px 32px rgba(45,212,191,0.18);border-color:rgba(45,212,191,0.6)!important}
+.teal-hover:hover{color:#2dd4bf;border-color:rgba(45,212,191,0.5)!important;box-shadow:0 4px 20px rgba(45,212,191,0.12)}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0f0a1a}::-webkit-scrollbar-thumb{background:rgba(139,92,246,0.5);border-radius:3px}
 </style>
 </head>
@@ -76,15 +80,15 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
     <p class="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">25+ years of luxury salon expertise, brought to your neighbourhood. Precision cuts, stunning colour, and a personalized experience in a <strong class="text-lavender">Private Luxury Studio</strong>.</p>
     <p class="text-sm text-gray-500 mb-10 tracking-wide">Serving Amherstview, Kingston &amp; surrounding communities</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#book" class="gradient-btn px-8 py-4 rounded-full text-white font-semibold text-lg shadow-xl">Book Your Appointment</a>
+      <a href="#book" class="gradient-btn booking-cta-hover px-8 py-4 rounded-full text-white font-semibold text-lg shadow-xl">Book Your Appointment</a>
       <a href="#services" class="glass border border-orchid/30 px-8 py-4 rounded-full text-gray-200 font-semibold text-lg hover:border-teal/50 transition-colors">View Services</a>
     </div>
   </div>
 </section>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- COMING SOON — Private Luxury Studio                        -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+  <!-- COMING SOON â Private Luxury Studio                        -->
+  <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
   <section id="coming-soon" class="py-20 px-4 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-r from-orchid/5 via-transparent to-teal/5 pointer-events-none"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
@@ -99,13 +103,13 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
           The <span class="gradient-text">Private Luxury Studio</span><br/>is Opening Soon
         </h2>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-          Emily is putting the finishing touches on her dedicated <strong class="text-lavender">Bespoke Home Suite</strong> — a beautifully designed, intimate space crafted exclusively for the elevated hair care experience you deserve. A true sanctuary where every detail has been curated with you in mind.
+          Emily is putting the finishing touches on her dedicated <strong class="text-lavender">Bespoke Home Suite</strong> â a beautifully designed, intimate space crafted exclusively for the elevated hair care experience you deserve. A true sanctuary where every detail has been curated with you in mind.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
           <div class="glass rounded-2xl p-5">
             <p class="text-3xl mb-2">&#10024;</p>
             <p class="text-white font-semibold text-sm mb-1">Fully Private</p>
-            <p class="text-gray-400 text-xs">Your own exclusive session — no waiting, no distractions</p>
+            <p class="text-gray-400 text-xs">Your own exclusive session â no waiting, no distractions</p>
           </div>
           <div class="glass rounded-2xl p-5">
             <p class="text-3xl mb-2">&#127775;</p>
@@ -138,6 +142,25 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#127775;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Children's Cut</h3><p class="text-gray-400 text-sm mb-4">Gentle, fun cuts for kids in a relaxed home setting.</p><p class="text-teal font-bold text-lg">from $30</p></div>
       <div class="service-card glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#128136;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Men's Cut</h3><p class="text-gray-400 text-sm mb-4">Clean, sharp cuts with attention to detail.</p><p class="text-teal font-bold text-lg">from $35</p></div>
       <div class="service-card glass-teal rounded-2xl p-7 relative overflow-hidden"><div class="absolute top-3 right-3 px-3 py-1 bg-teal/20 border border-teal/40 rounded-full text-teal text-xs font-semibold">Coming Soon</div><div class="w-12 h-12 rounded-xl bg-teal/15 flex items-center justify-center mb-4 text-2xl">&#127756;</div><h3 class="font-display text-xl text-white font-semibold mb-2">Aurora Studio</h3><p class="text-gray-400 text-sm mb-4">Emily's dedicated Private Luxury Studio space. An elevated bespoke experience.</p><p class="text-teal/60 font-semibold">Launching Soon</p></div>
+        <!-- New services — Gemini-generated, audited & injected -->
+        <div class="service-card glass rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#10024;</div>
+          <h3 class="font-display text-xl text-white font-semibold mb-2">Dimensional Balayage &amp; Colour Melts</h3>
+          <p class="text-gray-400 text-sm mb-4">Experience seamless, sun-kissed perfection with our trending 2026 balayage and dimensional colour melts in our Bespoke Home Suite.</p>
+          <p class="text-teal font-bold text-lg">from $140</p>
+        </div>
+        <div class="service-card glass rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#127807;</div>
+          <h3 class="font-display text-xl text-white font-semibold mb-2">Rejuvenating Luxury Head Spa</h3>
+          <p class="text-gray-400 text-sm mb-4">Relax deeply in our Private Luxury Studio with a restorative head spa, designed to nourish your scalp and elevate your well-being.</p>
+          <p class="text-teal font-bold text-lg">from $85</p>
+        </div>
+        <div class="service-card glass rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-orchid/15 flex items-center justify-center mb-4 text-2xl">&#9986;&#65039;</div>
+          <h3 class="font-display text-xl text-white font-semibold mb-2">Bespoke Textured Cuts</h3>
+          <p class="text-gray-400 text-sm mb-4">Discover your signature style with a modern textured cut crafted exclusively for you at our Private Luxury Studio in Amherstview.</p>
+          <p class="text-teal font-bold text-lg">from $70</p>
+        </div>
     </div>
   </div>
 </section>
@@ -147,7 +170,7 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       <div class="absolute top-0 right-0 w-64 h-64 bg-orchid/8 rounded-full blur-3xl pointer-events-none"></div>
       <p class="brand-signature text-orchid text-2xl mb-3">The Artist Behind the Chair</p>
       <h2 class="font-display text-4xl text-white font-bold mb-6">About Emily</h2>
-      <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-10">With over 25 years of experience, Emily has perfected the art of making clients feel extraordinary. Based in Amherstview, she brings the full luxury salon experience to your neighbourhood with personalized service, premium products, and a genuine love for her craft Ã¢ÂÂ all within her <span class="text-lavender font-semibold">Bespoke Home Suite</span>.</p>
+      <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-10">With over 25 years of experience, Emily has perfected the art of making clients feel extraordinary. Based in Amherstview, she brings the full luxury salon experience to your neighbourhood with personalized service, premium products, and a genuine love for her craft ÃÂ¢ÃÂÃÂ all within her <span class="text-lavender font-semibold">Bespoke Home Suite</span>.</p>
       <div class="grid grid-cols-3 gap-6 max-w-md mx-auto">
         <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">25+</p><p class="text-gray-400 text-xs mt-1">Years Experience</p></div>
         <div class="glass rounded-2xl py-6 px-4"><p class="gradient-text text-3xl font-bold font-display">500+</p><p class="text-gray-400 text-xs mt-1">Happy Clients</p></div>
@@ -157,9 +180,9 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
   </div>
 </section>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- GALLERY — WebP-ready placeholder grid                      -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+  <!-- GALLERY â WebP-ready placeholder grid                      -->
+  <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
   <section id="gallery" class="py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
@@ -168,7 +191,7 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
         <p class="text-gray-400 max-w-xl mx-auto">Precision colour, bespoke cuts, and transformations crafted with 25+ years of expertise.</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid">
-        <!-- Gallery item template — replace src with real WebP photos -->
+        <!-- Gallery item template â replace src with real WebP photos -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-orchid/8 border border-orchid/20 cursor-pointer hover:border-teal/40 transition-all duration-300">
           <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
             <p class="text-4xl mb-2">&#9986;&#65039;</p>
@@ -221,7 +244,7 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
           <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
             <p class="text-5xl mb-3">&#128248;</p>
             <p class="text-white font-semibold mb-1">Your Transformation Here</p>
-            <p class="text-gray-400 text-sm">Real client photos coming soon — follow us on Instagram for the latest looks</p>
+            <p class="text-gray-400 text-sm">Real client photos coming soon â follow us on Instagram for the latest looks</p>
             <p class="text-teal text-sm font-semibold mt-2">@theperfectlookbyemily</p>
           </div>
         </div>
@@ -272,14 +295,14 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       <div class="glass-teal rounded-2xl p-6">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-9 h-9 rounded-full bg-teal/20 flex items-center justify-center text-teal font-bold text-lg">$</div>
-          <div><p class="text-white font-semibold">Secure Your Appointment</p><p class="text-gray-400 text-xs">$25 deposit Ã¢ÂÂ applied to your service balance</p></div>
+          <div><p class="text-white font-semibold">Secure Your Appointment</p><p class="text-gray-400 text-xs">$25 deposit ÃÂ¢ÃÂÃÂ applied to your service balance</p></div>
         </div>
         <div id="square-card-container" class="mb-4"></div>
         <p id="square-status-msg" class="text-red-400 text-sm mb-3 min-h-5"></p>
         <button id="square-pay-btn" type="button" onclick="handleSquarePayment()" class="gradient-btn w-full py-3 rounded-xl text-white font-semibold shadow-lg">Pay $25 Deposit &amp; Request Appointment</button>
         <div id="sandbox-helper" class="mt-4 rounded-xl p-3 border border-yellow-500/30 bg-yellow-500/5">
-          <p class="text-yellow-400 text-xs font-semibold mb-1">&#129514; Sandbox Mode Ã¢ÂÂ Test Cards Only</p>
-          <p class="text-gray-400 text-xs">Visa: <code class="text-teal">4111 1111 1111 1111</code> &nbsp;ÃÂ·&nbsp; Exp: any future &nbsp;ÃÂ·&nbsp; CVV: any 3 digits &nbsp;ÃÂ·&nbsp; ZIP: 12345</p>
+          <p class="text-yellow-400 text-xs font-semibold mb-1">&#129514; Sandbox Mode ÃÂ¢ÃÂÃÂ Test Cards Only</p>
+          <p class="text-gray-400 text-xs">Visa: <code class="text-teal">4111 1111 1111 1111</code> &nbsp;ÃÂÃÂ·&nbsp; Exp: any future &nbsp;ÃÂÃÂ·&nbsp; CVV: any 3 digits &nbsp;ÃÂÃÂ·&nbsp; ZIP: 12345</p>
         </div>
       </div>
       <div id="square-success-panel" class="hidden glass-teal rounded-2xl p-8 text-center">
@@ -336,9 +359,9 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
       </div>
       <div class="flex flex-wrap items-center gap-4 justify-center">
         <a href="/privacy" class="hover:text-orchid transition-colors">Privacy Policy</a>
-        <span class="text-gray-700">ÃÂ·</span>
+        <span class="text-gray-700">ÃÂÃÂ·</span>
         <a href="/terms" class="hover:text-orchid transition-colors">Terms of Service</a>
-        <span class="text-gray-700">ÃÂ·</span>
+        <span class="text-gray-700">ÃÂÃÂ·</span>
         <a href="tel:+16139298711" class="hover:text-teal transition-colors">(613) 929-8711</a>
       </div>
       <div class="text-center md:text-right">
@@ -505,7 +528,7 @@ async function initSquare() {
 async function handleSquarePayment() {
   const statusEl = document.getElementById('square-status-msg');
   const payBtn = document.getElementById('square-pay-btn');
-  if (!squareCard) { statusEl.textContent = 'Payment system initialising Ã¢ÂÂ please wait.'; return; }
+  if (!squareCard) { statusEl.textContent = 'Payment system initialising ÃÂ¢ÃÂÃÂ please wait.'; return; }
   if (!currentUser) { statusEl.textContent = 'Please sign in first.'; return; }
   statusEl.textContent = '';
   payBtn.disabled = true;
@@ -728,12 +751,12 @@ window.addEventListener('DOMContentLoaded', () => {
 <!-- Square Integration -->
 <script src="/js/square-integration.js" defer></script>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- MANYCHAT WIDGET — Chat widget scaffold                     -->
+  <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+  <!-- MANYCHAT WIDGET â Chat widget scaffold                     -->
   <!-- Replace data-page-id with your ManyChat Page ID           -->
-  <!-- To activate: Log in to ManyChat → Settings → Chat Widget  -->
+  <!-- To activate: Log in to ManyChat â Settings â Chat Widget  -->
   <!-- Copy your Page ID and replace REPLACE_WITH_MANYCHAT_PAGE_ID below -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
   <!--
   <div id="fb-root"></div>
   <script>
@@ -752,8 +775,8 @@ window.addEventListener('DOMContentLoaded', () => {
     attribution="biz_inbox"
     page_id="REPLACE_WITH_MANYCHAT_PAGE_ID"
     theme_color="#8b5cf6"
-    logged_in_greeting="Hi! Ready to book your appointment with Emily? 💜"
-    logged_out_greeting="Hi! Book your appointment or ask Emily anything. 💜">
+    logged_in_greeting="Hi! Ready to book your appointment with Emily? ð"
+    logged_out_greeting="Hi! Book your appointment or ask Emily anything. ð">
   </div>
   -->
 </body>
