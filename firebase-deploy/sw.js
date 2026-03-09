@@ -1,6 +1,6 @@
 // ================================================================
 // THE PERFECT LOOK BY EMILY â Service Worker (sw.js)
-// v4 — CORS fix + sitemap + robots deploy
+// v5 — full deploy: new service cards, CSS hover, gallery, coming-soon, indexing script
 // Handles Firebase Cloud Messaging push notifications
 // ================================================================
 'use strict';
