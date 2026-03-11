@@ -1,25 +1,58 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-    content: [
-          './pages/**/*.{js,ts,jsx,tsx,mdx}',
+  content: [
+      './pages/**/*.{js,ts,jsx,tsx,mdx}',
           './components/**/*.{js,ts,jsx,tsx,mdx}',
-          './app/**/*.{js,ts,jsx,tsx,mdx}',
-        ],
-    theme: {
-          extend: {
-                  colors: {
-                            midnight: '#0f0a1a',
-                            orchid: '#8b5cf6',
-                            teal: '#14b8a6',
-                  },
-                  fontFamily: {
-                            serif: ['var(--font-playfair)', 'serif'],
-                            sans: ['var(--font-raleway)', 'sans-serif'],
-                  },
-          },
-    },
-    plugins: [],
-};
+              './app/**/*.{js,ts,jsx,tsx,mdx}',
+                ],
+                  theme: {
+                      extend: {
+                            colors: {
+                                    charcoal: '#1e1e2e',
+                                            purple: {
+                                                      DEFAULT: '#8b3cf7',
+                                                                light: '#a855f7',
+                                                                          dark: '#6d28d9',
+                                                                                  },
+                                                                                          teal: {
+                                                                                                    DEFAULT: '#0d9488',
+                                                                                                              light: '#14b8a6',
+                                                                                                                      },
+                                                                                                                              'off-white': '#f0eaf8',
+                                                                                                                                      muted: '#a9a3b8',
+                                                                                                                                              surface: '#27273a',
+                                                                                                                                                      border: '#3b3a52',
+                                                                                                                                                            },
+                                                                                                                                                                  fontFamily: {
+                                                                                                                                                                          cinzel: ['var(--font-cinzel)', 'Cinzel', 'serif'],
+                                                                                                                                                                                  cormorant: ['var(--font-cormorant)', 'Cormorant Garamond', 'serif'],
+                                                                                                                                                                                          sans: ['var(--font-raleway)', 'sans-serif'],
+                                                                                                                                                                                                },
+                                                                                                                                                                                                      boxShadow: {
+                                                                                                                                                                                                              'purple-sm': '0 0 8px 0 rgba(139,60,247,0.40)',
+                                                                                                                                                                                                                      'purple-md': '0 0 20px 2px rgba(139,60,247,0.35)',
+                                                                                                                                                                                                                              'purple-lg': '0 0 40px 6px rgba(139,60,247,0.30)',
+                                                                                                                                                                                                                                      'teal-sm': '0 0 8px 0 rgba(13,148,136,0.45)',
+                                                                                                                                                                                                                                              'teal-md': '0 0 20px 2px rgba(13,148,136,0.35)',
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                          keyframes: {
+                                                                                                                                                                                                                                                                  float: {
+                                                                                                                                                                                                                                                                            '0%, 100%': { transform: 'translate(0,0)' },
+                                                                                                                                                                                                                                                                                      '50%': { transform: 'translate(20px,30px)' },
+                                                                                                                                                                                                                                                                                              },
+                                                                                                                                                                                                                                                                                                      'pulse-glow': {
+                                                                                                                                                                                                                                                                                                                '0%, 100%': { boxShadow: '0 0 10px 2px rgba(139,60,247,0.30)' },
+                                                                                                                                                                                                                                                                                                                          '50%': { boxShadow: '0 0 24px 6px rgba(139,60,247,0.55)' },
+                                                                                                                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                                                              animation: {
+                                                                                                                                                                                                                                                                                                                                                      float: 'float 10s ease-in-out infinite',
+                                                                                                                                                                                                                                                                                                                                                              'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+                                                                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                                                                                                                                                            plugins: [],
+                                                                                                                                                                                                                                                                                                                                                                            };
 
-export default config;
+                                                                                                                                                                                                                                                                                                                                                                            export default config;

@@ -1,125 +1,46 @@
 import React from 'react';
 
 export default function BookingSection() {
-      const sectionStyle: React.CSSProperties = {
-              padding: '100px 32px',
-              textAlign: 'center',
-              background: 'linear-gradient(135deg, rgba(139,92,246,0.1), rgba(20,184,166,0.05))',
-      };
-
-  const innerStyle: React.CSSProperties = {
-          maxWidth: '800px',
-          margin: '0 auto',
-  };
-
-  const labelStyle: React.CSSProperties = {
-          fontSize: '12px',
-          letterSpacing: '4px',
-          color: '#14b8a6',
-          textTransform: 'uppercase',
-          marginBottom: '16px',
-  };
-
-  const titleStyle: React.CSSProperties = {
-          fontSize: 'clamp(36px, 5vw, 64px)',
-          fontWeight: 800,
-          color: '#fff',
-          marginBottom: '24px',
-  };
-
-  const descStyle: React.CSSProperties = {
-          color: 'rgba(255,255,255,0.6)',
-          fontSize: '18px',
-          lineHeight: 1.7,
-          marginBottom: '48px',
-  };
-
-  const btnRowStyle: React.CSSProperties = {
-          display: 'flex',
-          gap: '16px',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          marginBottom: '48px',
-  };
-
-  const primaryBtnStyle: React.CSSProperties = {
-          padding: '20px 48px',
-          borderRadius: '50px',
-          background: 'linear-gradient(135deg, #8b5cf6, #14b8a6)',
-          color: '#fff',
-          fontWeight: 700,
-          textDecoration: 'none',
-          fontSize: '18px',
-  };
-
-  const secondaryBtnStyle: React.CSSProperties = {
-          padding: '20px 48px',
-          borderRadius: '50px',
-          border: '2px solid rgba(139,92,246,0.5)',
-          color: '#fff',
-          fontWeight: 700,
-          textDecoration: 'none',
-          fontSize: '18px',
-  };
-
-  const auroraCardStyle: React.CSSProperties = {
-          background: 'rgba(139,92,246,0.1)',
-          border: '1px solid rgba(139,92,246,0.3)',
-          borderRadius: '24px',
-          padding: '32px',
-          backdropFilter: 'blur(20px)',
-  };
-
-  const auroraTitleStyle: React.CSSProperties = {
-          fontSize: '24px',
-          fontWeight: 700,
-          color: '#8b5cf6',
-          marginBottom: '16px',
-  };
-
-  const auroraDescStyle: React.CSSProperties = {
-          color: 'rgba(255,255,255,0.7)',
-          fontSize: '16px',
-          lineHeight: 1.7,
-  };
-
-  const comingSoonStyle: React.CSSProperties = {
-          marginTop: '16px',
-          display: 'inline-block',
-          padding: '8px 24px',
-          borderRadius: '20px',
-          background: 'rgba(139,92,246,0.2)',
-          color: '#8b5cf6',
-          fontSize: '14px',
-          fontWeight: 700,
-  };
-
-  return React.createElement('section', { id: 'book', style: sectionStyle },
-                                 React.createElement('div', { style: innerStyle },
-                                                           React.createElement('div', { style: labelStyle }, 'BOOK NOW'),
-                                                           React.createElement('h2', { style: titleStyle }, 'Begin Your Transformation'),
-                                                           React.createElement('p', { style: descStyle },
-                                                                                       'Book your private consultation at the Amherstview studio. Tue-Sat regular hours. Premium Sun and Mon available.'
-                                                                                     ),
-                                                           React.createElement('div', { style: btnRowStyle },
-                                                                                       React.createElement('a', {
-                                                                                                     href: 'https://square.site/book/EMLYSALON',
-                                                                                                     target: '_blank',
-                                                                                                     rel: 'noopener noreferrer',
-                                                                                                     style: primaryBtnStyle,
-                                                                                       }, 'BOOK ONLINE'),
-                                                                                       React.createElement('a', {
-                                                                                                     href: 'tel:6135839977',
-                                                                                                     style: secondaryBtnStyle,
-                                                                                       }, '(613) 583-9977')
-                                                                                     ),
-                                                           React.createElement('div', { style: auroraCardStyle },
-                                                                                       React.createElement('h3', { style: auroraTitleStyle }, 'The Aurora Garage Studio'),
-                                                                                       React.createElement('p', { style: auroraDescStyle },
-                                                                                                                     'Coming Soon: A dedicated luxury private studio for the ultimate experience.'
-                                                                                                                   ),
-                                                                                       React.createElement('div', { style: comingSoonStyle }, 'COMING SOON 2025')
-                                                                                     )
-                                                         )
-                               );
-}
+  return (
+      <section
+            id="book"
+                  className="py-24 px-6 text-center"
+                        style={{ background: 'linear-gradient(135deg, rgba(139,60,247,0.08) 0%, rgba(13,148,136,0.04) 100%)' }}
+                            >
+                                  <div className="max-w-2xl mx-auto">
+                                          <p className="text-xs tracking-widest uppercase mb-4 font-semibold" style={{ color: '#14b8a6' }}>
+                                                    Book Now
+                                                            </p>
+                                                                    <h2 className="font-black mb-6" style={{ fontSize: 'clamp(32px,5vw,56px)', color: '#f0eaf8' }}>
+                                                                              Begin Your Transformation
+                                                                                      </h2>
+                                                                                              <hr className="divider-brand" />
+                                                                                                      <p className="text-lg leading-relaxed mt-6 mb-10" style={{ color: '#a9a3b8' }}>
+                                                                                                                Book your appointment at the Amherstview studio or arrange a mobile visit.
+                                                                                                                          Tuesday through Saturday regular hours. Sunday and Monday available at a competitive premium fee.
+                                                                                                                                  </p>
+                                                                                                                                          <div className="flex flex-wrap gap-4 justify-center mb-10">
+                                                                                                                                                    <a href="https://square.site/book/EMLYSALON" target="_blank" rel="noopener noreferrer" className="btn-cta">
+                                                                                                                                                                Book Online
+                                                                                                                                                                          </a>
+                                                                                                                                                                                    <a href="tel:6139298711" className="btn-outline">
+                                                                                                                                                                                                (613) 929-8711
+                                                                                                                                                                                                          </a>
+                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                          <div className="glass-purple rounded-2xl p-8 animate-pulse-glow">
+                                                                                                                                                                                                                                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5" style={{ background: 'rgba(139,60,247,0.15)', border: '1px solid rgba(139,60,247,0.30)' }}>
+                                                                                                                                                                                                                                                <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#8b3cf7' }} />
+                                                                                                                                                                                                                                                            <span className="text-xs tracking-widest uppercase font-semibold" style={{ color: '#a855f7' }}>Coming Soon</span>
+                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                <h3 className="text-xl font-bold mb-3" style={{ color: '#f0eaf8' }}>Dedicated Home Salon</h3>
+                                                                                                                                                                                                                                                                                          <p className="text-base leading-relaxed max-w-md mx-auto" style={{ color: '#a9a3b8' }}>
+                                                                                                                                                                                                                                                                                                      Emily is crafting a bespoke private home salon — an intimate, beautifully designed space built exclusively for the elevated hair-care experience you deserve.
+                                                                                                                                                                                                                                                                                                                </p>
+                                                                                                                                                                                                                                                                                                                          <p className="text-xs tracking-widest uppercase mt-4 font-semibold" style={{ color: '#8b3cf7' }}>
+                                                                                                                                                                                                                                                                                                                                      Stay Tuned
+                                                                                                                                                                                                                                                                                                                                                </p>
+                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                                  </section>
+                                                                                                                                                                                                                                                                                                                                                                    );
+                                                                                                                                                                                                                                                                                                                                                                    }

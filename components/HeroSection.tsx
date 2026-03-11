@@ -1,42 +1,61 @@
 import React from 'react';
 
 export default function HeroSection() {
-      return React.createElement('div', {
-              id: 'about',
-              style: {
-                        minHeight: '100vh', display: 'flex', flexDirection: 'column',
-                        alignItems: 'center', justifyContent: 'center', textAlign: 'center',
-                        padding: '120px 32px 80px',
-                        background: 'radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.15) 0%, rgba(20,184,166,0.05) 50%, transparent 70%)'
-              }
-      },
-                                     React.createElement('p', {
-                                               style: { fontSize: '12px', letterSpacing: '4px', color: '#14b8a6', textTransform: 'uppercase', marginBottom: '24px' }
-                                     }, 'ODESSA, ONTARIO — PRIVATE STUDIO'),
-                                     React.createElement('h1', {
-                                               style: {
-                                                           fontSize: 'clamp(48px, 8vw, 96px)', fontWeight: 800, lineHeight: 1.05,
-                                                           background: 'linear-gradient(135deg, #fff 30%, #8b5cf6 60%, #14b8a6 100%)',
-                                                           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                                                           backgroundClip: 'text', marginBottom: '24px', marginTop: 0
-                                               }
-                                     }, 'The Perfect Look By Emily'),
-                                     React.createElement('p', {
-                                               style: { fontSize: '20px', color: 'rgba(255,255,255,0.65)', maxWidth: '560px', lineHeight: 1.7, marginBottom: '48px' }
-                                     }, 'Where precision artistry meets luxury wellness — your private sanctuary for hair transformation'),
-                                     React.createElement('div', {
-                                               style: { display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }
-                                     },
-                                                               React.createElement('a', {
-                                                                           href: 'https://square.site/book/EMLYSALON',
-                                                                           target: '_blank',
-                                                                           rel: 'noopener noreferrer',
-                                                                           style: { padding: '16px 40px', borderRadius: '50px', background: 'linear-gradient(135deg, #8b5cf6, #14b8a6)', color: '#fff', fontWeight: 700, textDecoration: 'none', fontSize: '16px' }
-                                                               }, 'BOOK YOUR EXPERIENCE'),
-                                                               React.createElement('a', {
-                                                                           href: '#services',
-                                                                           style: { padding: '16px 40px', borderRadius: '50px', border: '2px solid rgba(139,92,246,0.5)', color: '#fff', fontWeight: 700, textDecoration: 'none', fontSize: '16px' }
-                                                               }, 'EXPLORE SERVICES')
-                                                             )
-                                   );
-}
+  return (
+      <section
+            id="about"
+                  className="relative min-h-screen flex flex-col items-center justify-center text-center px-8 pt-32 pb-20"
+                        style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(139,60,247,0.18) 0%, transparent 100%)' }}
+                            >
+                                  <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+                                          <div className="animate-float absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[100px]" style={{ background: 'rgba(139,60,247,0.10)' }} />
+                                                  <div className="animate-float absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full blur-[80px]" style={{ background: 'rgba(13,148,136,0.08)', animationDelay: '5s' }} />
+                                                        </div>
+
+                                                              <div className="relative mb-8 inline-flex items-center gap-3 px-6 py-3 rounded-full glass-purple animate-pulse-glow">
+                                                                      <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#8b3cf7' }} />
+                                                                              <span className="text-xs tracking-widest uppercase font-semibold" style={{ color: '#a855f7' }}>
+                                                                                        Coming Soon — Dedicated Home Salon
+                                                                                                </span>
+                                                                                                        <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#8b3cf7' }} />
+                                                                                                              </div>
+
+                                                                                                                    <p className="text-xs tracking-widest uppercase mb-6 font-semibold" style={{ color: '#14b8a6' }}>
+                                                                                                                            Amherstview, Ontario — Premium Chair Studio
+                                                                                                                                  </p>
+
+                                                                                                                                        <h1
+                                                                                                                                                className="font-black leading-tight mb-6"
+                                                                                                                                                        style={{
+                                                                                                                                                                  fontSize: 'clamp(44px, 7.5vw, 92px)',
+                                                                                                                                                                            background: 'linear-gradient(135deg, #f0eaf8 25%, #8b3cf7 65%, #0d9488 100%)',
+                                                                                                                                                                                      WebkitBackgroundClip: 'text',
+                                                                                                                                                                                                WebkitTextFillColor: 'transparent',
+                                                                                                                                                                                                          backgroundClip: 'text',
+                                                                                                                                                                                                                  }}
+                                                                                                                                                                                                                        >
+                                                                                                                                                                                                                                The Perfect Look
+                                                                                                                                                                                                                                        <br />
+                                                                                                                                                                                                                                                By Emily
+                                                                                                                                                                                                                                                      </h1>
+
+                                                                                                                                                                                                                                                            <p className="text-xl max-w-xl leading-relaxed mb-12" style={{ color: '#a9a3b8' }}>
+                                                                                                                                                                                                                                                                    Precision artistry and Goldwell-certified colour expertise — your personal sanctuary for hair transformation in Amherstview.
+                                                                                                                                                                                                                                                                          </p>
+
+                                                                                                                                                                                                                                                                                <div className="flex flex-wrap gap-4 justify-center">
+                                                                                                                                                                                                                                                                                        <a href="https://square.site/book/EMLYSALON" target="_blank" rel="noopener noreferrer" className="btn-cta">
+                                                                                                                                                                                                                                                                                                  Book Your Experience
+                                                                                                                                                                                                                                                                                                          </a>
+                                                                                                                                                                                                                                                                                                                  <a href="#services" className="btn-outline">
+                                                                                                                                                                                                                                                                                                                            Explore Services
+                                                                                                                                                                                                                                                                                                                                    </a>
+                                                                                                                                                                                                                                                                                                                                          </div>
+
+                                                                                                                                                                                                                                                                                                                                                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+                                                                                                                                                                                                                                                                                                                                                        <span className="text-xs tracking-widest uppercase" style={{ color: '#f0eaf8' }}>Scroll</span>
+                                                                                                                                                                                                                                                                                                                                                                <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, rgba(240,234,248,0.6), transparent)' }} />
+                                                                                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                                                                                          </section>
+                                                                                                                                                                                                                                                                                                                                                                            );
+                                                                                                                                                                                                                                                                                                                                                                            }

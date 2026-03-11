@@ -1,16 +1,23 @@
-import type { Metadata } from 'next';
 import React from 'react';
-import './globals.css';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import ServicesMatrix from '@/components/ServicesMatrix';
+import MobileConcierge from '@/components/MobileConcierge';
+import HoursSection from '@/components/HoursSection';
+import BookingSection from '@/components/BookingSection';
 
-export const metadata: Metadata = {
-        title: 'The Perfect Look By Emily | Hair Colourist - Odessa, Kingston Ontario',
-        description: 'Master hair colourist Emily specializes in balayage, colour correction, and mobile salon services in Odessa, Amherstview and Kingston, Ontario.',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-        return React.createElement('html', { lang: 'en', className: 'scroll-smooth' },
-                                       React.createElement('body', { className: 'bg-midnight text-white antialiased' },
-                                                                 children
-                                                               )
-                                     );
-}
+export default function Home() {
+  return (
+      <main className="bg-charcoal text-off-white min-h-screen overflow-x-hidden">
+            <Navigation />
+                  <HeroSection />
+                        <ServicesMatrix />
+                              <MobileConcierge />
+                                    <HoursSection />
+                                          <BookingSection />
+                                                <footer className="text-center py-8 border-t border-border text-muted text-sm tracking-widest">
+                                                        © 2026 The Perfect Look By Emily — Emily Caird, Amherstview, Ontario.
+                                                              </footer>
+                                                                  </main>
+                                                                    );
+                                                                    }
