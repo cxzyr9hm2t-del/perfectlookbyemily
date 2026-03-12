@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-    output: 'export',
-      distDir: 'firebase-deploy',
-        images: { unoptimized: true },
-        };
-        
-        module.exports = nextConfig;
+    // NOTE: "output: 'export'" removed — incompatible with server.js runtime + API routes
+    //   images: {
+        unoptimized: true,
+          },
+          };
+          
+          module.exports = nextConfig;" */
