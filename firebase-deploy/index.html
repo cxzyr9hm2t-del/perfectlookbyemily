@@ -48,6 +48,31 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
 .booking-cta-hover:hover{box-shadow:0 0 0 3px rgba(45,212,191,0.35),0 8px 32px rgba(45,212,191,0.18);border-color:rgba(45,212,191,0.6)!important}
 .teal-hover:hover{color:#2dd4bf;border-color:rgba(45,212,191,0.5)!important;box-shadow:0 4px 20px rgba(45,212,191,0.12)}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0f0a1a}::-webkit-scrollbar-thumb{background:rgba(139,92,246,0.5);border-radius:3px}
+
+/* ===== MASONRY GALLERY ===== */
+.gallery-masonry-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:280px;gap:12px}
+@media(max-width:768px){.gallery-masonry-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}}
+@media(max-width:480px){.gallery-masonry-grid{grid-template-columns:1fr;grid-auto-rows:280px}}
+.gallery-item{position:relative;overflow:hidden;border-radius:12px;border:1px solid rgba(139,92,246,0.2);background:rgba(45,212,191,0.04);cursor:pointer;transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease}
+.gallery-item--tall{grid-row:span 2}
+.gallery-item--wide{grid-column:span 2}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(45,212,191,0.15),0 0 0 1px rgba(45,212,191,0.3);border-color:rgba(45,212,191,0.4)}
+.gallery-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease}
+.gallery-item:hover .gallery-img{transform:scale(1.05)}
+.gallery-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 14px;background:linear-gradient(to top,rgba(15,10,26,0.88) 0%,transparent 100%);opacity:0;transition:opacity 0.3s ease}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-tag{display:inline-block;background:rgba(45,212,191,0.15);border:1px solid rgba(45,212,191,0.4);color:#2dd4bf;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+/* ===== INSTAGRAM CTA BANNER ===== */
+.instagram-cta-banner{margin-top:48px;border-radius:20px;padding:2px;background-image:linear-gradient(rgba(15,10,26,1),rgba(15,10,26,1)),linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);background-origin:border-box;background-clip:padding-box,border-box}
+.instagram-cta-inner{display:flex;align-items:center;gap:24px;padding:32px 40px;flex-wrap:wrap}
+@media(max-width:768px){.instagram-cta-inner{flex-direction:column;text-align:center;padding:28px 24px}}
+.instagram-icon-wrap{color:#e6683c;flex-shrink:0}
+.instagram-cta-text{flex:1}
+.instagram-cta-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#e6683c;margin-bottom:4px}
+.instagram-cta-handle{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.2}
+.instagram-cta-sub{color:rgba(255,255,255,0.6);font-size:0.9rem}
+.instagram-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);color:#fff;font-weight:700;font-size:0.9rem;letter-spacing:0.04em;text-decoration:none;transition:opacity 0.2s ease,transform 0.2s ease;flex-shrink:0;white-space:nowrap}
+.instagram-cta-btn:hover{opacity:0.88;transform:translateY(-2px)}
 </style>
 </head>
 <body class="bg-midnight min-h-screen">
@@ -167,28 +192,64 @@ body{background-color:#0f0a1a;color:#e2e8f0;font-family:'Inter',system-ui,sans-s
 </div>
 </section>
 <section id="gallery" class="py-24 px-4">
-<div class="max-w-6xl mx-auto">
-<div class="text-center mb-14">
-<p class="brand-signature text-teal text-2xl mb-2">Our Work</p>
-<h2 class="font-display text-4xl md:text-5xl text-white font-bold mb-4">The Look Gallery</h2>
-<p class="text-gray-400 max-w-xl mx-auto">Precision colour, bespoke cuts, and transformations crafted with 25+ years of expertise.</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid">
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-orchid/8 border border-orchid/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4"><p class="text-4xl mb-2">&#9986;&#65039;</p><p class="text-white text-xs font-semibold">Precision Cut</p><p class="text-gray-500 text-xs mt-1">Photo coming soon</p></div><div class="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></div>
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-orchid/8 border border-orchid/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4"><p class="text-4xl mb-2">&#127912;</p><p class="text-white text-xs font-semibold">Balayage &amp; Colour</p><p class="text-gray-500 text-xs mt-1">Photo coming soon</p></div><div class="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></div>
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-teal/6 border border-teal/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4"><p class="text-4xl mb-2">&#127775;</p><p class="text-white text-xs font-semibold">Highlights</p><p class="text-gray-500 text-xs mt-1">Photo coming soon</p></div><div class="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></div>
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-orchid/8 border border-orchid/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4"><p class="text-4xl mb-2">&#128134;</p><p class="text-white text-xs font-semibold">Deep Treatment</p><p class="text-gray-500 text-xs mt-1">Photo coming soon</p></div><div class="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></div>
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-teal/6 border border-teal/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4"><p class="text-4xl mb-2">&#128116;</p><p class="text-white text-xs font-semibold">Senior Care Visit</p><p class="text-gray-500 text-xs mt-1">Photo coming soon</p></div><div class="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></div>
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square bg-orchid/8 border border-orchid/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4"><p class="text-4xl mb-2">&#128136;</p><p class="text-white text-xs font-semibold">Men's Style</p><p class="text-gray-500 text-xs mt-1">Photo coming soon</p></div><div class="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></div>
-<div class="gallery-item group relative overflow-hidden rounded-2xl aspect-square col-span-2 bg-gradient-to-br from-orchid/10 to-teal/8 border border-orchid/20 cursor-pointer hover:border-teal/40 transition-all duration-300"><div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6"><p class="text-5xl mb-3">&#128248;</p><p class="text-white font-semibold mb-1">Your Transformation Here</p><p class="text-gray-400 text-sm">Real client photos coming soon &mdash; follow us on Instagram for the latest looks</p><p class="text-teal text-sm font-semibold mt-2">@theperfectlookbyemily</p></div></div>
-</div>
-<div class="text-center mt-8">
-<a href="https://www.instagram.com/theperfectlookbyemily" target="_blank" rel="noopener" class="glass border border-orchid/30 inline-flex items-center gap-2 px-6 py-3 rounded-full text-gray-200 font-semibold hover:border-teal/50 transition-colors">
-<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-Follow @theperfectlookbyemily
-</a>
-</div>
-</div>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="brand-signature text-teal text-xl mb-3">Our Work</p>
+      <h2 class="font-display text-4xl md:text-5xl text-white font-bold mb-4">✦ From Our Chair: Real Transformations ✦</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Precision colour, bespoke cuts, and transformations crafted with 25+ years of expertise.</p>
+    </div>
+    <div class="gallery-masonry-grid">
+      <div class="gallery-item gallery-item--tall group">
+        <img src="images/gallery/portfolio-02-highlights-blonde.jpg" alt="Dimensional ash blonde highlights with soft waves — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="900"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Highlights</span></div>
+      </div>
+      <div class="gallery-item group">
+        <img src="images/gallery/portfolio-03-pixie-purple.jpg" alt="Pixie cut with bold purple peekaboo colour — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="600"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Creative Colour</span></div>
+      </div>
+      <div class="gallery-item gallery-item--tall group">
+        <img src="images/gallery/portfolio-04-vivid-rainbow.jpg" alt="Vivid rainbow — purple, pink and teal panel colour — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="900"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Vivid Colour</span></div>
+      </div>
+      <div class="gallery-item group">
+        <img src="images/gallery/portfolio-08-multicolour-highlights.jpg" alt="Multi-tone highlights — red, blonde and dark lowlights — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="600"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Highlights</span></div>
+      </div>
+      <div class="gallery-item gallery-item--tall group">
+        <img src="images/gallery/portfolio-05-balayage-platinum.jpg" alt="Platinum balayage with glossy waves — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="900"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Balayage</span></div>
+      </div>
+      <div class="gallery-item gallery-item--tall group">
+        <img src="images/gallery/portfolio-06-purple-ombre.jpg" alt="Purple and blue ombré on curled long hair — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="900"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Ombré Colour</span></div>
+      </div>
+      <div class="gallery-item gallery-item--tall group">
+        <img src="images/gallery/portfolio-07-copper-auburn.jpg" alt="Rich copper-auburn full colour with waves — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="900"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Full Colour</span></div>
+      </div>
+      <div class="gallery-item group">
+        <img src="images/gallery/portfolio-09-bridal-updo.jpg" alt="Romantic bridal updo with pearl and crystal pins — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="600"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Bridal Updo</span></div>
+      </div>
+      <div class="gallery-item gallery-item--tall group">
+        <img src="images/gallery/portfolio-10-ocean-blue-vivid.jpg" alt="Oceanic blue, teal and violet vivid colour melt — by Emily Caird" class="gallery-img" loading="lazy" width="600" height="900"/>
+        <div class="gallery-overlay"><span class="gallery-tag">Vivid Colour</span></div>
+      </div>
+    </div>
+    <div class="instagram-cta-banner">
+      <div class="instagram-cta-inner">
+        <div class="instagram-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div class="instagram-cta-text">
+          <p class="instagram-cta-eyebrow">Follow Along</p>
+          <h3 class="instagram-cta-handle">@theperfectlookbyemily</h3>
+          <p class="instagram-cta-sub">See the latest transformations as they happen.</p>
+        </div>
+        <a href="https://www.instagram.com/theperfectlookbyemily" target="_blank" rel="noopener noreferrer" class="instagram-cta-btn" aria-label="Follow The Perfect Look By Emily on Instagram">Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
 </section>
 <section id="book" class="py-24 px-4">
 <div class="max-w-2xl mx-auto">
@@ -338,10 +399,10 @@ Follow @theperfectlookbyemily
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-messaging-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-check-compat.js"></script>
 <script>
-// ── ADMIN UID: Replace with Emily's Firebase UID ──────────────────────────
+// ââ ADMIN UID: Replace with Emily's Firebase UID ââââââââââââââââââââââââââ
 // Found in Firebase Console > Authentication > Users > copy UID column
 const ADMIN_UID = '6oops2DWnYeoWbzfeenkaySyIvB2';
-// ── Square credentials (production App ID, sandbox ENV for testing) ────────
+// ââ Square credentials (production App ID, sandbox ENV for testing) ââââââââ
 const SQUARE_APP_ID = 'sq0idp-M_oCFikySOk7i5WSDPArqw';
 const SQUARE_LOCATION_ID = 'L3KS31DS36YTN';
 const ENV = 'production';
@@ -458,7 +519,7 @@ async function submitMailchimp(event) {
   } catch(err) { statusEl.textContent = 'Error: ' + err.message; }
   finally { btn.disabled = false; }
 }
-// FIX: Admin table row builder — use a helper function to avoid onclick quote collision
+// FIX: Admin table row builder â use a helper function to avoid onclick quote collision
 function _adminRow(docId, b) {
   const sc = b.status==='confirmed'?'text-green-400':b.status==='cancelled'?'text-red-400':'text-yellow-400';
   const row = document.createElement('tr');
@@ -617,7 +678,7 @@ async function sendAIMessage() {
   const thinkDiv = document.createElement('div');
   thinkDiv.id = 'ai-thinking';
   thinkDiv.style.cssText = 'display:flex;justify-content:flex-start';
-  thinkDiv.innerHTML = '<div style="padding:10px 14px;border-radius:16px 16px 16px 4px;background:#27273a;color:#a9a3b8;font-size:13px;">Thinking…</div>';
+  thinkDiv.innerHTML = '<div style="padding:10px 14px;border-radius:16px 16px 16px 4px;background:#27273a;color:#a9a3b8;font-size:13px;">Thinkingâ¦</div>';
   msgs.appendChild(thinkDiv);
   scrollAIChat();
   try {
