@@ -1,6 +1,6 @@
 'use strict';
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v8
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v9
 // Uses @google/generative-ai SDK for Gemini
 // ================================================================
 const express = require('express');
@@ -257,7 +257,7 @@ app.post('/api/chat', async (req, res) => {
         const { GoogleGenerativeAI } = require('@google/generative-ai');
         const genAI = new GoogleGenerativeAI(geminiKey);
         const model = genAI.getGenerativeModel({
-          model: 'gemini-1.5-flash',
+          model: 'gemini-pro',
           systemInstruction: SYSTEM_PROMPT,
         });
 
