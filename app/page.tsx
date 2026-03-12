@@ -30,8 +30,7 @@ const PORTFOLIO = [
   { file: '1000010201.jpg', label: 'Creative Colour',     span: 2 },
   { file: '1000010413.jpg', label: 'Bridal Updo',         span: 1 },
   { file: '1000020389.jpg', label: 'Extension Install',   span: 1 },
-  { file: '1000009868.jpg', label: 'Ocean Blue Vivid',    span: 2 },
-];
+];  
 
 function Nav() {
   const links = ['Services','Gallery','About','Book Now'];
