@@ -1,6 +1,6 @@
 'use strict';
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v12
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v13
 // Uses @google/generative-ai SDK for Gemini
 // ================================================================
 const express = require('express');
@@ -262,9 +262,14 @@ app.post('/api/chat', async (req, res) => {
         });
 
         // Build history (all but last message)
+        // Filter: skip leading assistant/model messages (Gemini requires history starts with user)
         const rawMessages = messages.slice(-10);
         const lastMsg = rawMessages[rawMessages.length - 1];
-        const history = rawMessages.slice(0, -1).map(m => ({
+        const rawHistory = rawMessages.slice(0, -1);
+        // Drop leading assistant messages
+        let startIdx = 0;
+        while (startIdx < rawHistory.length && rawHistory[startIdx].role !== 'user') startIdx++;
+        const history = rawHistory.slice(startIdx).map(m => ({
           role: m.role === 'assistant' ? 'model' : 'user',
           parts: [{ text: String(m.content) }],
         }));
