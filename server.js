@@ -1,6 +1,6 @@
 'use strict';
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v5
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v6
 // ================================================================
 const express = require('express');
 const compression = require('compression');
@@ -302,7 +302,7 @@ app.post('/api/chat', async (req, res) => {
 
         const geminiResult = await httpsPost(
           'generativelanguage.googleapis.com',
-          `/v1/models/gemini-1.5-flash-latest:generateContent?key=${geminiKey}`,
+          `/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${geminiKey}`,
           { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(geminiBody) },
           geminiBody
         );
