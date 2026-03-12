@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-    images: {
-        unoptimized: true,
-          },
-          };
-          
-          module.exports = nextConfig;
+  output: 'export',
+  distDir: 'firebase-deploy',
+  images: {
+    unoptimized: true,
+  },
+};
+
+module.exports = nextConfig;
