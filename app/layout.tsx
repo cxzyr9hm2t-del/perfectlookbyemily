@@ -9,74 +9,45 @@ const inter = Inter({
       });
 
       export const metadata: Metadata = {
-          title: 'The Perfect Look By Emily | Hair Salon Amherstview, Ontario',
-            description:
-                'Precision artistry and Goldwell-certified colour expertise in Amherstview, Ontario. Mobile hair services, retirement home visits, and studio appointments. Call (613) 929-8711.',
-                  keywords: [
-                        'hair salon Amherstview',
-                            'hair stylist Amherstview Ontario',
-                                'mobile hair stylist',
-                                    'Goldwell colour',
-                                        'balayage Kingston Ontario',
-                                            'retirement home hair visits',
-                                                'Emily Caird hair',
-                  ],
-                    openGraph: {
-                          title: 'The Perfect Look By Emily',
-                              description: 'Luxury hair artistry in Amherstview, Ontario.',
-                                  url: 'https://theperfectlookbyemily.ca',
-                                      siteName: 'The Perfect Look By Emily',
-                                          locale: 'en_CA',
-                                              type: 'website',
-                                                  images: [
-                                                          {
-                                                                    url: 'https://theperfectlookbyemily.ca/og-image.jpg',
-                                                                            width: 1200,
-                                                                                    height: 630,
-                                                                                            alt: 'The Perfect Look By Emily — Hair Salon Amherstview',
-                                                          },
-                                                  ],
-                                                    },
-                                                      twitter: {
-                                                            card: 'summary_large_image',
-                                                                title: 'The Perfect Look By Emily',
-                                                                    description: 'Luxury hair artistry in Amherstview, Ontario.',
-                                                      },
-                                                      };
+        title: 'The Perfect Look By Emily | Hair Salon Amherstview, Ontario',
+          description:
+              'Precision artistry and Goldwell-certified colour expertise in Amherstview, Ontario. Mobile hair services, retirement home visits, and studio appointments. Call (613) 929-8711.',
+                keywords: [
+                    'hair salon Amherstview',
+                        'hair stylist Amherstview Ontario',
+                            'mobile hair stylist',
+                                'Goldwell colour',
+                                    'balayage Kingston Ontario',
+                                        'retirement home hair visits',
+                                            'Emily Caird hair',
+                                              ],
+                                                openGraph: {
+                                                    title: 'The Perfect Look By Emily',
+                                                        description: 'Luxury hair artistry in Amherstview, Ontario.',
+                                                            url: 'https://theperfectlookbyemily.ca',
+                                                                siteName: 'The Perfect Look By Emily',
+                                                                    locale: 'en_CA',
+                                                                        type: 'website',
+                                                                            images: [
+                                                                                  {
+                                                                                          url: 'https://theperfectlookbyemily.ca/og-image.jpg',
+                                                                                                  width: 1200,
+                                                                                                          height: 630,
+                                                                                                                  alt: 'The Perfect Look By Emily - Hair Salon Amherstview',
+                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                              },
+                                                                                                                                twitter: {
+                                                                                                                                    card: 'summary_large_image',
+                                                                                                                                        title: 'The Perfect Look By Emily',
+                                                                                                                                            description: 'Luxury hair artistry in Amherstview, Ontario.',
+                                                                                                                                              },
+                                                                                                                                              };
 
-                                                      export default function RootLayout({ children }: { children: React.ReactNode }) {
-                                                          const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
-                                                            return (
-                                                                  <html lang="en" className={inter.variable}>
-                                                                          <head>
-                                                                                    {GA_ID && (
-                                                                                                <>
-                                                                                                            <script
-                                                                                                                          async
-                                                                                                                                        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-                                                                                                                                                    />
-                                                                                                                                                                <script
-                                                                                                                                                                              dangerouslySetInnerHTML={{
-                                                                                                                                                                                                __html: `
-                                                                                                                                                                                                                  window.dataLayer = window.dataLayer || [];
-                                                                                                                                                                                                                                    function gtag(){dataLayer.push(arguments);}
-                                                                                                                                                                                                                                                      gtag('js', new Date());
-                                                                                                                                                                                                                                                                        gtag('config', '${GA_ID}');
-                                                                                                                                                                                                                                                                                        `,
-                                                                                                                                                                                                                                                                                                      }}
-                                                                                                                                                                                                                                                                                                                  />
-                                                                                                                                                                                                                                                                                                                            </>
-                                                                                                                                                                                                                                                                                                                                    )}
-                                                                                                                                                                                                                                                                                                                                          </head>      <body style={{ background: '#1e1e2e', margin: 0 }}>{children}</body>    </html>
-                                                                                                                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                                                                                                                            }`
-                                                                                                                                                                              }}
-                                                                                    )
-                                                            )
-                                                      }
-                                                      }
-                                                          }
-                                                  ]
-                    }
-                  ]
-      }
+                                                                                                                                              export default function RootLayout({ children }: { children: React.ReactNode }) {
+                                                                                                                                                return (
+                                                                                                                                                    <html lang="en" className={inter.variable}>
+                                                                                                                                                          <body style={{ background: '#1e1e2e', margin: 0 }}>{children}</body>
+                                                                                                                                                              </html>
+                                                                                                                                                                );
+                                                                                                                                                                }
