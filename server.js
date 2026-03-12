@@ -1,6 +1,7 @@
 'use strict';
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v7
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v8
+// Uses @google/generative-ai SDK for Gemini
 // ================================================================
 const express = require('express');
 const compression = require('compression');
@@ -235,32 +236,8 @@ function mcRequest(server, apiKey, listId, subscriberHash, body) {
   });
 }
 
-// Helper: make HTTPS POST and return parsed JSON
-function httpsPost(hostname, path, headers, body) {
-  return new Promise((resolve, reject) => {
-    const options = { hostname, path, method: 'POST', headers };
-    const req = https.request(options, (resp) => {
-      let raw = '';
-      resp.statusCode && (resp._statusCode = resp.statusCode);
-      resp.on('data', chunk => { raw += chunk; });
-      resp.on('end', () => {
-        try {
-          const parsed = JSON.parse(raw);
-          parsed._httpStatus = resp.statusCode;
-          resolve(parsed);
-        } catch {
-          reject(new Error('Invalid JSON: ' + raw.slice(0, 200)));
-        }
-      });
-    });
-    req.on('error', reject);
-    req.write(body);
-    req.end();
-  });
-}
-
 // ================================================================
-// API: POST /api/chat — Gemini AI assistant (with OpenAI fallback)
+// API: POST /api/chat — Gemini AI (using @google/generative-ai SDK)
 // ================================================================
 app.post('/api/chat', async (req, res) => {
   try {
@@ -271,57 +248,41 @@ app.post('/api/chat', async (req, res) => {
 
     const SYSTEM_PROMPT = `You are a friendly, warm assistant for "The Perfect Look By Emily", run by Emily Caird in Amherstview, Ontario. Studio hours: Tue-Fri 9am-6pm, Sat 9am-4pm. Sun & Mon by request (+$25). Services: Women's Cut & Style from $65, Colour & Highlights from $120, Treatment & Gloss from $45, Children's Cut from $30, Men's Cut from $35, Dimensional Balayage & Colour Melts from $140, Rejuvenating Luxury Head Spa from $85, Bespoke Textured Cuts from $70. $25 deposit required to book. Phone: (613) 929-8711. Keep replies concise and warm.`;
 
-    // ── Try Gemini 1.5 Flash ──────────────────────────────────────
+    // ── Try Gemini via @google/generative-ai SDK ─────────────────
     const geminiKey = process.env.GEMINI_API_KEY || '';
-    console.log('[Chat] GEMINI_API_KEY set:', !!geminiKey, 'length:', geminiKey.length);
+    console.log('[Chat] GEMINI_API_KEY set:', !!geminiKey);
 
     if (geminiKey) {
       try {
-        // Build contents — ensure alternating user/model turns
-        const rawMessages = messages.slice(-10);
-        const contents = [];
-        for (const m of rawMessages) {
-          const role = m.role === 'assistant' ? 'model' : 'user';
-          // Avoid consecutive same-role messages
-          if (contents.length > 0 && contents[contents.length - 1].role === role) {
-            contents[contents.length - 1].parts[0].text += ' ' + m.content;
-          } else {
-            contents.push({ role, parts: [{ text: String(m.content) }] });
-          }
-        }
-        // Must start with user turn
-        if (contents.length === 0 || contents[0].role !== 'user') {
-          contents.unshift({ role: 'user', parts: [{ text: 'Hello' }] });
-        }
-
-        const geminiBody = JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents,
-          generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+        const { GoogleGenerativeAI } = require('@google/generative-ai');
+        const genAI = new GoogleGenerativeAI(geminiKey);
+        const model = genAI.getGenerativeModel({
+          model: 'gemini-1.5-flash',
+          systemInstruction: SYSTEM_PROMPT,
         });
 
-        const geminiResult = await httpsPost(
-          'generativelanguage.googleapis.com',
-          `/v1beta/models/gemini-pro:generateContent?key=${geminiKey}`,
-          { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(geminiBody) },
-          geminiBody
-        );
+        // Build history (all but last message)
+        const rawMessages = messages.slice(-10);
+        const lastMsg = rawMessages[rawMessages.length - 1];
+        const history = rawMessages.slice(0, -1).map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: String(m.content) }],
+        }));
 
-        console.log('[Chat] Gemini HTTP status:', geminiResult._httpStatus);
+        const chat = model.startChat({
+          history,
+          generationConfig: { maxOutputTokens: 300, temperature: 0.7 },
+        });
 
-        if (geminiResult.error) {
-          console.warn('[Chat] Gemini API error:', JSON.stringify(geminiResult.error));
-        }
+        const result = await chat.sendMessage(String(lastMsg?.content || 'Hello'));
+        const reply = result.response.text().trim();
 
-        const reply = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
         if (reply) {
-          console.log('[Chat] Gemini response OK, length:', reply.length);
+          console.log('[Chat] Gemini SDK response OK, length:', reply.length);
           return res.status(200).json({ reply });
-        } else {
-          console.warn('[Chat] Gemini returned no reply. Full response:', JSON.stringify(geminiResult).slice(0, 500));
         }
       } catch (geminiErr) {
-        console.warn('[Chat] Gemini exception:', geminiErr.message);
+        console.warn('[Chat] Gemini SDK error:', geminiErr.message);
       }
     }
 
@@ -340,12 +301,20 @@ app.post('/api/chat', async (req, res) => {
       max_tokens: 300, temperature: 0.7
     });
 
-    const result = await httpsPost(
-      'api.openai.com',
-      '/v1/chat/completions',
-      { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body), 'Authorization': `Bearer ${openaiKey}` },
-      body
-    );
+    const result = await new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.openai.com', path: '/v1/chat/completions', method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body), 'Authorization': `Bearer ${openaiKey}` }
+      };
+      const req2 = https.request(options, (resp) => {
+        let raw = '';
+        resp.on('data', chunk => { raw += chunk; });
+        resp.on('end', () => { try { resolve(JSON.parse(raw)); } catch { reject(new Error('Invalid JSON')); } });
+      });
+      req2.on('error', reject);
+      req2.write(body);
+      req2.end();
+    });
 
     const reply = result.choices?.[0]?.message?.content?.trim() || "I'm not sure — please call (613) 929-8711.";
     return res.status(200).json({ reply });
