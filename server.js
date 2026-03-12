@@ -1,6 +1,6 @@
 'use strict';
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v13
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v14
 // Uses @google/generative-ai SDK for Gemini
 // ================================================================
 const express = require('express');
@@ -76,6 +76,7 @@ app.use(
           "'self'",
           'https://www.google-analytics.com',
           'https://formspree.io',
+          'https://perfectlookbyemily.onrender.com',
           'https://connect.squareupsandbox.com',
           'https://connect.squareup.com',
           'https://firestore.googleapis.com',
