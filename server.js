@@ -264,59 +264,98 @@ function mcRequest(server, apiKey, listId, subscriberHash, body) {
 }
 
 // ================================================================
-// API: POST /api/chat — OpenAI GPT-4o-mini AI assistant
+// API: POST /api/chat — Gemini AI assistant (with OpenAI fallback)
 // ================================================================
 app.post('/api/chat', async (req, res) => {
   try {
-      const { messages } = req.body;
-          if (!messages || !Array.isArray(messages)) {
-                return res.status(400).json({ success: false, error: 'messages array required.' });
-                    }
-                        const apiKey = process.env.OPENAI_API_KEY || '';
-                            if (!apiKey) {
-                                  return res.status(200).json({
-                                          reply: "I'm not fully set up yet — please call Emily at (613) 929-8711 or book at square.site/book/EMLYSALON.",
-                                                });
-                                                    }
-                                                        const systemPrompt = `You are a friendly, warm assistant for "The Perfect Look By Emily", run by Emily Caird in Amherstview, Ontario. Studio hours: Tue-Fri 9am-6pm, Sat 9am-4pm. Sun & Mon by request (+$25). Services: Balayage from $185, Colour Correction from $250, Colour Gloss from $95, Cut & Style from $65, Olaplex from $45, Mobile cut from $75, Mobile colour from $120. Mobile: visits homes, retirement residences, events. Book: square.site/book/EMLYSALON. Phone: (613) 929-8711. Goldwell-certified. Keep replies concise and warm.`;
-                                                            const body = JSON.stringify({
-                                                                  model: 'gpt-4o-mini',
-                                                                        messages: [
-                                                                                { role: 'system', content: systemPrompt },
-                                                                                        ...messages.slice(-10).map((m) => ({ role: m.role, content: m.content })),
-                                                                                              ],
-                                                                                                    max_tokens: 300,
-                                                                                                          temperature: 0.7,
-                                                                                                              });
-                                                                                                                  const result = await new Promise((resolve, reject) => {
-                                                                                                                        const options = {
-                                                                                                                                hostname: 'api.openai.com',
-                                                                                                                                        path: '/v1/chat/completions',
-                                                                                                                                                method: 'POST',
-                                                                                                                                                        headers: {
-                                                                                                                                                                  'Content-Type': 'application/json',
-                                                                                                                                                                            'Content-Length': Buffer.byteLength(body),
-                                                                                                                                                                                      Authorization: `Bearer ${apiKey}`,
-                                                                                                                                                                                              },
-                                                                                                                                                                                                    };
-                                                                                                                                                                                                          const req2 = https.request(options, (resp) => {
-                                                                                                                                                                                                                  let raw = '';
-                                                                                                                                                                                                                          resp.on('data', (chunk) => { raw += chunk; });
-                                                                                                                                                                                                                                  resp.on('end', () => {
-                                                                                                                                                                                                                                            try { resolve(JSON.parse(raw)); } catch { reject(new Error('Invalid JSON from OpenAI')); }
-                                                                                                                                                                                                                                                    });
-                                                                                                                                                                                                                                                          });
-                                                                                                                                                                                                                                                                req2.on('error', reject);
-                                                                                                                                                                                                                                                                      req2.write(body);
-                                                                                                                                                                                                                                                                            req2.end();
-                                                                                                                                                                                                                                                                                });
-                                                                                                                                                                                                                                                                                    const reply = result.choices?.[0]?.message?.content?.trim() || "I'm not sure — please call (613) 929-8711.";
-                                                                                                                                                                                                                                                                                        return res.status(200).json({ reply });
-                                                                                                                                                                                                                                                                                          } catch (err) {
-                                                                                                                                                                                                                                                                                              console.error('[Chat] error:', err.message);
-                                                                                                                                                                                                                                                                                                  return res.status(500).json({ reply: 'Something went wrong. Please call (613) 929-8711.' });
-                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                    });
+    const { messages } = req.body;
+    if (!messages || !Array.isArray(messages)) {
+      return res.status(400).json({ success: false, error: 'messages array required.' });
+    }
+
+    const SYSTEM_PROMPT = `You are a friendly, warm assistant for "The Perfect Look By Emily", run by Emily Caird in Amherstview, Ontario. Studio hours: Tue-Fri 9am-6pm, Sat 9am-4pm. Sun & Mon by request (+$25). Services: Women's Cut & Style from $65, Colour & Highlights from $120, Treatment & Gloss from $45, Children's Cut from $30, Men's Cut from $35, Dimensional Balayage & Colour Melts from $140, Rejuvenating Luxury Head Spa from $85, Bespoke Textured Cuts from $70. $25 deposit required to book. Phone: (613) 929-8711. Keep replies concise and warm.`;
+
+    // Try Gemini first
+    const geminiKey = process.env.GEMINI_API_KEY || '';
+    if (geminiKey) {
+      try {
+        const geminiMessages = messages.slice(-10).map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: m.content }]
+        }));
+
+        const geminiBody = JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents: geminiMessages,
+          generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+        });
+
+        const geminiResult = await new Promise((resolve, reject) => {
+          const options = {
+            hostname: 'generativelanguage.googleapis.com',
+            path: `/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(geminiBody) }
+          };
+          const req2 = https.request(options, (resp) => {
+            let raw = '';
+            resp.on('data', chunk => { raw += chunk; });
+            resp.on('end', () => { try { resolve(JSON.parse(raw)); } catch { reject(new Error('Invalid JSON from Gemini')); } });
+          });
+          req2.on('error', reject);
+          req2.write(geminiBody);
+          req2.end();
+        });
+
+        const reply = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+        if (reply) {
+          console.log('[Chat] Gemini response OK');
+          return res.status(200).json({ reply });
+        }
+      } catch (geminiErr) {
+        console.warn('[Chat] Gemini error, falling back to OpenAI:', geminiErr.message);
+      }
+    }
+
+    // Fallback: OpenAI
+    const openaiKey = process.env.OPENAI_API_KEY || '';
+    if (!openaiKey) {
+      return res.status(200).json({ reply: "I'm not fully set up yet — please call Emily at (613) 929-8711." });
+    }
+
+    const body = JSON.stringify({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        ...messages.slice(-10).map(m => ({ role: m.role, content: m.content }))
+      ],
+      max_tokens: 300, temperature: 0.7
+    });
+
+    const result = await new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.openai.com', path: '/v1/chat/completions', method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body), Authorization: `Bearer ${openaiKey}` }
+      };
+      const req2 = https.request(options, (resp) => {
+        let raw = '';
+        resp.on('data', chunk => { raw += chunk; });
+        resp.on('end', () => { try { resolve(JSON.parse(raw)); } catch { reject(new Error('Invalid JSON from OpenAI')); } });
+      });
+      req2.on('error', reject);
+      req2.write(body);
+      req2.end();
+    });
+
+    const reply = result.choices?.[0]?.message?.content?.trim() || "I'm not sure — please call (613) 929-8711.";
+    return res.status(200).json({ reply });
+
+  } catch (err) {
+    console.error('[Chat] error:', err.message);
+    return res.status(500).json({ reply: 'Something went wrong. Please call (613) 929-8711.' });
+  }
+});
+
 // ================================================================
 // SYSTEM ROUTES
 // ================================================================
