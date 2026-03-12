@@ -1,6 +1,6 @@
 'use strict';
 // ================================================================
-// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v14
+// THE PERFECT LOOK BY EMILY — server.js GOLD MASTER v15
 // Uses @google/generative-ai SDK for Gemini
 // ================================================================
 const express = require('express');
@@ -32,6 +32,7 @@ function getSquareClient() {
 // ── CORS — MUST be first, before helmet ──────────────────────────
 const ALLOWED_ORIGINS = [
   'https://theperfectlookbyemily.ca',
+  'https://www.theperfectlookbyemily.ca',
   'https://the-perfect-look-by-emily.web.app',
   'https://the-perfect-look-by-emily.firebaseapp.com',
 ];
