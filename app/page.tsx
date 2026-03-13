@@ -230,7 +230,7 @@ function Services() {
         <h2 style={{ ...fenway,fontSize:'clamp(2rem,5vw,3.2rem)',color:C.white,textAlign:'center',marginBottom:52 }}>Services Menu</h2>
         <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:20 }}>
           {SERVICES.map((sv,i) => (
-            <div key={sv.name}
+            <div key={sv.title}
               onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
               style={{
                 ...glassCard, padding:'32px 28px', borderRadius:20,
@@ -241,7 +241,7 @@ function Services() {
                 transition:'all 0.28s cubic-bezier(0.34,1.56,0.64,1)',
               }}>
               <div style={{ fontSize:28,marginBottom:16 }}>{sv.icon}</div>
-              <h3 style={{ ...raleway,color:C.white,fontWeight:700,fontSize:'1.1rem',marginBottom:10 }}>{sv.name}</h3>
+              <h3 style={{ ...raleway,color:C.white,fontWeight:700,fontSize:'1.1rem',marginBottom:10 }}>{sv.title}</h3>
               <p style={{ ...raleway,color:C.gray,fontSize:14,lineHeight:1.65,marginBottom:20 }}>{sv.desc}</p>
               <span style={{
                 display:'inline-block',padding:'6px 16px',borderRadius:100,
