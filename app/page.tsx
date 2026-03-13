@@ -393,6 +393,16 @@ function AboutEmily() {
   );
 }
 
+/* ─── Testimonials ────────────────────────────────────────────────────────── */
+const TESTIMONIALS = [
+  { stars:5, text:'"Emily is an absolute artist. My balayage looks like I stepped out of a high-end editorial shoot. The private studio experience is unlike anything else."', name:'Sarah M.', location:'Kingston, ON' },
+  { stars:5, text:'"I have been going to Emily for three years and my hair has never been healthier or more beautiful. She truly understands colour like no one else."', name:'Jennifer K.', location:'Amherstview, ON' },
+  { stars:5, text:'"The mobile service is a game-changer. Emily came to my home and delivered salon-quality results with full professionalism. Absolutely worth every penny."', name:'Michelle T.', location:'Bath, ON' },
+  { stars:5, text:'"Incredible attention to detail. Emily diagnosed scalp issues my previous stylist missed for years. Walking out every time feeling like a new person."', name:'Rachel L.', location:'Napanee, ON' },
+  { stars:5, text:'"My colour correction took years off the damage my hair had. Emily was honest, thorough, and delivered results beyond what I thought possible."', name:'Amanda P.', location:'Kingston, ON' },
+  { stars:5, text:'"Finally a stylist who truly listens. Emily took my whole lifestyle into account and created a look that is genuinely perfect for me."', name:'Caitlin B.', location:'Amherstview, ON' },
+];
+
 function Testimonials() {
   return (
     <section id="testimonials" style={{ padding:'5rem 1.5rem', background:'#1e1e2e' }}>
