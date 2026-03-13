@@ -131,7 +131,7 @@ function Nav() {
         <span style={{ ...raleway, fontWeight:600, fontSize:'1rem', color:'#f0eaf8', letterSpacing:'0.02em' }}>The Perfect Look By Emily</span>
       </a>
       <div style={{ display:'flex', alignItems:'center', gap:'1.5rem' }}>
-        {([['Services','#services'],['Gallery','#gallery'],['Lookbook','#lookbook'],['About','#about'],['Book Now','#booking']]).map(([label, href]: string[]) => (
+        {([['Services','#services'],['Gallery','#gallery'],['Lookbook','#lookbook'],['About','#about'],['Membership','#membership'],['Book Now','#book-now']]).map(([label, href]: string[]) => (
           <a key={label} href={href} style={{ ...raleway, color:'rgba(240,234,248,0.80)', fontSize:'0.875rem', fontWeight:500, textDecoration:'none', letterSpacing:'0.03em', transition:'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#a855f7')}
             onMouseLeave={e => (e.currentTarget.style.color = 'rgba(240,234,248,0.80)')}>{label}</a>
@@ -145,38 +145,49 @@ function Nav() {
 }
 
 /* ─── Hero ───────────────────────────────────────────────────────────────── */
+
+/* ═══ HERO (with count-up) ════════════════════════════════════ */
 function Hero() {
+  const [statsVis, setStatsVis] = React.useState(false);
+  const statsRef = React.useRef<HTMLDivElement>(null);
+  const yrs  = useCountUp(25, 1600, statsVis);
+  const revs = useCountUp(47, 1600, statsVis);
+
+  React.useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setStatsVis(true); }, { threshold:0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section id="hero" style={{ position:'relative', minHeight:'92vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', overflow:'hidden', background:'radial-gradient(at 20% 50%, rgba(139,92,246,0.18) 0%, transparent 60%), radial-gradient(at 80% 20%, rgba(13,148,136,0.12) 0%, transparent 50%), #1e1e2e', padding:'0 1.5rem 3rem' }}>
+    <section id="hero" style={{ position:'relative',minHeight:'92vh',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden',background:C.bg }}>
       <ParticleCanvas />
-      <div style={{ position:'relative', zIndex:1, textAlign:'center', maxWidth:800, paddingTop:80 }}>
-        <div style={{ display:'inline-flex', alignItems:'center', gap:8, background:'rgba(139,92,246,0.12)', border:'1px solid rgba(139,92,246,0.30)', borderRadius:999, padding:'0.35rem 1rem', marginBottom:'1.5rem', ...raleway, fontSize:'0.75rem', fontWeight:600, letterSpacing:'0.12em', color:C.tealL, textTransform:'uppercase' }}>
-          Amherstview · Kingston, Ontario
+      <div style={{ position:'absolute',inset:0,background:`radial-gradient(ellipse 80% 60% at 50% 40%,${C.purple}18 0%,transparent 70%)`,pointerEvents:'none' }} />
+      <div style={{ position:'relative',zIndex:1,textAlign:'center',padding:'120px 24px 80px',maxWidth:860,margin:'0 auto' }}>
+        <div style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'8px 20px',borderRadius:100,border:`1px solid ${C.purple}40`,background:`${C.purple}12`,marginBottom:28 }}>
+          <span style={{ ...raleway,color:C.gray,fontSize:12,letterSpacing:3,textTransform:'uppercase' }}>Amherstview · Kingston, Ontario</span>
         </div>
-        <h1 style={{ ...fenway, fontSize:'clamp(3rem,8vw,6rem)', fontWeight:700, lineHeight:1.05, color:C.white, margin:'0 0 0.3rem', letterSpacing:'-0.01em' }}>
-          The Perfect Look
-        </h1>
-        <p style={{ ...fenway, fontSize:'clamp(1.5rem,4vw,2.5rem)', color:C.tealL, margin:'0 0 1.5rem', fontStyle:'italic' }}>By Emily</p>
-        <p style={{ ...raleway, fontSize:'clamp(1rem,2vw,1.125rem)', color:'rgba(240,234,248,0.75)', maxWidth:560, margin:'0 auto 2.5rem', lineHeight:1.7 }}>
+        <h1 style={{ ...fenway,fontSize:'clamp(3.2rem,9vw,6.5rem)',color:C.white,lineHeight:1.05,marginBottom:12 }}>The Perfect Look</h1>
+        <p style={{ ...fenway,fontSize:'clamp(1.4rem,3.5vw,2.2rem)',color:C.teal,fontStyle:'italic',marginBottom:28 }}>By Emily</p>
+        <p style={{ ...raleway,color:'rgba(240,234,248,0.75)',maxWidth:560,margin:'0 auto 2.5rem',lineHeight:1.7 }}>
           25+ years of Goldwell-certified colour mastery, bespoke cuts, and luxury extension installations. Private studio in Amherstview — and mobile care that comes to you.
         </p>
-        <div style={{ display:'flex', gap:'1rem', justifyContent:'center', flexWrap:'wrap', marginBottom:'3rem' }}>
-          <a href="#book-now" style={{ ...raleway, background:'linear-gradient(135deg,#0d9488,#14b8a6)', color:'#fff', padding:'0.85rem 2.2rem', borderRadius:30, fontSize:'1rem', fontWeight:700, textDecoration:'none', letterSpacing:'0.03em', boxShadow:'0 4px 24px rgba(13,148,136,0.40)', transition:'transform 0.2s, box-shadow 0.2s', display:'inline-flex', alignItems:'center', gap:8, backdropFilter:'blur(4px)' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform='translateY(-2px)'; (e.currentTarget as HTMLElement).style.boxShadow='0 8px 32px rgba(13,148,136,0.55)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform='translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow='0 4px 24px rgba(13,148,136,0.40)'; }}>
-            Book Your Appointment
-          </a>
-          <a href="#gallery" style={{ ...raleway, background:'rgba(139,92,246,0.15)', backdropFilter:'blur(14px)', WebkitBackdropFilter:'blur(14px)', color:'#f0eaf8', padding:'0.85rem 2.2rem', borderRadius:30, fontSize:'1rem', fontWeight:600, textDecoration:'none', border:'1px solid rgba(139,92,246,0.40)', letterSpacing:'0.03em', transition:'background 0.2s, border-color 0.2s' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background='rgba(139,92,246,0.28)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='rgba(139,92,246,0.15)'; }}>
-            View Gallery
-          </a>
+        <div style={{ display:'flex',gap:'1rem',justifyContent:'center',flexWrap:'wrap',marginBottom:'3rem' }}>
+          <a href="#book-now" style={{ display:'inline-block',padding:'16px 36px',borderRadius:100,background:`linear-gradient(135deg,${C.purple},${C.teal})`,color:C.white,fontWeight:700,fontSize:16,textDecoration:'none',boxShadow:`0 8px 32px ${C.purple}40`,...raleway }}>Book Your Appointment</a>
+          <a href="#gallery" style={{ display:'inline-block',padding:'16px 32px',borderRadius:100,...glassCard,color:C.white,fontWeight:600,fontSize:16,textDecoration:'none',...raleway }}>View Gallery</a>
         </div>
-        <div style={{ display:'flex', justifyContent:'center', gap:'clamp(1.5rem,4vw,3.5rem)', flexWrap:'wrap' }}>
-          {[['25+','Years Experience'],['⭐ 5.0','Client Rating'],['Goldwell','Certified Colourist'],['Mobile','Care Available']].map(([val,sub]) => (
-            <div key={sub} style={{ textAlign:'center' }}>
-              <div style={{ ...raleway, fontSize:'clamp(1.3rem,2.5vw,1.8rem)', fontWeight:800, color:C.purple, letterSpacing:'-0.01em' }}>{val}</div>
-              <div style={{ ...raleway, fontSize:'0.7rem', color:C.gray, letterSpacing:'0.1em', textTransform:'uppercase', marginTop:2 }}>{sub}</div>
+        <div ref={statsRef} style={{ display:'grid',gridTemplateColumns:'repeat(4,1fr)',maxWidth:600,margin:'0 auto',...glassCard,borderRadius:20,overflow:'hidden' }}>
+          {[
+            { val: yrs + '+',           label:'YEARS EXPERIENCE', col:C.purple },
+            { val: '⭐ 5.0',             label:`${revs} REVIEWS`,  col:C.gold },
+            { val: 'Goldwell',          label:'CERTIFIED',         col:C.teal },
+            { val: 'Mobile',            label:'CARE AVAILABLE',    col:C.tealL },
+          ].map((st,i) => (
+            <div key={st.label} style={{ padding:'20px 8px',textAlign:'center',borderRight:i<3?`1px solid ${C.border}`:'none' }}>
+              <div style={{ ...raleway,color:st.col,fontWeight:800,fontSize:'clamp(0.9rem,2.5vw,1.3rem)',marginBottom:4 }}>{st.val}</div>
+              <div style={{ ...raleway,color:C.gray,fontSize:9,letterSpacing:1.5,textTransform:'uppercase' }}>{st.label}</div>
             </div>
           ))}
         </div>
@@ -185,7 +196,6 @@ function Hero() {
   );
 }
 
-/* ─── Coming Soon Banner ─────────────────────────────────────────────────── */
 function ComingSoon() {
   return (
     <div style={{ background:'linear-gradient(90deg,rgba(229,184,105,0.08),rgba(229,184,105,0.14),rgba(229,184,105,0.08))', borderTop:'1px solid rgba(229,184,105,0.20)', borderBottom:'1px solid rgba(229,184,105,0.20)', padding:'1rem 2rem', display:'flex', justifyContent:'center', alignItems:'center', gap:'1rem', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)' }}>
@@ -209,21 +219,37 @@ const SERVICES = [
   { icon:'🧔',  title:"Men\'s Grooming",           desc:'Precision fades, textured crops, and classic barbershop-style cuts for all hair types.', price:'From $35', style:glassCard },
 ];
 
+
+/* ═══ SERVICES (with hover lift) ═════════════════════════════ */
 function Services() {
+  const [hov, setHov] = React.useState<number|null>(null);
   return (
-    <section id="services" style={{ padding:'5rem 1.5rem', background:'linear-gradient(135deg,rgba(139,92,246,0.06) 0%,rgba(13,148,136,0.04) 100%),#1e1e2e' }}>
-      <div style={{ maxWidth:1200, margin:'0 auto' }}>
-        <p style={{ ...raleway, textAlign:'center', fontSize:'0.75rem', fontWeight:700, letterSpacing:'0.15em', color:C.tealL, textTransform:'uppercase', marginBottom:'0.75rem' }}>What We Do</p>
-        <h2 style={{ ...fenway, textAlign:'center', fontSize:'clamp(2rem,5vw,3rem)', color:C.white, marginBottom:'3rem', fontWeight:700 }}>Services Menu</h2>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'1.5rem' }}>
-          {SERVICES.map(svc => (
-            <div key={svc.title} style={{ ...svc.style, padding:'2rem', transition:'transform 0.2s, box-shadow 0.2s', cursor:'default' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform='translateY(-4px)'; (e.currentTarget as HTMLElement).style.boxShadow='0 12px 40px rgba(139,92,246,0.18)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform=''; (e.currentTarget as HTMLElement).style.boxShadow=''; }}>
-              <div style={{ fontSize:'2rem', marginBottom:'1rem' }}>{svc.icon}</div>
-              <h3 style={{ ...raleway, fontSize:'1.15rem', fontWeight:700, color:C.white, marginBottom:'0.6rem' }}>{svc.title}</h3>
-              <p style={{ ...raleway, fontSize:'0.9rem', color:C.gray, lineHeight:1.65, marginBottom:'1.2rem', margin:'0 0 1.2rem' }}>{svc.desc}</p>
-              <span style={{ ...raleway, display:'inline-block', background:'rgba(229,184,105,0.12)', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)', border:'1px solid rgba(229,184,105,0.35)', color:C.gold, padding:'0.3rem 0.85rem', borderRadius:20, fontSize:'0.8rem', fontWeight:600 }}>{svc.price}</span>
+    <section id="services" style={{ background:C.bg, padding:'100px 24px' }}>
+      <div style={{ maxWidth:1100, margin:'0 auto' }}>
+        <p style={{ ...raleway,color:C.teal,letterSpacing:4,fontSize:12,textTransform:'uppercase',textAlign:'center',marginBottom:12 }}>WHAT WE DO</p>
+        <h2 style={{ ...fenway,fontSize:'clamp(2rem,5vw,3.2rem)',color:C.white,textAlign:'center',marginBottom:52 }}>Services Menu</h2>
+        <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:20 }}>
+          {SERVICES.map((sv,i) => (
+            <div key={sv.name}
+              onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
+              style={{
+                ...glassCard, padding:'32px 28px', borderRadius:20,
+                border:`1px solid ${hov===i?C.purple+'60':C.border}`,
+                transform:hov===i?'translateY(-7px) scale(1.015)':'translateY(0) scale(1)',
+                boxShadow:hov===i?`0 24px 60px ${C.purple}28`:glassCard.boxShadow,
+                backdropFilter:hov===i?'blur(22px)':'blur(14px)',
+                transition:'all 0.28s cubic-bezier(0.34,1.56,0.64,1)',
+              }}>
+              <div style={{ fontSize:28,marginBottom:16 }}>{sv.icon}</div>
+              <h3 style={{ ...raleway,color:C.white,fontWeight:700,fontSize:'1.1rem',marginBottom:10 }}>{sv.name}</h3>
+              <p style={{ ...raleway,color:C.gray,fontSize:14,lineHeight:1.65,marginBottom:20 }}>{sv.desc}</p>
+              <span style={{
+                display:'inline-block',padding:'6px 16px',borderRadius:100,
+                background:hov===i?`${C.purple}30`:`${C.gold}18`,
+                border:`1px solid ${hov===i?C.purple+'50':C.gold+'40'}`,
+                color:hov===i?C.tealL:C.gold, fontSize:13, fontWeight:700, ...raleway,
+                transition:'all 0.25s',
+              }}>{sv.price}</span>
             </div>
           ))}
         </div>
@@ -232,7 +258,6 @@ function Services() {
   );
 }
 
-/* ─── Goldwell Suite ─────────────────────────────────────────────────────── */
 function GoldwellSuite() {
   return (
     <section id="goldwell" style={{ padding:'5rem 1.5rem', background:'#1e1e2e', borderTop:'1px solid rgba(229,184,105,0.12)' }}>
@@ -403,34 +428,7 @@ const TESTIMONIALS = [
   { stars:5, text:'"Finally a stylist who truly listens. Emily took my whole lifestyle into account and created a look that is genuinely perfect for me."', name:'Caitlin B.', location:'Amherstview, ON' },
 ];
 
-function Testimonials() {
-  return (
-    <section id="testimonials" style={{ padding:'5rem 1.5rem', background:'#1e1e2e' }}>
-      <div style={{ maxWidth:1200, margin:'0 auto' }}>
-        <p style={{ ...raleway, textAlign:'center', fontSize:'0.75rem', fontWeight:700, letterSpacing:'0.15em', color:C.tealL, textTransform:'uppercase', marginBottom:'0.75rem' }}>Client Love</p>
-        <h2 style={{ ...fenway, textAlign:'center', fontSize:'clamp(2rem,5vw,3rem)', color:C.white, marginBottom:'3rem', fontWeight:700 }}>What They Say</h2>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'1.5rem' }}>
-          {TESTIMONIALS.map((t,i) => (
-            <div key={i} style={{ ...glassCard, padding:'2rem', transition:'transform 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform='translateY(-3px)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform=''; }}>
-              <div style={{ display:'flex', gap:3, marginBottom:'1rem' }}>
-                {'★★★★★'.split('').map((_,si) => <span key={si} style={{ color:C.gold, fontSize:'1.1rem' }}>★</span>)}
-              </div>
-              <p style={{ ...raleway, color:'rgba(240,234,248,0.85)', lineHeight:1.75, fontStyle:'italic', marginBottom:'1.5rem', fontSize:'0.95rem' }}>{t.text}</p>
-              <div>
-                <p style={{ ...raleway, fontWeight:700, color:C.tealL, fontSize:'0.8rem', letterSpacing:'0.1em', textTransform:'uppercase', margin:'0 0 2px' }}>{t.name}</p>
-                <p style={{ ...raleway, color:C.gray, fontSize:'0.75rem', margin:0, letterSpacing:'0.05em', textTransform:'uppercase' }}>{t.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
-/* ─── Mobile Concierge ───────────────────────────────────────────────────── */
 function MobileConcierge() {
   return (
     <section id="mobile-care" style={{ padding:'5rem 1.5rem', background:'linear-gradient(135deg,rgba(13,148,136,0.06) 0%,rgba(30,30,46,1) 100%)' }}>
@@ -957,51 +955,63 @@ function Lookbook() {
 }
 
 
-function Booking() {
-  return (
-    <section id="book-now" style={{ padding:'6rem 1.5rem', background:'linear-gradient(135deg,rgba(139,92,246,0.12) 0%,rgba(13,148,136,0.08) 50%,rgba(30,30,46,1) 100%)' }}>
-      <div style={{ maxWidth:600, margin:'0 auto', textAlign:'center' }}>
-        <p style={{ ...raleway, fontSize:'0.75rem', fontWeight:700, letterSpacing:'0.15em', color:C.tealL, textTransform:'uppercase', marginBottom:'0.75rem' }}>Ready?</p>
-        <h2 style={{ ...fenway, fontSize:'clamp(2.5rem,6vw,4rem)', color:C.white, marginBottom:'1rem', fontWeight:700, lineHeight:1.05 }}>Book Your Appointment</h2>
-        <p style={{ ...raleway, color:C.gray, fontSize:'1rem', marginBottom:'0.75rem', lineHeight:1.7 }}>Call or text Emily directly to schedule your visit. A $25 deposit is required to secure your booking.</p>
-        <p style={{ ...raleway, color:'rgba(229,184,105,0.80)', fontSize:'0.85rem', marginBottom:'2.5rem', fontStyle:'italic' }}>Online booking coming soon — call or text to schedule today.</p>
-        <div style={{ display:'flex', gap:'1rem', justifyContent:'center', flexWrap:'wrap' }}>
-          <a href="tel:6139298711" style={{ ...raleway, background:'linear-gradient(135deg,#0d9488,#14b8a6)', color:'#fff', padding:'1rem 2.2rem', borderRadius:30, fontSize:'1rem', fontWeight:700, textDecoration:'none', boxShadow:'0 4px 24px rgba(13,148,136,0.40)', display:'inline-flex', alignItems:'center', gap:8, transition:'transform 0.2s, box-shadow 0.2s' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform='translateY(-2px)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform=''; }}>
-            📞 Call (613) 929-8711
-          </a>
-          <a href="sms:6139298711" style={{ ...raleway, background:'rgba(139,92,246,0.15)', backdropFilter:'blur(14px)', WebkitBackdropFilter:'blur(14px)', color:C.white, padding:'1rem 2.2rem', borderRadius:30, fontSize:'1rem', fontWeight:600, textDecoration:'none', border:'1px solid rgba(139,92,246,0.40)', display:'inline-flex', alignItems:'center', gap:8, transition:'background 0.2s' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background='rgba(139,92,246,0.28)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='rgba(139,92,246,0.15)'; }}>
-            💬 Send a Text
-          </a>
-        </div>
-        <p style={{ ...raleway, color:C.gray, fontSize:'0.8rem', marginTop:'1.5rem' }}>Serving Amherstview, Kingston, Bath & surrounding areas.</p>
-      </div>
-    </section>
-  );
-}
 
-/* ─── Footer ─────────────────────────────────────────────────────────────── */
+
+/* ═══ FOOTER (expanded with socials + WhatsApp) ══════════════ */
 function Footer() {
+  const socials = [
+    { icon:'📸', label:'Instagram', href:'https://www.instagram.com/theperfectlookbyemily', col:'#E1306C' },
+    { icon:'👍', label:'Facebook',  href:'https://www.facebook.com/theperfectlookbyemily', col:'#1877F2' },
+    { icon:'🎵', label:'TikTok',    href:'https://www.tiktok.com/@theperfectlookbyemily', col:'#69C9D0' },
+  ];
   return (
-    <footer style={{ background:'#13131e', borderTop:'1px solid rgba(139,92,246,0.15)', padding:'2.5rem 1.5rem', textAlign:'center' }}>
-      <p style={{ ...raleway, color:C.white, fontWeight:700, fontSize:'1.1rem', margin:'0 0 0.4rem' }}>The Perfect Look By Emily</p>
-      <p style={{ ...raleway, color:C.gray, fontSize:'0.85rem', margin:'0 0 1.5rem' }}>Emily Caird · Amherstview / Kingston, Ontario · (613) 929-8711</p>
-      <nav aria-label="Footer navigation" style={{ display:'flex', justifyContent:'center', gap:'1.5rem', flexWrap:'wrap', marginBottom:'1.5rem' }}>
-        {[['Services','#services'],['Gallery','#gallery'],['About','#about'],['Hours','#hours'],['Book Now','#book-now']].map(([label,href]) => (
-          <a key={label} href={href} style={{ ...raleway, color:C.gray, fontSize:'0.85rem', textDecoration:'none', transition:'color 0.2s' }}
-            onMouseEnter={e => (e.currentTarget.style.color = '#a855f7')}
-            onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>{label}</a>
-        ))}
-      </nav>
-      <p style={{ ...raleway, color:'rgba(255,255,255,0.25)', fontSize:'0.75rem', margin:0 }}>© 2026 The Perfect Look By Emily. All rights reserved.</p>
+    <footer style={{ background:'#0a0714', padding:'60px 24px 40px', borderTop:`1px solid ${C.border}` }}>
+      <div style={{ maxWidth:1100, margin:'0 auto' }}>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:40, marginBottom:48 }}>
+          <div>
+            <div style={{ ...fenway,color:C.white,fontSize:'1.3rem',marginBottom:8 }}>The Perfect Look By Emily</div>
+            <p style={{ ...raleway,color:C.gray,fontSize:13,lineHeight:1.7,marginBottom:16 }}>Goldwell-certified colour artistry, bespoke cuts, and luxury extensions. Private studio in Amherstview with mobile service across Greater Kingston.</p>
+            <div style={{ display:'flex',gap:12 }}>
+              {socials.map(sc=>(
+                <a key={sc.label} href={sc.href} target="_blank" rel="noopener noreferrer" title={sc.label}
+                  style={{ width:38,height:38,borderRadius:'50%',background:`${sc.col}20`,border:`1px solid ${sc.col}40`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:16,textDecoration:'none',transition:'background 0.2s' }}
+                  onMouseEnter={e=>{(e.currentTarget as HTMLAnchorElement).style.background=sc.col+'40';}}
+                  onMouseLeave={e=>{(e.currentTarget as HTMLAnchorElement).style.background=sc.col+'20';}}
+                >{sc.icon}</a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p style={{ ...raleway,color:C.white,fontWeight:700,fontSize:13,letterSpacing:2,textTransform:'uppercase',marginBottom:16 }}>Quick Links</p>
+            {[['Services','#services'],['Gallery','#gallery'],['Lookbook','#lookbook'],['About','#about'],['Hours','#hours'],['Membership','#membership'],['Book Now','#book-now']].map(([lbl,href])=>(
+              <a key={lbl} href={href} style={{ ...raleway,display:'block',color:C.gray,fontSize:14,marginBottom:10,textDecoration:'none',transition:'color 0.2s' }}
+                onMouseEnter={e=>{(e.currentTarget as HTMLAnchorElement).style.color=C.teal;}}
+                onMouseLeave={e=>{(e.currentTarget as HTMLAnchorElement).style.color=C.gray as string;}}
+              >{lbl}</a>
+            ))}
+          </div>
+          <div>
+            <p style={{ ...raleway,color:C.white,fontWeight:700,fontSize:13,letterSpacing:2,textTransform:'uppercase',marginBottom:16 }}>Contact</p>
+            <p style={{ ...raleway,color:C.gray,fontSize:14,marginBottom:10 }}>📍 Amherstview / Kingston, Ontario</p>
+            <a href="tel:6139298711" style={{ ...raleway,display:'block',color:C.teal,fontSize:14,marginBottom:10,textDecoration:'none' }}>📞 (613) 929-8711</a>
+            <a href="sms:6139298711" style={{ ...raleway,display:'block',color:C.gray,fontSize:14,marginBottom:10,textDecoration:'none' }}>💬 Text Us</a>
+            <a href="https://wa.me/16139298711" target="_blank" rel="noopener noreferrer" style={{ ...raleway,display:'block',color:'#25D366',fontSize:14,textDecoration:'none' }}>🟢 WhatsApp</a>
+          </div>
+          <div style={{ display:'flex',flexDirection:'column',justifyContent:'center' }}>
+            <p style={{ ...fenway,color:C.white,fontSize:'1.3rem',marginBottom:16,lineHeight:1.3 }}>Ready for your next transformation?</p>
+            <a href="#book-now" style={{ display:'block',textAlign:'center',padding:'16px 24px',background:`linear-gradient(135deg,${C.purple},${C.teal})`,borderRadius:14,color:C.white,fontWeight:700,textDecoration:'none',fontSize:15,...raleway,marginBottom:12 }}>Book Your Appointment</a>
+            <a href="tel:6139298711" style={{ display:'block',textAlign:'center',padding:'14px 24px',...glassCard,borderRadius:14,color:C.white,textDecoration:'none',fontSize:15,...raleway }}>Call (613) 929-8711</a>
+          </div>
+        </div>
+        <div style={{ borderTop:`1px solid ${C.border}`,paddingTop:24,display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:12 }}>
+          <p style={{ ...raleway,color:C.gray,fontSize:12 }}>© {new Date().getFullYear()} The Perfect Look By Emily · Emily Caird · Amherstview, Ontario</p>
+          <p style={{ ...raleway,color:C.gray,fontSize:12 }}>Serving Amherstview, Kingston, Bath, Napanee & surrounding areas</p>
+        </div>
+      </div>
     </footer>
   );
 }
 
-/* ─── AI Concierge ────────────────────────────────────────────────────────── */
 const AI_REPLIES: Record<string, string> = {
   balayage: "Balayage starts from $120 and takes 2–3 hours. It's Emily's signature speciality — hand-painted for a natural, sun-kissed effect that grows out beautifully.",
   colour:   "Emily offers full colour transformations from $130, vivid/fashion colour from $160, and colour correction from $180. Every formula is precision-mixed with Goldwell products.",
@@ -1143,6 +1153,219 @@ function ScrollRevealProvider({ children }: { children: React.ReactNode }) {
 }
 
 /* ─── Schema Markup ──────────────────────────────────────────────────────── */
+
+/* ═══ TRUST BAR ══════════════════════════════════════════════ */
+function TrustBar() {
+  const badges = [
+    { icon: '🏅', label: 'Goldwell Certified', sub: 'Colour Mastery' },
+    { icon: '⭐', label: '5.0 Google Rating', sub: '47 Reviews' },
+    { icon: '📅', label: '25+ Years', sub: 'Expert Stylist' },
+    { icon: '🏠', label: 'Mobile Service', sub: 'We Come to You' },
+    { icon: '💎', label: 'Private Studio', sub: 'Amherstview, ON' },
+    { icon: '🛡️', label: 'Insured & Licensed', sub: 'Professional Grade' },
+  ];
+  return (
+    <div style={{
+      background: `linear-gradient(90deg, ${C.bg} 0%, rgba(139,60,247,0.08) 50%, ${C.bg} 100%)`,
+      borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}`,
+      padding: '20px 24px',
+    }}>
+      <div style={{ maxWidth:1100, margin:'0 auto', display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:0 }}>
+        {badges.map((b, i) => (
+          <div key={b.label} style={{
+            display:'flex', flexDirection:'column', alignItems:'center', gap:4, padding:'12px 8px',
+            borderRight: i < badges.length-1 ? `1px solid ${C.border}` : 'none',
+          }}>
+            <span style={{ fontSize:22 }}>{b.icon}</span>
+            <span style={{ ...raleway, color:C.white, fontWeight:700, fontSize:13, textAlign:'center' }}>{b.label}</span>
+            <span style={{ ...raleway, color:C.teal, fontSize:11, letterSpacing:1, textTransform:'uppercase', textAlign:'center' }}>{b.sub}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ═══ COUNT-UP HOOK ══════════════════════════════════════════ */
+function useCountUp(target: number, duration = 1800, trigger = false) {
+  const [count, setCount] = React.useState(0);
+  React.useEffect(() => {
+    if (!trigger) return;
+    let cur = 0;
+    const step = target / (duration / 16);
+    const t = setInterval(() => {
+      cur += step;
+      if (cur >= target) { setCount(target); clearInterval(t); }
+      else setCount(Math.floor(cur));
+    }, 16);
+    return () => clearInterval(t);
+  }, [trigger, target, duration]);
+  return count;
+}
+
+/* ═══ TESTIMONIAL CAROUSEL ═══════════════════════════════════ */
+function TestimonialCarousel() {
+  const [active, setActive] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  React.useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => setActive(a => (a+1) % TESTIMONIALS.length), 4200);
+    return () => clearInterval(t);
+  }, [paused]);
+  const t = TESTIMONIALS[active];
+  return (
+    <section id="testimonials" style={{ background:C.bg, padding:'100px 24px' }}>
+      <div style={{ maxWidth:900, margin:'0 auto' }}>
+        <p style={{ ...raleway, color:C.teal, letterSpacing:4, fontSize:12, textTransform:'uppercase', textAlign:'center', marginBottom:12 }}>CLIENT LOVE</p>
+        <h2 style={{ ...fenway, fontSize:'clamp(2rem,5vw,3.2rem)', color:C.white, textAlign:'center', marginBottom:52 }}>What They Say</h2>
+        <div onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} style={{ ...glassCard, borderRadius:24, padding:'48px 48px 40px', textAlign:'center', minHeight:260, border:`1px solid ${C.purple}30` }}>
+          <div style={{ display:'flex', justifyContent:'center', gap:4, marginBottom:24 }}>
+            {[...Array(t.stars)].map((_,i)=><span key={i} style={{ color:C.gold, fontSize:20 }}>★</span>)}
+          </div>
+          <p style={{ ...raleway, color:'rgba(240,234,248,0.9)', fontSize:17, lineHeight:1.8, fontStyle:'italic', marginBottom:28, maxWidth:640, margin:'0 auto 28px' }}>"{t.text}"</p>
+          <p style={{ ...raleway, color:C.teal, fontWeight:700, fontSize:14, letterSpacing:2, textTransform:'uppercase', marginBottom:2 }}>{t.name}</p>
+          <p style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1 }}>{t.location}</p>
+        </div>
+        <div style={{ display:'flex', justifyContent:'center', gap:10, marginTop:28 }}>
+          {TESTIMONIALS.map((_,i) => (
+            <button key={i} onClick={()=>{ setActive(i); setPaused(true); setTimeout(()=>setPaused(false),6000); }}
+              style={{ width:active===i?28:10, height:10, borderRadius:5, border:'none', cursor:'pointer', background:active===i?C.purple:C.border, transition:'all 0.3s', padding:0 }} />
+          ))}
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))', gap:16, marginTop:44 }}>
+          {TESTIMONIALS.map((tr, i) => (
+            <div key={i} onClick={()=>setActive(i)} style={{ ...glassCard, borderRadius:16, padding:'20px 22px', cursor:'pointer', border:`1px solid ${active===i?C.purple+'60':C.border}`, opacity:active===i?1:0.65, transition:'all 0.2s' }}>
+              <div style={{ display:'flex', gap:2, marginBottom:8 }}>{[...Array(tr.stars)].map((_,j)=><span key={j} style={{ color:C.gold, fontSize:12 }}>★</span>)}</div>
+              <p style={{ ...raleway, color:'rgba(240,234,248,0.8)', fontSize:13, lineHeight:1.6, fontStyle:'italic', marginBottom:10 }}>"{tr.text.slice(0,90)}{tr.text.length>90?'...':''}"</p>
+              <p style={{ ...raleway, color:C.teal, fontSize:12, fontWeight:700 }}>{tr.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ BOOKING FORM ═══════════════════════════════════════════ */
+function BookingForm() {
+  const SVCS = ['Precision Cut','Balayage & Colour','Vivid Creative Colour','Hair Extensions','Bridal & Special Occasion','Mobile Concierge Visit','Colour Correction','Deep Conditioning Treatment','Mens Grooming','Membership Enquiry','Gift Card Purchase','Other / Consultation'];
+  const [sent, setSent] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [form, setForm] = React.useState({ name:'', phone:'', email:'', service:'', date:'', note:'' });
+  const handle = (f: string) => (e: React.ChangeEvent<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>) => setForm(prev => ({...prev, [f]: e.target.value}));
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault(); setLoading(true);
+    try {
+      await fetch('https://formspree.io/f/xdoqzrjq', { method:'POST', headers:{ 'Content-Type':'application/json', Accept:'application/json' }, body: JSON.stringify({...form, _subject: `New Booking — ${form.service||'General'}` }) });
+    } catch {}
+    setSent(true); setLoading(false);
+  };
+  const inp: React.CSSProperties = { width:'100%', padding:'14px 18px', borderRadius:12, background:'rgba(139,92,246,0.08)', border:`1px solid ${C.border}`, color:C.white, fontSize:15, outline:'none', boxSizing:'border-box', fontFamily:"'Raleway','Inter',system-ui,sans-serif", transition:'border-color 0.2s' };
+  const fo = (e: React.FocusEvent<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>, clr: string) => { e.target.style.borderColor = clr; };
+  return (
+    <section id="book-now" style={{ background:`linear-gradient(160deg, #0f0a1e 0%, ${C.bg} 60%)`, padding:'100px 24px' }}>
+      <div style={{ maxWidth:860, margin:'0 auto' }}>
+        <p style={{ ...raleway, color:C.teal, letterSpacing:4, fontSize:12, textTransform:'uppercase', textAlign:'center', marginBottom:12 }}>READY?</p>
+        <h2 style={{ ...fenway, fontSize:'clamp(2rem,5vw,3.4rem)', color:C.white, textAlign:'center', marginBottom:16 }}>Book Your Appointment</h2>
+        <p style={{ ...raleway, color:C.gray, textAlign:'center', marginBottom:44, lineHeight:1.7 }}>Fill in your details and Emily will confirm within a few hours. A $25 deposit secures your booking.</p>
+        {sent ? (
+          <div style={{ ...glassCard, borderRadius:24, padding:'56px 40px', textAlign:'center' }}>
+            <div style={{ fontSize:56, marginBottom:20 }}>✅</div>
+            <h3 style={{ ...fenway, color:C.white, fontSize:'1.8rem', marginBottom:12 }}>Request Received!</h3>
+            <p style={{ ...raleway, color:C.gray, lineHeight:1.7, maxWidth:440, margin:'0 auto 28px' }}>Emily will be in touch shortly. For urgent bookings call or text directly.</p>
+            <a href="tel:6139298711" style={{ display:'inline-block', padding:'14px 32px', background:`linear-gradient(135deg,${C.teal},${C.tealL})`, borderRadius:12, color:'#0d0d1a', fontWeight:700, textDecoration:'none', ...raleway }}>📞 Call (613) 929-8711</a>
+          </div>
+        ) : (
+          <form onSubmit={submit} style={{ ...glassCard, borderRadius:24, padding:'48px 40px', display:'grid', gap:20 }}>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+              <div>
+                <label style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1, textTransform:'uppercase', display:'block', marginBottom:8 }}>Full Name *</label>
+                <input required value={form.name} onChange={handle('name')} placeholder="Your name" style={inp} onFocus={e=>fo(e,C.purple)} onBlur={e=>fo(e,C.border as string)} />
+              </div>
+              <div>
+                <label style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1, textTransform:'uppercase', display:'block', marginBottom:8 }}>Phone / Text *</label>
+                <input required value={form.phone} onChange={handle('phone')} placeholder="(613) 000-0000" type="tel" style={inp} onFocus={e=>fo(e,C.purple)} onBlur={e=>fo(e,C.border as string)} />
+              </div>
+            </div>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+              <div>
+                <label style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1, textTransform:'uppercase', display:'block', marginBottom:8 }}>Email</label>
+                <input value={form.email} onChange={handle('email')} placeholder="your@email.com" type="email" style={inp} onFocus={e=>fo(e,C.purple)} onBlur={e=>fo(e,C.border as string)} />
+              </div>
+              <div>
+                <label style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1, textTransform:'uppercase', display:'block', marginBottom:8 }}>Service *</label>
+                <select required value={form.service} onChange={handle('service')} style={{ ...inp, appearance:'none' } as React.CSSProperties} onFocus={e=>fo(e,C.purple)} onBlur={e=>fo(e,C.border as string)}>
+                  <option value="" disabled>Select a service…</option>
+                  {SVCS.map(sv=><option key={sv} value={sv} style={{ background:'#1e1e2e' }}>{sv}</option>)}
+                </select>
+              </div>
+            </div>
+            <div>
+              <label style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1, textTransform:'uppercase', display:'block', marginBottom:8 }}>Preferred Date / Time</label>
+              <input value={form.date} onChange={handle('date')} placeholder="e.g. Any Tuesday afternoon, March 20th…" style={inp} onFocus={e=>fo(e,C.teal)} onBlur={e=>fo(e,C.border as string)} />
+            </div>
+            <div>
+              <label style={{ ...raleway, color:C.gray, fontSize:12, letterSpacing:1, textTransform:'uppercase', display:'block', marginBottom:8 }}>Notes / Hair History</label>
+              <textarea value={form.note} onChange={handle('note')} rows={4} placeholder="Share your hair history, inspiration, or any questions…" style={{ ...inp, resize:'vertical', lineHeight:1.6 } as React.CSSProperties} onFocus={e=>fo(e,C.teal)} onBlur={e=>fo(e,C.border as string)} />
+            </div>
+            <button type="submit" disabled={loading} style={{ padding:'18px 0', borderRadius:14, border:'none', cursor:loading?'not-allowed':'pointer', background:loading?C.border:`linear-gradient(135deg,${C.purple},${C.teal})`, color:C.white, fontWeight:700, fontSize:17, ...raleway, transition:'opacity 0.2s' }}>
+              {loading ? 'Sending…' : 'Request My Appointment →'}
+            </button>
+            <p style={{ ...raleway, color:C.gray, fontSize:13, textAlign:'center', marginTop:-8 }}>
+              Or call Emily directly: <a href="tel:6139298711" style={{ color:C.teal }}>(613) 929-8711</a>
+            </p>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/* ═══ CUSTOM CURSOR GLOW ════════════════════════════════════ */
+function CustomCursor() {
+  const dotRef = React.useRef<HTMLDivElement>(null);
+  const ringRef = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    let mx=0,my=0,gx=0,gy=0;
+    const onMove = (e: MouseEvent) => { mx=e.clientX; my=e.clientY; };
+    const loop = () => {
+      gx += (mx-gx)*0.12; gy += (my-gy)*0.12;
+      if (dotRef.current) { dotRef.current.style.left=mx+'px'; dotRef.current.style.top=my+'px'; }
+      if (ringRef.current) { ringRef.current.style.left=gx+'px'; ringRef.current.style.top=gy+'px'; }
+      requestAnimationFrame(loop);
+    };
+    window.addEventListener('mousemove', onMove);
+    requestAnimationFrame(loop);
+    return () => window.removeEventListener('mousemove', onMove);
+  }, []);
+  if (typeof window!=='undefined' && window.matchMedia('(pointer:coarse)').matches) return null;
+  return (
+    <>
+      <div ref={dotRef} style={{ position:'fixed',width:7,height:7,borderRadius:'50%',background:C.purple,pointerEvents:'none',zIndex:99999,transform:'translate(-50%,-50%)',mixBlendMode:'screen' as React.CSSProperties['mixBlendMode'] }} />
+      <div ref={ringRef} style={{ position:'fixed',width:36,height:36,borderRadius:'50%',border:`1.5px solid ${C.teal}80`,pointerEvents:'none',zIndex:99998,transform:'translate(-50%,-50%)',background:`radial-gradient(circle,${C.purple}18 0%,transparent 70%)` }} />
+    </>
+  );
+}
+
+/* ═══ PAGE LOADER ═════════════════════════════════════════════ */
+function PageLoader() {
+  const [vis, setVis] = React.useState(true);
+  React.useEffect(() => { const t=setTimeout(()=>setVis(false),800); return ()=>clearTimeout(t); }, []);
+  if (!vis) return null;
+  return (
+    <div style={{ position:'fixed',inset:0,background:C.bg,zIndex:99997,display:'flex',alignItems:'center',justifyContent:'center',animation:'loaderFade 0.5s ease 0.6s forwards',pointerEvents:'none' }}>
+      <style>{`@keyframes loaderFade{from{opacity:1}to{opacity:0}} @keyframes loaderDot{0%,80%,100%{transform:scale(0.5);opacity:0.3}40%{transform:scale(1);opacity:1}}`}</style>
+      <div style={{ textAlign:'center' }}>
+        <div style={{ ...fenway, color:C.white, fontSize:'2rem', letterSpacing:3, marginBottom:6 }}>The Perfect Look</div>
+        <div style={{ ...fenway, color:C.teal, fontSize:'1.1rem', fontStyle:'italic', marginBottom:20 }}>By Emily</div>
+        <div style={{ display:'flex',gap:6,justifyContent:'center' }}>
+          {[0,1,2].map(i=><div key={i} style={{ width:7,height:7,borderRadius:'50%',background:C.purple,animation:`loaderDot 1.2s ease ${i*0.2}s infinite` }} />)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SchemaMarkup() {
   const schema = {
     "@context": "https://schema.org",
@@ -1190,18 +1413,21 @@ function SchemaMarkup() {
 export default function Home() {
   return (
     <>
+      <PageLoader />
+      <CustomCursor />
       <SchemaMarkup />
       <Nav />
       <ScrollRevealProvider>
         <main>
           <Hero />
+          <TrustBar />
           <ComingSoon />
           <Services />
           <GoldwellSuite />
           <Portfolio />
           <Lookbook />
           <AboutEmily />
-          <Testimonials />
+          <TestimonialCarousel />
           <Membership />
           <MobileConcierge />
           <PriceWizard />
@@ -1209,7 +1435,7 @@ export default function Home() {
           <HoursSection />
           <FAQ />
           <GiftCards />
-          <Booking />
+          <BookingForm />
         </main>
       </ScrollRevealProvider>
       <Footer />
