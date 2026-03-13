@@ -1,0 +1,7 @@
+# robots.txt — The Perfect Look By Emily
+# https://theperfectlookbyemily.ca
+
+User-agent: *
+Allow: /
+
+Sitemap: https://theperfectlookbyemily.ca/sitemap.xml
