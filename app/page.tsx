@@ -526,6 +526,335 @@ function Footer() {
 }
 
 /* ─── Schema.org JSON-LD ─────────────────────────────────────────────── */
+/* ══════════════════════════════════════
+   AI CONCIERGE CHAT WIDGET
+══════════════════════════════════════ */
+function AIConcierge() {
+  const [open, setOpen] = React.useState(false);
+  const [msgs, setMsgs] = React.useState([
+    { role:'ai', text:"Hi! I'm Emily's AI Concierge. Ask me about services, pricing, availability, or booking." }
+  ]);
+  const [input, setInput] = React.useState('');
+  const msgsRef = React.useRef<HTMLDivElement>(null);
+
+  const reply = (q: string) => {
+    const lo = q.toLowerCase();
+    if (lo.includes('price') || lo.includes('cost') || lo.includes('how much'))
+      return "Cuts start from $60, Balayage from $120, Men's Grooming from $35. Use our Price Estimator below for a personalised quote!";
+    if (lo.includes('book') || lo.includes('appointment') || lo.includes('schedule'))
+      return "Call or text Emily at (613) 929-8711 to book. A $25 deposit secures your slot. Studio is open Tue–Sat!";
+    if (lo.includes('colour') || lo.includes('color') || lo.includes('balayage'))
+      return "Emily is a Goldwell Colour Mastery certified specialist. Balayage from $120, Vivid Colour from $80, Correction from $150+.";
+    if (lo.includes('hour') || lo.includes('open') || lo.includes('time'))
+      return "Studio hours: Mon–Wed 9am–7pm, Thu 9am–8pm, Fri 9am–6pm, Sat 8am–5pm. Closed Sunday. By appointment only.";
+    if (lo.includes('mobile') || lo.includes('home') || lo.includes('retirement') || lo.includes('visit'))
+      return "Emily offers mobile concierge visits to your home, retirement community, or workplace across Amherstview & Kingston!";
+    if (lo.includes('extension'))
+      return "Emily offers tape-in, micro-link, clip-in, and halo extensions. All colour-matched and damage-free. Book a consultation!";
+    if (lo.includes('location') || lo.includes('address') || lo.includes('where'))
+      return "The studio is in Amherstview, Ontario (exact address given on booking). Emily also does mobile visits across Kingston area!";
+    return "Great question! For full details I recommend booking a free consultation with Emily. Call (613) 929-8711 or scroll to Book Now!";
+  };
+
+  const send = () => {
+    if (!input.trim()) return;
+    const userMsg = { role:'user', text: input };
+    const aiMsg  = { role:'ai',  text: reply(input) };
+    setMsgs(prev => [...prev, userMsg, aiMsg]);
+    setInput('');
+    setTimeout(() => { if (msgsRef.current) msgsRef.current.scrollTop = msgsRef.current.scrollHeight; }, 50);
+  };
+
+  return (
+    <div style={{ position:'fixed', bottom:'2rem', right:'2rem', zIndex:999 }}>
+      {/* Chat panel */}
+      {open && (
+        <div style={{ position:'absolute', bottom:'5rem', right:0, width:320,
+          background:'#0d0d1a', border:'1px solid rgba(139,92,246,0.3)',
+          borderRadius:20, overflow:'hidden',
+          boxShadow:'0 20px 60px rgba(0,0,0,0.8)', fontFamily:"'Inter',system-ui,sans-serif" }}>
+          {/* Header */}
+          <div style={{ padding:'14px 18px', background:'linear-gradient(135deg,rgba(139,92,246,0.25),rgba(13,148,136,0.15))',
+            borderBottom:'1px solid rgba(255,255,255,0.08)', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+            <div>
+              <div style={{ fontWeight:700, fontSize:13, color:'#fff' }}>AI Concierge</div>
+              <div style={{ fontSize:11, color:'#2dd4bf' }}>● Online — Emily's Studio</div>
+            </div>
+            <button onClick={() => setOpen(false)}
+              style={{ background:'none', border:'none', color:'rgba(255,255,255,0.4)', cursor:'pointer', fontSize:18, lineHeight:1 }}>×</button>
+          </div>
+          {/* Messages */}
+          <div ref={msgsRef} style={{ height:260, overflowY:'auto', padding:12, display:'flex', flexDirection:'column', gap:8 }}>
+            {msgs.map((m, i) => (
+              <div key={i} style={{ maxWidth:'85%', padding:'10px 13px', borderRadius:12, fontSize:13, lineHeight:1.5,
+                alignSelf: m.role==='user' ? 'flex-end' : 'flex-start',
+                background: m.role==='user' ? 'rgba(13,148,136,0.2)' : 'rgba(139,92,246,0.15)',
+                border: m.role==='user' ? '1px solid rgba(13,148,136,0.3)' : '1px solid rgba(139,92,246,0.25)',
+                color:'rgba(255,255,255,0.9)' }}>
+                {m.text}
+              </div>
+            ))}
+          </div>
+          {/* Input */}
+          <div style={{ display:'flex', gap:8, padding:'10px 12px', borderTop:'1px solid rgba(255,255,255,0.07)' }}>
+            <input value={input} onChange={e => setInput(e.target.value)}
+              onKeyDown={e => e.key==='Enter' && send()}
+              placeholder="Ask anything..."
+              style={{ flex:1, background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)',
+                borderRadius:999, padding:'8px 14px', color:'#fff', fontSize:13, outline:'none', fontFamily:"'Inter',system-ui,sans-serif" }} />
+            <button onClick={send}
+              style={{ padding:'8px 16px', background:'linear-gradient(135deg,#8b3cf7,#0d9488)',
+                border:'none', borderRadius:999, color:'#fff', cursor:'pointer', fontSize:13, fontWeight:600 }}>Send</button>
+          </div>
+        </div>
+      )}
+      {/* Trigger button */}
+      <button onClick={() => setOpen(o => !o)}
+        style={{ width:56, height:56, borderRadius:'50%',
+          background: open ? 'linear-gradient(135deg,#0d9488,#0f766e)' : 'linear-gradient(135deg,#8b3cf7,#7c3aed)',
+          border:'none', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center',
+          fontSize:24, boxShadow:'0 8px 32px rgba(139,92,246,0.5)', transition:'all .3s' }}
+        title="AI Concierge">
+        {open ? '×' : '🤖'}
+      </button>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════
+   PRICE WIZARD (2-question estimator)
+══════════════════════════════════════ */
+function PriceWizard() {
+  const [step, setStep] = React.useState(0);
+  const [answers, setAnswers] = React.useState<string[]>([]);
+
+  const questions = [
+    { q:"What is your colour history?",
+      opts:["Virgin / no colour","Professional colour only","Box dye in the last 6 months","Not sure"] },
+    { q:"What is your hair length?",
+      opts:["Short (above chin)","Medium (chin to shoulder)","Long (below shoulder)","Extra Long (mid-back+)"] },
+  ];
+
+  const getResult = (ans: string[]) => {
+    if (ans[0]==="Box dye in the last 6 months")
+      return { price:"From $280+", time:"~4–5 hrs", label:"Colour Correction Required" };
+    if (ans[1]==="Long (below shoulder)" || ans[1]==="Extra Long (mid-back+)")
+      return { price:"From $160", time:"~3 hrs",   label:"Extended Service" };
+    return { price:"From $120", time:"~2 hrs",    label:"Standard Colour Service" };
+  };
+
+  const pick = (opt: string) => {
+    const next = [...answers, opt];
+    setAnswers(next);
+    if (next.length < questions.length) setStep(next.length);
+    else setStep(questions.length);
+  };
+
+  const reset = () => { setStep(0); setAnswers([]); };
+  const result = answers.length === questions.length ? getResult(answers) : null;
+
+  return (
+    <section style={{ padding:'80px 24px', background:'linear-gradient(135deg,rgba(139,92,246,0.06),rgba(13,148,136,0.04)),#0d0d1a',
+      borderTop:'1px solid rgba(139,92,246,0.12)' }}>
+      <div style={{ maxWidth:680, margin:'0 auto' }}>
+        <div style={{ textAlign:'center', marginBottom:40 }}>
+          <p style={{ fontSize:12, fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase',
+            color:'#2dd4bf', marginBottom:8, fontFamily:"'Inter',system-ui,sans-serif" }}>AI Pricing</p>
+          <h2 style={{ fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:700, color:'#fff',
+            margin:'0 0 12px', fontFamily:"'FenwayPark','Playfair Display',Georgia,serif" }}>Smart Price Estimator</h2>
+          <p style={{ color:'rgba(255,255,255,0.55)', fontSize:15, fontFamily:"'Inter',system-ui,sans-serif" }}>
+            Answer 2 quick questions — get an instant estimate
+          </p>
+        </div>
+        <div style={{ background:'rgba(255,255,255,0.04)', backdropFilter:'blur(14px)', WebkitBackdropFilter:'blur(14px)',
+          border:'1px solid rgba(139,92,246,0.25)', borderRadius:20, padding:'2.5rem' }}>
+          {result ? (
+            <div style={{ textAlign:'center' }}>
+              <div style={{ fontSize:'3rem', marginBottom:'1rem' }}>✨</div>
+              <h3 style={{ fontFamily:"'FenwayPark','Playfair Display',serif", fontSize:'1.2rem', color:'#fff', marginBottom:8 }}>Your Estimate</h3>
+              <div style={{ fontFamily:"'FenwayPark','Playfair Display',serif", fontSize:'2.4rem', color:'#e5b869', margin:'12px 0 6px' }}>{result.price}</div>
+              <div style={{ color:'#2dd4bf', fontSize:15, marginBottom:6, fontFamily:"'Inter',system-ui,sans-serif" }}>{result.time}</div>
+              <div style={{ fontSize:12, letterSpacing:'0.12em', textTransform:'uppercase',
+                color:'rgba(255,255,255,0.5)', marginBottom:'2rem', fontFamily:"'Inter',system-ui,sans-serif" }}>{result.label}</div>
+              <div style={{ display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap' }}>
+                <a href="#book-now" style={{ background:'linear-gradient(135deg,#0d9488,#0f766e)', color:'#fff',
+                  padding:'12px 28px', borderRadius:999, textDecoration:'none', fontWeight:700, fontFamily:"'Inter',system-ui,sans-serif" }}>Book This Service</a>
+                <button onClick={reset} style={{ background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.15)',
+                  color:'#fff', padding:'12px 28px', borderRadius:999, cursor:'pointer', fontFamily:"'Inter',system-ui,sans-serif" }}>Start Over</button>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <p style={{ fontSize:11, fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase',
+                color:'#2dd4bf', textAlign:'center', marginBottom:16, fontFamily:"'Inter',system-ui,sans-serif" }}>
+                Question {step + 1} of {questions.length}
+              </p>
+              <p style={{ fontFamily:"'FenwayPark','Playfair Display',serif", fontSize:'1.3rem', fontStyle:'italic',
+                color:'rgba(255,255,255,0.9)', marginBottom:'1.5rem', textAlign:'center' }}>
+                {questions[step].q}
+              </p>
+              <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+                {questions[step].opts.map(opt => (
+                  <button key={opt} onClick={() => pick(opt)}
+                    style={{ padding:'14px 20px', background:'rgba(255,255,255,0.05)',
+                      border:'1px solid rgba(139,92,246,0.2)', borderRadius:12,
+                      cursor:'pointer', color:'rgba(255,255,255,0.85)', fontSize:15, textAlign:'left',
+                      transition:'all .2s', fontFamily:"'Inter',system-ui,sans-serif" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background='rgba(139,92,246,0.15)'; (e.currentTarget as HTMLButtonElement).style.borderColor='rgba(139,92,246,0.4)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background='rgba(255,255,255,0.05)'; (e.currentTarget as HTMLButtonElement).style.borderColor='rgba(139,92,246,0.2)'; }}>
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════
+   VIBE SETTER (style discovery)
+══════════════════════════════════════ */
+function VibeSetter() {
+  const [selected, setSelected] = React.useState<string|null>(null);
+  const vibes = [
+    { emoji:'🌿', name:'Natural & Effortless',   rec:'Lived-in Balayage + Scalp Treatment' },
+    { emoji:'✨', name:'Polished & Refined',      rec:'Precision Cut + Keratin Smooth' },
+    { emoji:'🔥', name:'Bold & Dramatic',         rec:'Full Colour Transformation + Cut' },
+    { emoji:'🌸', name:'Soft & Romantic',         rec:'Soft Balayage + Wave Styling' },
+    { emoji:'🖤', name:'Edgy & Modern',           rec:'Colour Correction + Geometric Cut' },
+    { emoji:'👑', name:'Classic Luxury',          rec:'Signature Cut + Scalp Spa' },
+  ];
+  return (
+    <section style={{ padding:'80px 24px', background:'#0d0d1a', borderTop:'1px solid rgba(229,184,105,0.1)' }}>
+      <div style={{ maxWidth:1000, margin:'0 auto' }}>
+        <div style={{ textAlign:'center', marginBottom:40 }}>
+          <p style={{ fontSize:12, fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase',
+            color:'#e5b869', marginBottom:8, fontFamily:"'Inter',system-ui,sans-serif" }}>Style Discovery</p>
+          <h2 style={{ fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:700, color:'#fff',
+            margin:'0 0 12px', fontFamily:"'FenwayPark','Playfair Display',Georgia,serif" }}>Find Your Vibe</h2>
+          <p style={{ color:'rgba(255,255,255,0.55)', fontSize:15, fontFamily:"'Inter',system-ui,sans-serif" }}>
+            Pick your aesthetic — we'll curate the perfect service for you
+          </p>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(150px,1fr))', gap:16 }}>
+          {vibes.map(v => (
+            <div key={v.name} onClick={() => setSelected(v.name)}
+              style={{ background: selected===v.name ? 'rgba(139,92,246,0.2)' : 'rgba(255,255,255,0.04)',
+                backdropFilter:'blur(14px)', WebkitBackdropFilter:'blur(14px)',
+                border: selected===v.name ? '2px solid #8b3cf7' : '1px solid rgba(139,92,246,0.2)',
+                borderRadius:16, padding:'1.5rem 1rem', textAlign:'center', cursor:'pointer', transition:'all .25s' }}>
+              <div style={{ fontSize:'2.4rem', marginBottom:10 }}>{v.emoji}</div>
+              <div style={{ fontFamily:"'FenwayPark','Playfair Display',serif", fontSize:'.85rem',
+                color:'#fff', fontWeight:600 }}>{v.name}</div>
+            </div>
+          ))}
+        </div>
+        {selected && (
+          <div style={{ marginTop:'2rem', textAlign:'center', animation:'fadeUp .4s ease' }}>
+            <div style={{ background:'rgba(255,255,255,0.04)', backdropFilter:'blur(14px)',
+              border:'1px solid rgba(139,92,246,0.3)', borderRadius:16, padding:'2rem',
+              maxWidth:480, margin:'0 auto' }}>
+              <p style={{ fontSize:11, fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase',
+                color:'#2dd4bf', marginBottom:10, fontFamily:"'Inter',system-ui,sans-serif" }}>Recommended for You</p>
+              <p style={{ fontFamily:"'FenwayPark','Playfair Display',serif", fontSize:'1.15rem',
+                color:'#fff', marginBottom:'1.5rem' }}>
+                {vibes.find(v => v.name===selected)?.rec}
+              </p>
+              <a href="#book-now" style={{ background:'linear-gradient(135deg,#8b3cf7,#7c3aed)', color:'#fff',
+                padding:'12px 28px', borderRadius:999, textDecoration:'none',
+                fontWeight:700, fontFamily:"'Inter',system-ui,sans-serif" }}>Book This Look</a>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════
+   FAQ ACCORDION
+══════════════════════════════════════ */
+function FAQ() {
+  const [openIdx, setOpenIdx] = React.useState<number|null>(null);
+  const faqs = [
+    { q:"What areas do you serve?",
+      a:"The private studio is in Amherstview, Ontario — exact address provided on booking. Emily also does mobile visits across Kingston, Bath, Napanee & surrounding areas." },
+    { q:"How do I book an appointment?",
+      a:"Call or text Emily at (613) 929-8711 to schedule. A $25 deposit is required to hold your slot. You can also use the Price Estimator on this page to get an estimate first." },
+    { q:"Do you offer colour correction?",
+      a:"Yes — Emily specialises in complex colour corrections. These require a paid consultation ($50) to assess the work and build a safe plan. Correction pricing starts from $80–100/hr." },
+    { q:"What products do you use?",
+      a:"Emily uses premium professional products including Goldwell, Olaplex, K18, Aveda, and Davines — selected for performance, quality, and clean beauty standards." },
+    { q:"Is the studio truly private?",
+      a:"100% private. You will never share the space with other clients. No distractions — just undivided attention from Emily start to finish." },
+    { q:"Do you do mobile retirement home visits?",
+      a:"Absolutely — this is one of Emily's specialties. She brings all equipment and provides the same quality service at retirement homes, LTC facilities, and private residences." },
+    { q:"How do I prepare for a colour service?",
+      a:"Come with day-old hair (not freshly washed). Bring inspiration photos if you have them. For colour corrections, avoid heavy products. Emily will guide you through everything." },
+  ];
+  return (
+    <section id="faq" style={{ padding:'80px 24px',
+      background:'linear-gradient(135deg,rgba(13,148,136,0.04),rgba(139,92,246,0.04)),#0d0d1a',
+      borderTop:'1px solid rgba(13,148,136,0.1)' }}>
+      <div style={{ maxWidth:760, margin:'0 auto' }}>
+        <div style={{ textAlign:'center', marginBottom:48 }}>
+          <p style={{ fontSize:12, fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase',
+            color:'#2dd4bf', marginBottom:8, fontFamily:"'Inter',system-ui,sans-serif" }}>FAQs</p>
+          <h2 style={{ fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:700, color:'#fff',
+            margin:0, fontFamily:"'FenwayPark','Playfair Display',Georgia,serif" }}>Questions Answered</h2>
+        </div>
+        <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+          {faqs.map((faq, i) => (
+            <div key={i} style={{ background:'rgba(255,255,255,0.04)', backdropFilter:'blur(14px)',
+              border:'1px solid rgba(139,92,246,0.2)', borderRadius:12, overflow:'hidden' }}>
+              <div onClick={() => setOpenIdx(openIdx===i ? null : i)}
+                style={{ padding:'18px 22px', cursor:'pointer', display:'flex',
+                  justifyContent:'space-between', alignItems:'center',
+                  fontFamily:"'FenwayPark','Playfair Display',serif", fontSize:'.95rem', color:'#fff' }}>
+                {faq.q}
+                <span style={{ color:'#2dd4bf', fontSize:'1.3rem', lineHeight:1,
+                  transform: openIdx===i ? 'rotate(45deg)' : 'none', transition:'transform .25s', flexShrink:0, marginLeft:12 }}>+</span>
+              </div>
+              {openIdx===i && (
+                <div style={{ padding:'0 22px 18px', color:'rgba(255,255,255,0.65)',
+                  fontSize:14, lineHeight:1.75, fontFamily:"'Inter',system-ui,sans-serif" }}>{faq.a}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════
+   BACK TO TOP
+══════════════════════════════════════ */
+function BackToTop() {
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    const h = () => setShow(window.scrollY > 500);
+    window.addEventListener('scroll', h);
+    return () => window.removeEventListener('scroll', h);
+  }, []);
+  if (!show) return null;
+  return (
+    <button onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
+      title="Back to top"
+      style={{ position:'fixed', bottom:'5.5rem', right:'2rem', zIndex:998,
+        width:44, height:44, borderRadius:'50%',
+        background:'rgba(139,92,246,0.25)', border:'1px solid rgba(139,92,246,0.4)',
+        color:'#fff', cursor:'pointer', fontSize:'1.1rem',
+        display:'flex', alignItems:'center', justifyContent:'center',
+        backdropFilter:'blur(8px)', transition:'all .3s' }}>
+      ↑
+    </button>
+  );
+}
+
 function SchemaMarkup() {
   const schema = {
     "@context": "https://schema.org",
@@ -563,22 +892,29 @@ function ScrollRevealProvider() {
 /* ─── App ────────────────────────────────────────────────────────────── */
 export default function Home() {
   return (
-    <main style={{ background:'#1e1e2e', color:'#fff', minHeight:'100vh', ...inter }}>
-      <SchemaMarkup />
-      <ScrollRevealProvider />
-      <Nav />
-      <Hero />
-      <ComingSoon />
-      <Services />
-      <GoldwellSuite />
-      <Portfolio />
-      <About />
-      <Testimonials />
-      <MobileConcierge />
-      <Hours />
-      <Booking />
-      <Footer />
-      <StickyMobileCTA />
-    </main>
+    <>
+      <main style={{ background:'#0d0d1a', color:'#fff', minHeight:'100vh', fontFamily:"'Inter',system-ui,sans-serif" }}>
+        <SchemaMarkup />
+        <ScrollRevealProvider />
+        <Nav />
+        <Hero />
+        <ComingSoon />
+        <Services />
+        <GoldwellSuite />
+        <Portfolio />
+        <About />
+        <Testimonials />
+        <MobileConcierge />
+        <PriceWizard />
+        <VibeSetter />
+        <Hours />
+        <FAQ />
+        <Booking />
+        <Footer />
+        <StickyMobileCTA />
+        <AIConcierge />
+        <BackToTop />
+      </main>
+    </>
   );
 }
