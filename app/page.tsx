@@ -854,7 +854,7 @@ const TRANSFORMATIONS = [
     label: 'BALAYAGE',
     title: 'Natural Brunette to Lived-In Balayage',
     desc: 'Hand-painted sun-kissed tones through naturally dark hair for a low-maintenance, high-impact result.',
-    after: '/images/1000010910.jpg',
+    after: '/images/1000010835.jpg',
     accent: C.teal,
   },
   {
@@ -862,7 +862,7 @@ const TRANSFORMATIONS = [
     label: 'VIVID COLOUR',
     title: 'Platinum to Pastel Purple Dreamscape',
     desc: 'Custom-formulated pastel violet over a lifted platinum base. Toned to last with Goldwell care.',
-    after: '/images/1000010922.jpg',
+    after: '/images/1000019345.jpg',
     accent: C.purple,
   },
   {
@@ -870,7 +870,7 @@ const TRANSFORMATIONS = [
     label: 'EXTENSIONS',
     title: 'Fine Hair to Full Luxury Volume',
     desc: 'Tape-in extensions added length and density while maintaining a perfectly natural blend at the root.',
-    after: '/images/1000010925.jpg',
+    after: '/images/1000022978.jpg',
     accent: C.tealL,
   },
 ];
