@@ -69,6 +69,8 @@ app.use(
           'https://web.squarecdn.com',
           'https://www.gstatic.com',
           'https://fonts.googleapis.com',
+          'https://unpkg.com',
+          'https://cdn.jsdelivr.net',
         ],
         styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com'],
