@@ -354,14 +354,15 @@ function Portfolio() {
 }
 
 /* ─── About Emily ────────────────────────────────────────────────────────── */
+/* ─── About Emily ────────────────────────────────────────────────────────── */
 function AboutEmily() {
   return (
     <section id="about" style={{ padding:'5rem 1.5rem', background:'linear-gradient(135deg,rgba(139,92,246,0.06) 0%,rgba(13,148,136,0.04) 50%,rgba(30,30,46,1) 100%)' }}>
       <div style={{ maxWidth:1100, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'4rem', alignItems:'center' }}>
         <div style={{ position:'relative' }}>
-          <div style={{ borderRadius:24, overflow:'hidden', aspectRatio:'4/5', position:'relative', boxShadow:'0 24px 80px rgba(139,92,246,0.25)' }}>
-            <Image src="/images/1000011101.jpg" alt="Emily Caird — Master Colourist, Amherstview Ontario" fill style={{ objectFit:'cover', objectPosition:'center top' }} sizes="(max-width:768px) 100vw, 50vw" />
-            <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(30,30,46,0.6) 0%, transparent 50%)' }} />
+          <div style={{ borderRadius:24, overflow:'hidden', position:'relative', boxShadow:'0 24px 80px rgba(139,92,246,0.25)', aspectRatio:'4/5' }}>
+            <img src="/images/1000011101.jpg" alt="Emily Caird — Master Colourist, Amherstview Ontario" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block' }} />
+            <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(30,30,46,0.5) 0%, transparent 50%)' }} />
           </div>
           <div style={{ ...glassCard, position:'absolute', bottom:-20, right:-20, padding:'1.2rem 1.6rem', backdropFilter:'blur(20px)', WebkitBackdropFilter:'blur(20px)' }}>
             <div style={{ ...fenway, fontSize:'2.5rem', fontWeight:800, color:C.purple, lineHeight:1 }}>25+</div>
@@ -372,7 +373,7 @@ function AboutEmily() {
           <p style={{ ...raleway, fontSize:'0.75rem', fontWeight:700, letterSpacing:'0.15em', color:C.tealL, textTransform:'uppercase', marginBottom:'0.75rem', margin:'0 0 0.75rem' }}>Meet Your Stylist</p>
           <h2 style={{ ...fenway, fontSize:'clamp(2rem,4vw,3rem)', color:C.white, marginBottom:'1.5rem', fontWeight:700, margin:'0 0 1.5rem', lineHeight:1.1 }}>Emily Caird</h2>
           <p style={{ ...raleway, color:C.gray, lineHeight:1.8, marginBottom:'1rem' }}>With over 25 years of hands-on experience in colour artistry and hair design, Emily brings Goldwell-certified mastery to every client — whether in her private Amherstview studio or your own home.</p>
-          <p style={{ ...raleway, color:C.gray, lineHeight:1.8, marginBottom:'2rem' }}>Specialising in complex colour transformations, seamless extensions, and mobile bridal styling, Emily's work is guided by one belief: every person deserves to feel extraordinary.</p>
+          <p style={{ ...raleway, color:C.gray, lineHeight:1.8, marginBottom:'2rem' }}>Specialising in complex colour transformations, seamless extensions, and mobile bridal styling, every person deserves to feel extraordinary.</p>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0.75rem', marginBottom:'2rem' }}>
             {[['✨','Private Studio'],['🏆','Goldwell Certified'],['🌿','25+ Years Expert'],['✦','Mobile Concierge'],['✂️','Precision Cuts'],['💜','Client-First Always']].map(([icon,label]) => (
               <div key={label} style={{ display:'flex', alignItems:'center', gap:10 }}>
@@ -384,23 +385,13 @@ function AboutEmily() {
           <a href="#book-now" style={{ ...raleway, display:'inline-block', background:'linear-gradient(135deg,#8b3cf7,#7c3aed)', color:'#fff', padding:'0.85rem 2rem', borderRadius:24, fontSize:'0.95rem', fontWeight:700, textDecoration:'none', letterSpacing:'0.03em', boxShadow:'0 4px 24px rgba(139,92,246,0.40)', transition:'transform 0.2s, box-shadow 0.2s' }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform='translateY(-2px)'; (e.currentTarget as HTMLElement).style.boxShadow='0 8px 32px rgba(139,92,246,0.55)'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform=''; (e.currentTarget as HTMLElement).style.boxShadow='0 4px 24px rgba(139,92,246,0.40)'; }}>
-            Begin Your Journey →
+            Begin Your Journey &#x2192;
           </a>
         </div>
       </div>
     </section>
   );
 }
-
-/* ─── Testimonials ────────────────────────────────────────────────────────── */
-const TESTIMONIALS = [
-  { stars:5, text:'"Emily is an absolute artist. My balayage looks like I stepped out of a high-end editorial shoot. The private studio experience is unlike anything else."', name:'Sarah M.', location:'Kingston, ON' },
-  { stars:5, text:'"I have been going to Emily for three years and my hair has never been healthier or more beautiful. She truly understands colour like no one else."', name:'Jennifer K.', location:'Amherstview, ON' },
-  { stars:5, text:'"The mobile service is a game-changer. Emily came to my home and delivered salon-quality results with full professionalism. Absolutely worth every penny."', name:'Michelle T.', location:'Bath, ON' },
-  { stars:5, text:'"Incredible attention to detail. Emily diagnosed scalp issues my previous stylist missed for years. Walking out every time feeling like a new person."', name:'Rachel L.', location:'Napanee, ON' },
-  { stars:5, text:'"My colour correction took years off the damage my hair had. Emily was honest, thorough, and delivered results beyond what I thought possible."', name:'Amanda P.', location:'Kingston, ON' },
-  { stars:5, text:'"Finally a stylist who truly listens. Emily took my whole lifestyle into account and created a look that is genuinely perfect for me."', name:'Caitlin B.', location:'Amherstview, ON' },
-];
 
 function Testimonials() {
   return (
