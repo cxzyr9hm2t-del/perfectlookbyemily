@@ -206,7 +206,7 @@ const SERVICES = [
   { icon:'✨',  title:'Vivid & Creative Colour',   desc:'Bold fantasy colours — from pastel lavender to deep ocean teal — expertly formulated.', price:'Custom Quote', style:glassCard },
   { icon:'💍',  title:'Bridal & Special Occasion', desc:'Bespoke wedding hair and event styling with pearl pins, braids, and elegant updos.', price:'From $150', style:glassCard },
   { icon:'🏠',  title:'Mobile Concierge',          desc:'Emily comes to your home, retirement residence, or facility. Full service, zero travel stress.', price:'Call for Quote', style:glassCard },
-  { icon:'🧔',  title:"Men's Grooming",           desc:'Precision fades, textured crops, and classic barbershop-style cuts for all hair types.', price:'From $35', style:glassCard },
+  { icon:'🧔',  title:"Men\'s Grooming",           desc:'Precision fades, textured crops, and classic barbershop-style cuts for all hair types.', price:'From $35', style:glassCard },
 ];
 
 function Services() {
@@ -620,13 +620,13 @@ function HoursSection() {
 
 /* ─── FAQ ─────────────────────────────────────────────────────────────────── */
 const FAQS = [
-  { q:'What areas do you serve?', a:'Emily serves Amherstview, Kingston, Bath, Napanee, and surrounding areas. Mobile services are available throughout Greater Kingston and Lennox & Addington County.' },
-  { q:'How do I book an appointment?', a:'Call or text Emily directly at (613) 929-8711. A $25 deposit is required to secure your booking. Online booking coming soon.' },
-  { q:'Do you offer colour correction?', a:'Yes. Emily specialises in complex colour correction including box dye removal, tonal corrections, and restoring health after over-processing. A consultation is required.' },
-  { q:'What products do you use?', a:'Emily exclusively uses Goldwell professional products — the same line used in top editorial and fashion industry settings. All formulas are custom-mixed for your unique hair.' },
-  { q:'Is the studio truly private?', a:'Yes. The studio is a dedicated private space — no other clients during your appointment. You get Emily's undivided attention for your full service.' },
-  { q:'Do you do mobile retirement home visits?', a:'Absolutely. Emily regularly visits retirement homes and long-term care facilities. All equipment is brought on-site. Please call to arrange a group booking or regular schedule.' },
-  { q:'How do I prepare for a colour service?', a:'Come with clean, dry hair (no oils or serums). Avoid washing the day-of if possible. Bring inspiration photos. Emily will walk you through everything at your consultation.' },
+  { q:`What areas do you serve?`, a:`Emily serves Amherstview, Kingston, Bath, Napanee, and surrounding areas. Mobile services are available throughout Greater Kingston and Lennox and Addington County.` },
+  { q:`How do I book an appointment?`, a:`Call or text Emily directly at (613) 929-8711. A $25 deposit is required to secure your booking. Online booking coming soon.` },
+  { q:`Do you offer colour correction?`, a:`Yes. Emily specialises in complex colour correction including box dye removal, tonal corrections, and restoring hair health after over-processing. A consultation is required.` },
+  { q:`What products do you use?`, a:`Emily exclusively uses Goldwell professional products — the same line used in top editorial and fashion settings. All formulas are custom-mixed for your unique hair.` },
+  { q:`Is the studio truly private?`, a:`Yes. The studio is a dedicated private space — no other clients during your appointment. You get undivided attention for your full service.` },
+  { q:`Do you do mobile retirement home visits?`, a:`Absolutely. Emily regularly visits retirement homes and long-term care facilities. All equipment is brought on-site. Call to arrange a group booking or regular schedule.` },
+  { q:`How do I prepare for a colour service?`, a:`Come with clean, dry hair (no heavy oils or serums). Avoid washing the day-of if possible. Bring inspiration photos. Emily will walk you through everything at your consultation.` },
 ];
 
 function FAQ() {
