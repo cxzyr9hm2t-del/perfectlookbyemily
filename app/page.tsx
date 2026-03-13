@@ -131,7 +131,7 @@ function Nav() {
         <span style={{ ...raleway, fontWeight:600, fontSize:'1rem', color:'#f0eaf8', letterSpacing:'0.02em' }}>The Perfect Look By Emily</span>
       </a>
       <div style={{ display:'flex', alignItems:'center', gap:'1.5rem' }}>
-        {(['Services','#services'],['Gallery','#gallery'],['About','#about'],['Book Now','#book-now']).map(([label, href]: string[]) => (
+        {([['Services','#services'],['Gallery','#gallery'],['About','#about'],['Book Now','#book-now']]).map(([label, href]: string[]) => (
           <a key={label} href={href} style={{ ...raleway, color:'rgba(240,234,248,0.80)', fontSize:'0.875rem', fontWeight:500, textDecoration:'none', letterSpacing:'0.03em', transition:'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#a855f7')}
             onMouseLeave={e => (e.currentTarget.style.color = 'rgba(240,234,248,0.80)')}>{label}</a>
