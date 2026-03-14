@@ -190,6 +190,121 @@ footer{background:var(--charcoal);border-top:1px solid var(--border);padding:4re
 .footer-copy{font-size:.8rem;color:rgba(255,255,255,.3);}
 @media(max-width:768px){.about-grid,.headspa-grid,.ar-showcase,.booking-grid{grid-template-columns:1fr;}.nav-links{display:none;}.insta-grid{grid-template-columns:repeat(3,1fr);}.ai-chat{width:280px;}}
 </style>
+
+<style id="emily-permanent-styles">
+/* ============================================================
+   INNER CIRCLE SECTION
+   ============================================================ */
+.inner-circle-section{position:relative;background:#0f0a1a;padding:100px 24px 120px;overflow:hidden;font-family:inherit;}
+.ic-hero{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto 72px;}
+.ic-eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2dd4bf;margin-bottom:14px;}
+.ic-headline{font-size:clamp(2.4rem,6vw,3.8rem);font-weight:700;margin:0 0 20px;line-height:1.1;background:linear-gradient(135deg,#f0eaff 30%,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ic-subheadline{font-size:1.05rem;color:rgba(240,234,255,.65);line-height:1.75;margin:0;font-style:italic;}
+.ic-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,#8b5cf6,transparent);margin:40px auto 0;}
+.ic-card{position:relative;display:flex;flex-direction:column;padding:52px 44px 44px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow:hidden;max-width:860px;margin:0 auto 48px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
+.ic-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.3);box-shadow:0 24px 48px rgba(0,0,0,.35),0 0 0 1px rgba(139,92,246,.15);}
+.ic-card--teal:hover{border-color:rgba(45,212,191,.35);box-shadow:0 24px 48px rgba(0,0,0,.35),0 0 0 1px rgba(45,212,191,.2);}
+.ic-card--coming-soon{border-color:rgba(139,92,246,.2);}
+.ic-card-glow{position:absolute;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .35s ease;}
+.ic-card:hover .ic-card-glow{opacity:1;}
+.glow--purple{width:280px;height:280px;top:-80px;right:-80px;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 70%);filter:blur(30px);}
+.glow--teal{width:280px;height:280px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(45,212,191,.2),transparent 70%);filter:blur(30px);}
+.glow--mixed{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(139,92,246,.14),rgba(45,212,191,.12),transparent 70%);filter:blur(50px);}
+.ic-card-badge{position:relative;z-index:1;display:inline-flex;align-self:flex-start;padding:5px 14px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px;background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.35);color:#a78bfa;}
+.ic-badge--teal{background:rgba(45,212,191,.15);border-color:rgba(45,212,191,.3);color:#2dd4bf;}
+.ic-hot-badge{position:absolute;top:24px;right:24px;z-index:2;background:linear-gradient(135deg,#8b5cf6,#2dd4bf);color:#fff;padding:6px 16px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.ic-coming-soon-ribbon{position:absolute;top:28px;right:-38px;background:linear-gradient(135deg,#8b5cf6,#2dd4bf);color:#fff;padding:8px 60px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;transform:rotate(30deg);font-weight:700;z-index:2;}
+.ic-card-header{position:relative;z-index:1;margin-bottom:24px;}
+.ic-tier-label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;}
+.ic-tier-name{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:700;color:#f0eaff;margin:0 0 10px;line-height:1.2;}
+.ic-tier-tagline{font-size:1rem;color:rgba(240,234,255,.55);font-style:italic;margin:0;}
+.ic-card-body{position:relative;z-index:1;flex:1;margin-bottom:32px;}
+.ic-tier-description{font-size:.95rem;color:rgba(240,234,255,.65);line-height:1.75;margin:0 0 28px;}
+.ic-perks-list{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:16px;}
+.ic-perks-list li{display:flex;gap:14px;align-items:flex-start;}
+.perk-icon{font-size:.7rem;margin-top:4px;flex-shrink:0;}
+.perk-icon--star{font-size:1rem;}
+.ic-perks-list li div{display:flex;flex-direction:column;gap:4px;}
+.ic-perks-list li strong{font-size:.95rem;color:#f0eaff;font-weight:600;}
+.ic-perks-list li span{font-size:.85rem;color:rgba(240,234,255,.55);line-height:1.55;}
+.ic-tier-cta-text{font-size:.85rem;color:rgba(240,234,255,.4);font-style:italic;margin:0;}
+.ic-beta-box{border:1px solid rgba(139,92,246,.35);border-radius:16px;padding:32px;margin:24px 0;background:rgba(139,92,246,.06);}
+.ic-beta-price{display:flex;flex-direction:column;gap:4px;margin-bottom:20px;}
+.price-label{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#2dd4bf;}
+.price-amount{font-size:2.8rem;font-weight:700;color:#f0eaff;line-height:1;}
+.price-name{font-size:1rem;font-weight:600;color:#a78bfa;}
+.ic-beta-description{font-size:.9rem;color:rgba(240,234,255,.6);line-height:1.65;margin:0 0 20px;}
+.ic-teaser-block{background:rgba(45,212,191,.05);border:1px solid rgba(45,212,191,.15);border-radius:12px;padding:24px;margin-top:24px;}
+.ic-teaser-block p{font-size:.9rem;color:rgba(240,234,255,.6);line-height:1.7;margin:0 0 12px;}
+.ic-teaser-block p:last-child{margin:0;}
+.ic-teaser-whisper{font-style:italic;color:#2dd4bf !important;font-size:.9rem !important;}
+.ic-card-footer{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:12px;}
+.ic-closing{position:relative;z-index:1;text-align:center;max-width:640px;margin:24px auto 0;padding-top:48px;}
+.ic-closing-headline{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:#f0eaff;margin:0 0 20px;line-height:1.3;}
+.ic-closing-body{font-size:.95rem;color:rgba(240,234,255,.6);line-height:1.75;margin:0 0 16px;}
+.ic-fine-print{font-size:.75rem;color:rgba(240,234,255,.28);margin-top:20px;letter-spacing:.03em;}
+.ic-gradient-text{background:linear-gradient(90deg,#8b5cf6,#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ic-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:100px;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .3s ease;}
+.ic-btn--purple{background:#8b5cf6;color:#fff;}
+.ic-btn--purple:hover{box-shadow:0 8px 28px rgba(139,92,246,.45);transform:translateY(-2px);}
+.ic-btn--teal{background:#2dd4bf;color:#0f0a1a;font-weight:800;}
+.ic-btn--teal:hover{box-shadow:0 8px 28px rgba(45,212,191,.5);transform:translateY(-2px);}
+.ic-btn--gradient{background:linear-gradient(135deg,#8b5cf6,#2dd4bf);color:#fff;}
+.ic-btn--gradient:hover{box-shadow:0 8px 28px rgba(139,92,246,.45);transform:translateY(-2px);}
+.ic-btn--ghost{border:1px solid rgba(255,255,255,.3);color:#f0eaff;background:transparent;}
+.ic-btn--ghost:hover{background:rgba(255,255,255,.06);transform:translateY(-2px);}
+.ic-btn--large{padding:18px 52px;font-size:1rem;}
+.ic-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;}
+.ic-orb--purple{width:500px;height:500px;background:radial-gradient(circle,rgba(139,92,246,.16),transparent 70%);top:-100px;left:-120px;}
+.ic-orb--teal{width:420px;height:420px;background:radial-gradient(circle,rgba(45,212,191,.13),transparent 70%);bottom:-80px;right:-100px;}
+/* ============================================================
+   SHOP SECTION
+   ============================================================ */
+.shop-section{--shop-midnight:#0f0a1a;--shop-orchid:#8b5cf6;--shop-orchid-light:#a78bfa;--shop-teal:#2dd4bf;--shop-glass-bg:rgba(255,255,255,.04);--shop-glass-border:rgba(255,255,255,.09);--shop-glass-hover:rgba(255,255,255,.075);--shop-text-primary:#f0eaff;--shop-text-secondary:rgba(240,234,255,.6);--shop-radius-card:20px;--shop-transition:.35s cubic-bezier(.4,0,.2,1);position:relative;background:#0f0a1a;padding:100px 24px 120px;overflow:hidden;font-family:inherit;}
+.shop-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;}
+.shop-orb--purple{width:480px;height:480px;background:radial-gradient(circle,rgba(139,92,246,.18),transparent 70%);top:-80px;left:-100px;}
+.shop-orb--teal{width:400px;height:400px;background:radial-gradient(circle,rgba(45,212,191,.14),transparent 70%);bottom:-60px;right:-80px;}
+.shop-upsell-banner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:16px;max-width:860px;margin:0 auto 64px;padding:16px 32px;background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(45,212,191,.10));border:1px solid rgba(139,92,246,.25);border-radius:100px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);text-align:center;}
+.shop-upsell-banner p{margin:0;font-size:.9rem;letter-spacing:.04em;color:rgba(240,234,255,.6);line-height:1.5;}
+.shop-upsell-banner p strong{color:#2dd4bf;font-weight:600;}
+.shop-upsell-icon{color:#8b5cf6;font-size:.75rem;flex-shrink:0;opacity:.8;}
+.shop-header{position:relative;z-index:1;text-align:center;max-width:600px;margin:0 auto 64px;}
+.shop-eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#2dd4bf;margin-bottom:14px;}
+.shop-headline{font-size:clamp(2rem,5vw,3rem);font-weight:700;color:#f0eaff;margin:0 0 16px;line-height:1.15;background:linear-gradient(135deg,#f0eaff 30%,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.shop-subheadline{font-size:1rem;color:rgba(240,234,255,.6);line-height:1.7;margin:0;font-style:italic;}
+.shop-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1100px;margin:0 auto;}
+.shop-card{position:relative;display:flex;flex-direction:column;padding:36px 32px 32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow:hidden;transition:transform .35s ease,border-color .35s ease,background .35s ease,box-shadow .35s ease;}
+.shop-card:hover{transform:translateY(-8px);background:rgba(255,255,255,.075);border-color:rgba(139,92,246,.3);box-shadow:0 24px 48px rgba(0,0,0,.35),0 0 0 1px rgba(139,92,246,.15);}
+.shop-card--featured{border-color:rgba(45,212,191,.22);}
+.shop-card--featured:hover{border-color:rgba(45,212,191,.45);box-shadow:0 24px 48px rgba(0,0,0,.35),0 0 0 1px rgba(45,212,191,.2);}
+.shop-card-glow{position:absolute;border-radius:50%;pointer-events:none;z-index:0;opacity:0;transition:opacity .35s ease;}
+.shop-card:hover .shop-card-glow{opacity:1;}
+.shop-card-glow--purple{width:220px;height:220px;top:-60px;right:-60px;background:radial-gradient(circle,rgba(139,92,246,.2),transparent 70%);filter:blur(30px);}
+.shop-card-glow--teal{width:220px;height:220px;bottom:-60px;left:-60px;background:radial-gradient(circle,rgba(45,212,191,.2),transparent 70%);filter:blur(30px);}
+.shop-card-glow--mixed{width:280px;height:280px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(139,92,246,.15),rgba(45,212,191,.12),transparent 70%);filter:blur(40px);}
+.shop-card-badge{position:relative;z-index:1;display:inline-flex;align-self:flex-start;padding:5px 14px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px;background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.35);color:#a78bfa;}
+.shop-card-badge--teal{background:rgba(45,212,191,.15);border-color:rgba(45,212,191,.3);color:#2dd4bf;}
+.shop-card-badge--gradient{background:linear-gradient(135deg,rgba(139,92,246,.2),rgba(45,212,191,.15));border:1px solid rgba(139,92,246,.3);color:#2dd4bf;}
+.shop-product-icon{position:relative;z-index:1;margin-bottom:24px;display:flex;align-items:center;}
+.shop-product-icon svg{filter:drop-shadow(0 8px 16px rgba(139,92,246,.3));transition:transform .35s ease,filter .35s ease;}
+.shop-card:hover .shop-product-icon svg{transform:translateY(-4px) scale(1.05);filter:drop-shadow(0 12px 24px rgba(139,92,246,.45));}
+.shop-card-content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;margin-bottom:28px;}
+.shop-product-category{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#2dd4bf;margin-bottom:8px;}
+.shop-product-name{font-size:1.2rem;font-weight:700;color:#f0eaff;margin:0 0 12px;line-height:1.3;}
+.shop-product-desc{font-size:.9rem;color:rgba(240,234,255,.6);line-height:1.7;margin:0 0 20px;flex:1;}
+.shop-product-benefits{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.shop-product-benefits li{position:relative;padding-left:18px;font-size:.82rem;color:rgba(240,234,255,.55);line-height:1.4;}
+.shop-product-benefits li::before{content:"\2726";position:absolute;left:0;top:0;font-size:.55rem;color:#8b5cf6;line-height:1.8;}
+.shop-btn{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:100px;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;background:#2dd4bf;color:#0f0a1a;transition:transform .35s ease,box-shadow .35s ease,filter .35s ease;}
+.shop-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(45,212,191,.4);filter:brightness(1.08);}
+.shop-btn--gradient{background:linear-gradient(135deg,#8b5cf6,#2dd4bf);color:#fff;}
+.shop-btn--gradient:hover{box-shadow:0 8px 28px rgba(139,92,246,.45);}
+.shop-btn-arrow{transition:transform .35s ease;flex-shrink:0;}
+.shop-btn:hover .shop-btn-arrow{transform:translateX(4px);}
+.shop-disclosure{position:relative;z-index:1;text-align:center;margin:56px auto 0;max-width:560px;font-size:.75rem;color:rgba(240,234,255,.28);letter-spacing:.03em;line-height:1.6;}
+@media(max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr);}.shop-grid>.shop-card:last-child{grid-column:1/-1;max-width:500px;margin:0 auto;width:100%;}.shop-upsell-banner{border-radius:20px;flex-wrap:wrap;gap:8px;}.ic-card{padding:36px 28px 32px;}}
+@media(max-width:580px){.shop-section,.inner-circle-section{padding:64px 16px 80px;}.shop-grid{grid-template-columns:1fr;}.shop-grid>.shop-card:last-child{grid-column:auto;max-width:100%;margin:0;}.shop-upsell-icon{display:none;}.ic-card{padding:28px 20px 26px;}.ic-card-footer{flex-direction:column;}.ic-btn{width:100%;text-align:center;}}
+</style>
 </head>
 <body>
 <div id="root"></div>
@@ -241,5 +356,187 @@ function App(){return React.createElement(React.Fragment,null,React.createElemen
 const root=ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(App,null));
 </script>
+
+
+<section id="inner-circle" class="inner-circle-section">
+  <div class="ic-orb ic-orb--purple" aria-hidden="true"></div>
+  <div class="ic-orb ic-orb--teal" aria-hidden="true"></div>
+  <div class="ic-hero">
+    <span class="ic-eyebrow">&#10022; Now Accepting Members &#10022;</span>
+    <h2 class="ic-headline">The Inner Circle</h2>
+    <p class="ic-subheadline">Because extraordinary hair deserves an extraordinary commitment.<br>Emily's most coveted memberships &mdash; curated for the clients who know that looking flawless is never an accident.</p>
+    <div class="ic-divider"></div>
+  </div>
+  <div class="ic-card">
+    <div class="ic-card-glow glow--purple" aria-hidden="true"></div>
+    <div class="ic-card-badge">Tier 01</div>
+    <div class="ic-card-header">
+      <span class="ic-tier-label" style="color:#2dd4bf;">Monthly Membership</span>
+      <h3 class="ic-tier-name">The Effortless Maintenance Club</h3>
+      <p class="ic-tier-tagline">Flawless. Every single month. Without lifting a finger.</p>
+    </div>
+    <div class="ic-card-body">
+      <p class="ic-tier-description">Designed for those who refuse to let a single week go by looking anything less than polished &mdash; this is the membership that keeps your cut immaculate, your style intentional, and your schedule effortlessly clear. Whether you're rocking a sharp pixie, a refined bob, or you prefer the luxury of Emily coming to <em>you</em>, the Effortless Maintenance Club handles every detail.</p>
+      <ul class="ic-perks-list">
+        <li><span class="perk-icon" style="color:#8b5cf6;">&#10022;</span><div><strong>One Precision Cut or Trim Per Month</strong><span>Auto-billed monthly &mdash; your appointment is always waiting for you.</span></div></li>
+        <li><span class="perk-icon" style="color:#8b5cf6;">&#10022;</span><div><strong>Priority Booking Access</strong><span>Skip the waitlist. Members always move to the front of the queue.</span></div></li>
+        <li><span class="perk-icon" style="color:#8b5cf6;">&#10022;</span><div><strong>Mobile Travel Fees &mdash; Waived. Always.</strong><span>Emily comes to you at your retirement community with zero surcharge, month after month.</span></div></li>
+      </ul>
+      <p class="ic-tier-cta-text"><em>Perfect for short haircut clients &amp; our beloved mobile retirement community family.</em></p>
+    </div>
+    <div class="ic-card-footer">
+      <a href="https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services" class="ic-btn ic-btn--purple" target="_blank" rel="noopener noreferrer">Claim Your Spot &rarr;</a>
+    </div>
+  </div>
+  <div class="ic-card ic-card--teal">
+    <div class="ic-card-glow glow--teal" aria-hidden="true"></div>
+    <div class="ic-hot-badge">&#9889; Most Exclusive</div>
+    <div class="ic-card-badge ic-badge--teal">Tier 02</div>
+    <div class="ic-card-header">
+      <span class="ic-tier-label" style="color:#2dd4bf;">Premium Monthly Membership</span>
+      <h3 class="ic-tier-name">Trendsetter VIP Access</h3>
+      <p class="ic-tier-tagline">Reserved for the boldest. Crafted for the most beautiful.</p>
+    </div>
+    <div class="ic-card-body">
+      <p class="ic-tier-description">This is not just a membership. This is a declaration. Trendsetter VIP Access is Emily's most premium monthly offering &mdash; an intimate, curated experience built for her Amherstview chair clients who demand colour-treated radiance, gravity-defying volume, and the kind of luminous, bouncy finish that turns heads at every entrance.</p>
+      <ul class="ic-perks-list">
+        <li><span class="perk-icon" style="color:#2dd4bf;">&#10022;</span><div><strong>One Custom Gloss or Toner Per Month</strong><span>Dialled in to your exact shade. Your colour stays dimensional, rich, and utterly alive.</span></div></li>
+        <li><span class="perk-icon" style="color:#2dd4bf;">&#10022;</span><div><strong>One Signature Bouncy Blowout Per Month</strong><span>Emily's most-requested finish &mdash; silky, voluminous, absolutely obsession-worthy.</span></div></li>
+        <li><span class="perk-icon" style="color:#2dd4bf;">&#10022;</span><div><strong>10% Off All Retail Purchases</strong><span>The products Emily swears by, now at a permanent member discount.</span></div></li>
+        <li><span class="perk-icon perk-icon--star" style="color:#2dd4bf;">&#9733;</span><div><strong>Guaranteed VIP Grand Opening Invitation</strong><span>When Emily's brand-new home salon opens its doors &mdash; <em>you</em> will be first inside. Your name is already on the list.</span></div></li>
+      </ul>
+      <p class="ic-tier-cta-text"><em>Exclusively available to Amherstview chair clients. Membership is limited &mdash; and it will sell out.</em></p>
+    </div>
+    <div class="ic-card-footer">
+      <a href="https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services" class="ic-btn ic-btn--teal" target="_blank" rel="noopener noreferrer">Join the VIP List &rarr;</a>
+    </div>
+  </div>
+  <div class="ic-card ic-card--coming-soon">
+    <div class="ic-card-glow glow--mixed" aria-hidden="true"></div>
+    <div class="ic-coming-soon-ribbon"><span>&#10022; Coming Soon &#10022;</span></div>
+    <div class="ic-card-header">
+      <span class="ic-tier-label ic-gradient-text">Exclusive Add-On &middot; Beta Access</span>
+      <h3 class="ic-tier-name ic-gradient-text">The Head Spa Experience</h3>
+      <p class="ic-tier-tagline">The most anticipated treatment Emily has ever offered. And it's almost here.</p>
+    </div>
+    <div class="ic-card-body">
+      <p class="ic-tier-description">Something extraordinary is being built. Deep within Emily's upcoming home salon &mdash; a dedicated, purpose-designed <strong>Head Spa Station</strong> is being installed. The full ritual is coming. But right now? You can be among the very first to taste it.</p>
+      <div class="ic-beta-box">
+        <div class="ic-beta-price">
+          <span class="price-label">Introducing</span>
+          <span class="price-amount">$25</span>
+          <span class="price-name">The Mini Head Spa Add-On</span>
+        </div>
+        <p class="ic-beta-description">Elevate any appointment with this three-part sensory treatment &mdash; available <em>right now</em> as a beta add-on while the full Head Spa Studio comes to life.</p>
+        <ul class="ic-perks-list">
+          <li><span class="perk-icon ic-gradient-text">&#10022;</span><div><strong>Scalp Massage</strong><span>A deeply therapeutic, tension-releasing ritual that stimulates circulation and melts the day away.</span></div></li>
+          <li><span class="perk-icon ic-gradient-text">&#10022;</span><div><strong>High-Frequency Wand Treatment</strong><span>The same technology trusted by top aestheticians &mdash; targeting your scalp for peak follicular health.</span></div></li>
+          <li><span class="perk-icon ic-gradient-text">&#10022;</span><div><strong>Detox Oil Infusion</strong><span>Luxury botanical oils chosen for your scalp's specific needs &mdash; purifying, nourishing, and utterly transformative.</span></div></li>
+        </ul>
+      </div>
+      <div class="ic-teaser-block">
+        <p>&#10022; &nbsp;The full <strong>Head Spa Studio</strong> &mdash; with a dedicated reclining spa station and Emily's complete signature ritual &mdash; is being designed for the new home salon right now.</p>
+        <p class="ic-teaser-whisper">The wait list for the full Head Spa launch is forming. Inner Circle members get access first. Always.</p>
+      </div>
+    </div>
+    <div class="ic-card-footer">
+      <a href="https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services" class="ic-btn ic-btn--gradient" target="_blank" rel="noopener noreferrer">Add to My Next Appointment &rarr;</a>
+      <a href="#book" class="ic-btn ic-btn--ghost">Notify Me When Head Spa Launches &rarr;</a>
+    </div>
+  </div>
+  <div class="ic-closing">
+    <div class="ic-divider"></div>
+    <h3 class="ic-closing-headline">The Inner Circle is small by design.<br><span class="ic-gradient-text">Extraordinary by intention.</span></h3>
+    <p class="ic-closing-body">Emily built this program for the clients who already know &mdash; the ones who understand that real luxury isn't a price point. It's a relationship. It's consistency. It's walking into a room and knowing, without question, that you look exactly like yourself at your most beautiful.</p>
+    <p class="ic-closing-body">These memberships are offered in limited quantities. When they're gone, they're gone.</p>
+    <a href="https://squareup.com/appointments/book/l04i0aqy5ry7l4/LVXZYZXJG0HK0/services" class="ic-btn ic-btn--gradient ic-btn--large" target="_blank" rel="noopener noreferrer">&#10022; &nbsp; Inquire About Membership &nbsp; &#10022;</a>
+    <p class="ic-fine-print">All memberships are auto-billed monthly. Questions? Reach Emily directly to find your perfect fit.</p>
+  </div>
+</section>
+
+<section id="shop" class="shop-section">
+  <div class="shop-orb shop-orb--purple" aria-hidden="true"></div>
+  <div class="shop-orb shop-orb--teal" aria-hidden="true"></div>
+  <div class="shop-upsell-banner" role="banner">
+    <span class="shop-upsell-icon" aria-hidden="true">&#10022;</span>
+    <p>Maintain your <strong>2026 Trending Styles</strong> at home with Emily's curated product picks.</p>
+    <span class="shop-upsell-icon" aria-hidden="true">&#10022;</span>
+  </div>
+  <div class="shop-header">
+    <span class="shop-eyebrow">Emily's Edit</span>
+    <h2 class="shop-headline">The Curated Shop</h2>
+    <p class="shop-subheadline">Professional-grade formulas, hand-selected by Emily &mdash; because your results shouldn't stop at the salon door.</p>
+  </div>
+  <div class="shop-grid" role="list">
+    <article class="shop-card" role="listitem">
+      <div class="shop-card-glow shop-card-glow--purple" aria-hidden="true"></div>
+      <div class="shop-card-badge">Emily's Pick</div>
+      <div class="shop-product-icon" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="28" fill="url(#gp1)"/>
+          <defs><linearGradient id="gp1" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+          <rect x="20" y="22" width="16" height="22" rx="3" fill="rgba(255,255,255,0.9)"/>
+          <rect x="23" y="16" width="10" height="7" rx="2" fill="rgba(255,255,255,0.75)"/>
+          <rect x="22" y="13" width="12" height="5" rx="2" fill="#2dd4bf"/>
+          <rect x="23" y="30" width="10" height="1.5" rx="0.75" fill="#8b5cf6" opacity="0.6"/>
+          <rect x="24" y="33" width="8" height="1.5" rx="0.75" fill="#8b5cf6" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="shop-card-content">
+        <span class="shop-product-category">Cleanse &amp; Colour Care</span>
+        <h3 class="shop-product-name">Colour-Safe Gloss Shampoo</h3>
+        <p class="shop-product-desc">A sulfate-free, colour-protecting formula that keeps your gloss and toner vibrant between appointments. Adds mirror-like shine with every wash &mdash; no compromise.</p>
+        <ul class="shop-product-benefits"><li>Sulfate &amp; paraben-free</li><li>Seals the cuticle for lasting colour</li><li>Adds glossy, salon-finish shine</li></ul>
+      </div>
+      <a href="#" class="shop-btn" target="_blank" rel="noopener noreferrer">Buy Now <svg class="shop-btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="shop-card shop-card--featured" role="listitem">
+      <div class="shop-card-glow shop-card-glow--teal" aria-hidden="true"></div>
+      <div class="shop-card-badge shop-card-badge--teal">Most Loved</div>
+      <div class="shop-product-icon" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="28" fill="url(#gt1)"/>
+          <defs><linearGradient id="gt1" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2dd4bf"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+          <rect x="18" y="24" width="14" height="18" rx="3" fill="rgba(255,255,255,0.9)"/>
+          <path d="M32 28 Q38 26 37 33 L32 33" fill="rgba(255,255,255,0.7)"/>
+          <rect x="34" y="25" width="6" height="2.5" rx="1.25" fill="#2dd4bf"/>
+          <circle cx="43" cy="21" r="1.2" fill="rgba(45,212,191,0.7)"/>
+          <circle cx="45" cy="25" r="0.9" fill="rgba(45,212,191,0.5)"/>
+          <rect x="21" y="30" width="8" height="1.5" rx="0.75" fill="#2dd4bf" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="shop-card-content">
+        <span class="shop-product-category">Style &amp; Texture</span>
+        <h3 class="shop-product-name">Air-Spun Texture Spray</h3>
+        <p class="shop-product-desc">Emily's secret weapon for that effortless, bouncy, lived-in volume her clients obsess over. Weightless hold with touchable texture &mdash; the blowout that never falls flat.</p>
+        <ul class="shop-product-benefits"><li>Weightless, non-crunchy hold</li><li>Amplifies volume &amp; movement</li><li>Heat-activated up to 450&deg;F</li></ul>
+      </div>
+      <a href="#" class="shop-btn" target="_blank" rel="noopener noreferrer">Buy Now <svg class="shop-btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="shop-card" role="listitem">
+      <div class="shop-card-glow shop-card-glow--mixed" aria-hidden="true"></div>
+      <div class="shop-card-badge shop-card-badge--gradient">Head Spa Edit</div>
+      <div class="shop-product-icon" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="28" fill="url(#gm1)"/>
+          <defs><linearGradient id="gm1" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#2dd4bf"/></linearGradient></defs>
+          <rect x="21" y="26" width="14" height="18" rx="3" fill="rgba(255,255,255,0.9)"/>
+          <rect x="24" y="18" width="8" height="9" rx="2" fill="rgba(255,255,255,0.75)"/>
+          <ellipse cx="28" cy="15" rx="5" ry="4" fill="rgba(139,92,246,0.5)"/>
+          <path d="M28 30 Q25 35 28 40 Q31 35 28 30Z" fill="url(#gm1)" opacity="0.4"/>
+          <rect x="24" y="33" width="8" height="1.5" rx="0.75" fill="#8b5cf6" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="shop-card-content">
+        <span class="shop-product-category">Scalp &amp; Wellness</span>
+        <h3 class="shop-product-name">Scalp Detox Oil</h3>
+        <p class="shop-product-desc">The at-home companion to Emily's upcoming Head Spa treatment. Purifying botanical oils that restore scalp balance, stimulate circulation, and leave every strand radiantly nourished from the root.</p>
+        <ul class="shop-product-benefits"><li>Purifying &amp; anti-inflammatory blend</li><li>Stimulates follicle circulation</li><li>Compatible with high-frequency tools</li></ul>
+      </div>
+      <a href="#" class="shop-btn shop-btn--gradient" target="_blank" rel="noopener noreferrer">Buy Now <svg class="shop-btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+  </div>
+  <p class="shop-disclosure">&#10022; &nbsp;Emily may earn a small commission on purchases made through these links, at no extra cost to you. She only recommends what she uses and trusts in the salon.</p>
+</section>
 </body>
 </html>
